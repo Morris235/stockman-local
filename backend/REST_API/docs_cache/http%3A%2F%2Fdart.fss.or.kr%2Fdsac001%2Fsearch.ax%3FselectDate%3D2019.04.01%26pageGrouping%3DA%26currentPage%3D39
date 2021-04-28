@@ -1,0 +1,4430 @@
+
+
+
+
+	<!--검색건수-->
+<div class="table_list"><p class="table_tit">
+	<b>
+		
+		
+		
+		
+        
+        
+		전체
+		 &nbsp;4,949건
+		
+			
+				
+					
+					(2019년 04월 01일)
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+	</b></p>
+
+	<!--검색 sort -->
+	<div class="sort" >
+		
+	    	
+			
+			
+		
+		
+			
+			   <a href="#time1" id="time1" onclick="setOrder(time); return false;">
+					<img name="sortImg" id="time" src="/images/sort/time/on_desc.gif" alt="시간 내림차순" title="시간 내림차순" /></a>
+				<a href="#crp1" id="crp1" onclick="setOrder(crp);  return false;">
+					<img name="sortImg" id="crp" src="/images/sort/crp/off_asc.gif" alt="회사별 오름차순" title="회사별 오름차순" /></a>
+				<a href="#rpt1"  id="rpt1" onclick="setOrder(rpt);  return false;">
+					<img name="sortImg"  id="rpt" src="/images/sort/rpt/off_asc.gif" alt="보고서별 오름차순" title="보고서별 오름차순" /></a>
+			
+			
+			
+			
+		
+	</div>
+
+<!--목록 -->
+<table summary="유가증권시장에 대한 시간, 공시대상회사, 보고서명, 제출인, 접수일자, 비고 등을 알리는 표입니다." style="table-layout: fixed;">
+	<caption>유가증권시장 목록</caption>
+	<colgroup>
+		<col width="6%" />
+		<col width="23%" />
+		<col width="*" />
+		<col width="15%" />
+		<col width="9%" />
+		<col width="8%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">시간</th>
+			<th scope="col">공시대상회사</th>
+			<th scope="col">보고서명</th>
+			<th scope="col">제출인</th>
+			<th scope="col">접수일자</th>
+			<th scope="col">비고</th>
+		</tr>
+	</thead>
+	
+		
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:49
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00164876" onclick="openCorpInfo('00164876'); return false;" title="케이비증권 기업개황 새창" >
+								케이비증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001091"  onclick="openReportViewer('20190401001091'); return false;" id="r_20190401001091"
+							title="투자설명서(일괄신고) 공시뷰어 새창" >투자설명서(일괄신고)
+							
+  							
+						</a>
+					</td>
+					<td title="케이비증권"><div class="nobr" style="width:95px">케이비증권</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00606901" onclick="openCorpInfo('00606901'); return false;" title="한국필름 기업개황 새창" >
+								한국필름
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001089"  onclick="openReportViewer('20190401001089'); return false;" id="r_20190401001089"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="동남회계법인"><div class="nobr" style="width:95px">동남회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00914466" onclick="openCorpInfo('00914466'); return false;" title="케이디건설 기업개황 새창" >
+								케이디건설
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001088"  onclick="openReportViewer('20190401001088'); return false;" id="r_20190401001088"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="여명공인회계사감사반(제118호)"><div class="nobr" style="width:95px">여명공인회계사감사반(제118호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00907314" onclick="openCorpInfo('00907314'); return false;" title="케이티지디에이치 기업개황 새창" >
+								케이티지디에이치
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001087"  onclick="openReportViewer('20190401001087'); return false;" id="r_20190401001087"
+							title="최대주주등의주식보유변동 공시뷰어 새창" >최대주주등의주식보유변동
+							
+  							
+						</a>
+					</td>
+					<td title="케이티지디에이치"><div class="nobr" style="width:95px">케이티지디에이치</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark08.gif" hspace="1"
+			title="본 공시사항은 공정거래위원회 소관임" alt="본 공시사항은 공정거래위원회 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:47
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01309795" onclick="openCorpInfo('01309795'); return false;" title="알로이스 기업개황 새창" >
+								알로이스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001086"  onclick="openReportViewer('20190401001086'); return false;" id="r_20190401001086"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="알로이스"><div class="nobr" style="width:95px">알로이스</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:47
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01043428" onclick="openCorpInfo('01043428'); return false;" title="디에이치텍 기업개황 새창" >
+								디에이치텍
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001085"  onclick="openReportViewer('20190401001085'); return false;" id="r_20190401001085"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="위드회계법인"><div class="nobr" style="width:95px">위드회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:47
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01157208" onclick="openCorpInfo('01157208'); return false;" title="무경설비 기업개황 새창" >
+								무경설비
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001084"  onclick="openReportViewer('20190401001084'); return false;" id="r_20190401001084"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="도영회계법인"><div class="nobr" style="width:95px">도영회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:45
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00618960" onclick="openCorpInfo('00618960'); return false;" title="세라제화 기업개황 새창" >
+								세라제화
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001083"  onclick="openReportViewer('20190401001083'); return false;" id="r_20190401001083"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="신한회계법인"><div class="nobr" style="width:95px">신한회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:45
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00696940" onclick="openCorpInfo('00696940'); return false;" title="원엔터테인먼트 기업개황 새창" >
+								원엔터테인먼트
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001082"  onclick="openReportViewer('20190401001082'); return false;" id="r_20190401001082"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="안세회계법인"><div class="nobr" style="width:95px">안세회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:45
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01298879" onclick="openCorpInfo('01298879'); return false;" title="헤이든 기업개황 새창" >
+								헤이든
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001081"  onclick="openReportViewer('20190401001081'); return false;" id="r_20190401001081"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="명문공인회계사감사반(제149호)"><div class="nobr" style="width:95px">명문공인회계사감사반(제149호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:45
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00673356" onclick="openCorpInfo('00673356'); return false;" title="리더스 기업개황 새창" >
+								리더스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001080"  onclick="openReportViewer('20190401001080'); return false;" id="r_20190401001080"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="대주회계법인"><div class="nobr" style="width:95px">대주회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:44
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00809261" onclick="openCorpInfo('00809261'); return false;" title="씨앤피시스템 기업개황 새창" >
+								씨앤피시스템
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001079"  onclick="openReportViewer('20190401001079'); return false;" id="r_20190401001079"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="여명공인회계사감사반(제118호)"><div class="nobr" style="width:95px">여명공인회계사감사반(제118호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:43
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00921350" onclick="openCorpInfo('00921350'); return false;" title="삼화기업 기업개황 새창" >
+								삼화기업
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001078"  onclick="openReportViewer('20190401001078'); return false;" id="r_20190401001078"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="동서회계법인"><div class="nobr" style="width:95px">동서회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:43
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00978172" onclick="openCorpInfo('00978172'); return false;" title="알케이에셋 기업개황 새창" >
+								알케이에셋
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001077"  onclick="openReportViewer('20190401001077'); return false;" id="r_20190401001077"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="상일공인회계사감사반(제27호)"><div class="nobr" style="width:95px">상일공인회계사감사반(제27호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:42
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01298134" onclick="openCorpInfo('01298134'); return false;" title="하얀건설산업 기업개황 새창" >
+								하얀건설산업
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001075"  onclick="openReportViewer('20190401001075'); return false;" id="r_20190401001075"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="명문공인회계사감사반(제149호)"><div class="nobr" style="width:95px">명문공인회계사감사반(제149호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:41
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01021347" onclick="openCorpInfo('01021347'); return false;" title="청해진건설 기업개황 새창" >
+								청해진건설
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001074"  onclick="openReportViewer('20190401001074'); return false;" id="r_20190401001074"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="여명공인회계사감사반(제118호)"><div class="nobr" style="width:95px">여명공인회계사감사반(제118호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:39
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01275133" onclick="openCorpInfo('01275133'); return false;" title="삼성인더스트리 기업개황 새창" >
+								삼성인더스트리
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001073"  onclick="openReportViewer('20190401001073'); return false;" id="r_20190401001073"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="명문공인회계사감사반(제149호)"><div class="nobr" style="width:95px">명문공인회계사감사반(제149호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:39
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00930631" onclick="openCorpInfo('00930631'); return false;" title="목포신항만운영 기업개황 새창" >
+								목포신항만운영
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001072"  onclick="openReportViewer('20190401001072'); return false;" id="r_20190401001072"
+							title="임원의변동 공시뷰어 새창" >임원의변동
+							
+  							
+						</a>
+					</td>
+					<td title="목포신항만운영"><div class="nobr" style="width:95px">목포신항만운영</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark08.gif" hspace="1"
+			title="본 공시사항은 공정거래위원회 소관임" alt="본 공시사항은 공정거래위원회 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:39
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00961783" onclick="openCorpInfo('00961783'); return false;" title="삼포식품 기업개황 새창" >
+								삼포식품
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001071"  onclick="openReportViewer('20190401001071'); return false;" id="r_20190401001071"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="여명공인회계사감사반(제118호)"><div class="nobr" style="width:95px">여명공인회계사감사반(제118호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:38
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00245490" onclick="openCorpInfo('00245490'); return false;" title="지화이브 기업개황 새창" >
+								지화이브
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001070"  onclick="openReportViewer('20190401001070'); return false;" id="r_20190401001070"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="동남회계법인"><div class="nobr" style="width:95px">동남회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:36
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00639200" onclick="openCorpInfo('00639200'); return false;" title="주식회조은푸드텍 기업개황 새창" >
+								주식회조은푸드텍
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001069"  onclick="openReportViewer('20190401001069'); return false;" id="r_20190401001069"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="여명공인회계사감사반(제118호)"><div class="nobr" style="width:95px">여명공인회계사감사반(제118호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:34
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00872911" onclick="openCorpInfo('00872911'); return false;" title="하성 기업개황 새창" >
+								하성
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001068"  onclick="openReportViewer('20190401001068'); return false;" id="r_20190401001068"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="명문공인회계사감사반(제149호)"><div class="nobr" style="width:95px">명문공인회계사감사반(제149호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:34
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00857912" onclick="openCorpInfo('00857912'); return false;" title="제이앤드 기업개황 새창" >
+								제이앤드
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001067"  onclick="openReportViewer('20190401001067'); return false;" id="r_20190401001067"
+							title="호가중개시스템을통한소액매출공시서류 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>호가중개시스템을통한소액매출공시서류
+							
+  							
+						</a>
+					</td>
+					<td title="제이앤드"><div class="nobr" style="width:95px">제이앤드</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:34
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01073164" onclick="openCorpInfo('01073164'); return false;" title="한국하이티엔 기업개황 새창" >
+								한국하이티엔
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001066"  onclick="openReportViewer('20190401001066'); return false;" id="r_20190401001066"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="위드회계법인"><div class="nobr" style="width:95px">위드회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:33
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00495031" onclick="openCorpInfo('00495031'); return false;" title="시스게이트 기업개황 새창" >
+								시스게이트
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001065"  onclick="openReportViewer('20190401001065'); return false;" id="r_20190401001065"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="여명공인회계사감사반(제118호)"><div class="nobr" style="width:95px">여명공인회계사감사반(제118호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:30
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01210899" onclick="openCorpInfo('01210899'); return false;" title="오다스톤파트너스 기업개황 새창" >
+								오다스톤파트너스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001063"  onclick="openReportViewer('20190401001063'); return false;" id="r_20190401001063"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="가율회계법인"><div class="nobr" style="width:95px">가율회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:30
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01243161" onclick="openCorpInfo('01243161'); return false;" title="인산가 기업개황 새창" >
+								인산가
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001062"  onclick="openReportViewer('20190401001062'); return false;" id="r_20190401001062"
+							title="주식등의대량보유상황보고서(일반) 공시뷰어 새창" >주식등의대량보유상황보고서(일반)
+							
+  							
+						</a>
+					</td>
+					<td title="김윤세"><div class="nobr" style="width:95px">김윤세</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:29
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00501970" onclick="openCorpInfo('00501970'); return false;" title="코드네이처 기업개황 새창" >
+								코드네이처
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001061"  onclick="openReportViewer('20190401001061'); return false;" id="r_20190401001061"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="코드네이처"><div class="nobr" style="width:95px">코드네이처</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:29
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00522919" onclick="openCorpInfo('00522919'); return false;" title="모빌랩 기업개황 새창" >
+								모빌랩
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001060"  onclick="openReportViewer('20190401001060'); return false;" id="r_20190401001060"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="화우공인회계사감사반(제41호)"><div class="nobr" style="width:95px">화우공인회계사감사반(제41호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:28
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00613886" onclick="openCorpInfo('00613886'); return false;" title="에이치앤에스에셋 기업개황 새창" >
+								에이치앤에스에셋
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001059"  onclick="openReportViewer('20190401001059'); return false;" id="r_20190401001059"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="중앙회계법인"><div class="nobr" style="width:95px">중앙회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:28
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01154681" onclick="openCorpInfo('01154681'); return false;" title="대호홀딩스 기업개황 새창" >
+								대호홀딩스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001057"  onclick="openReportViewer('20190401001057'); return false;" id="r_20190401001057"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="태율회계법인"><div class="nobr" style="width:95px">태율회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:27
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00447928" onclick="openCorpInfo('00447928'); return false;" title="네오티스 기업개황 새창" >
+								네오티스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001056"  onclick="openReportViewer('20190401001056'); return false;" id="r_20190401001056"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="네오티스"><div class="nobr" style="width:95px">네오티스</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:27
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00359623" onclick="openCorpInfo('00359623'); return false;" title="우리산업홀딩스 기업개황 새창" >
+								우리산업홀딩스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001055"  onclick="openReportViewer('20190401001055'); return false;" id="r_20190401001055"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="우리산업홀딩스"><div class="nobr" style="width:95px">우리산업홀딩스</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:25
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00806510" onclick="openCorpInfo('00806510'); return false;" title="한국발터 기업개황 새창" >
+								한국발터
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001053"  onclick="openReportViewer('20190401001053'); return false;" id="r_20190401001053"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="정현회계법인"><div class="nobr" style="width:95px">정현회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:25
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00462389" onclick="openCorpInfo('00462389'); return false;" title="한본인더스트리 기업개황 새창" >
+								한본인더스트리
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001052"  onclick="openReportViewer('20190401001052'); return false;" id="r_20190401001052"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="상일공인회계사감사반(제27호)"><div class="nobr" style="width:95px">상일공인회계사감사반(제27호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:23
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00461326" onclick="openCorpInfo('00461326'); return false;" title="아이리스코리아 기업개황 새창" >
+								아이리스코리아
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001050"  onclick="openReportViewer('20190401001050'); return false;" id="r_20190401001050"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="동서회계법인"><div class="nobr" style="width:95px">동서회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:23
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00988294" onclick="openCorpInfo('00988294'); return false;" title="씨앤제이개발 기업개황 새창" >
+								씨앤제이개발
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001049"  onclick="openReportViewer('20190401001049'); return false;" id="r_20190401001049"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="대원공인회계사감사반(제239호)"><div class="nobr" style="width:95px">대원공인회계사감사반(제239호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:22
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00146269" onclick="openCorpInfo('00146269'); return false;" title="일신방직 기업개황 새창" >
+								일신방직
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001048"  onclick="openReportViewer('20190401001048'); return false;" id="r_20190401001048"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="일신방직"><div class="nobr" style="width:95px">일신방직</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:22
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00623935" onclick="openCorpInfo('00623935'); return false;" title="성신문화인쇄사 기업개황 새창" >
+								성신문화인쇄사
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001047"  onclick="openReportViewer('20190401001047'); return false;" id="r_20190401001047"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="중앙회계법인"><div class="nobr" style="width:95px">중앙회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:22
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00479705" onclick="openCorpInfo('00479705'); return false;" title="EMW 기업개황 새창" >
+								EMW
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001046"  onclick="openReportViewer('20190401001046'); return false;" id="r_20190401001046"
+							title="사업보고서 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="EMW"><div class="nobr" style="width:95px">EMW</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" />&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:21
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00357157" onclick="openCorpInfo('00357157'); return false;" title="두백 기업개황 새창" >
+								두백
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001045"  onclick="openReportViewer('20190401001045'); return false;" id="r_20190401001045"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:20
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00602279" onclick="openCorpInfo('00602279'); return false;" title="그린플러스 기업개황 새창" >
+								그린플러스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001044"  onclick="openReportViewer('20190401001044'); return false;" id="r_20190401001044"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="그린플러스"><div class="nobr" style="width:95px">그린플러스</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:20
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00923729" onclick="openCorpInfo('00923729'); return false;" title="시아플랜건축사사무소 기업개황 새창" >
+								시아플랜건축사사무소
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001043"  onclick="openReportViewer('20190401001043'); return false;" id="r_20190401001043"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="태율회계법인"><div class="nobr" style="width:95px">태율회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:20
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00122667" onclick="openCorpInfo('00122667'); return false;" title="범서기업 기업개황 새창" >
+								범서기업
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001041"  onclick="openReportViewer('20190401001041'); return false;" id="r_20190401001041"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="한길회계법인"><div class="nobr" style="width:95px">한길회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:19
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01233094" onclick="openCorpInfo('01233094'); return false;" title="성일기공 기업개황 새창" >
+								성일기공
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001040"  onclick="openReportViewer('20190401001040'); return false;" id="r_20190401001040"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="동서회계법인"><div class="nobr" style="width:95px">동서회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:19
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00603214" onclick="openCorpInfo('00603214'); return false;" title="이오니아 기업개황 새창" >
+								이오니아
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001039"  onclick="openReportViewer('20190401001039'); return false;" id="r_20190401001039"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:19
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01205471" onclick="openCorpInfo('01205471'); return false;" title="아이엠코퍼레이션 기업개황 새창" >
+								아이엠코퍼레이션
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001038"  onclick="openReportViewer('20190401001038'); return false;" id="r_20190401001038"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:18
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00920883" onclick="openCorpInfo('00920883'); return false;" title="디케이시 기업개황 새창" >
+								디케이시
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001037"  onclick="openReportViewer('20190401001037'); return false;" id="r_20190401001037"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인원지"><div class="nobr" style="width:95px">회계법인원지</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:18
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01018097" onclick="openCorpInfo('01018097'); return false;" title="대한볼트 기업개황 새창" >
+								대한볼트
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001036"  onclick="openReportViewer('20190401001036'); return false;" id="r_20190401001036"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:18
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00301413" onclick="openCorpInfo('00301413'); return false;" title="내성기업 기업개황 새창" >
+								내성기업
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001035"  onclick="openReportViewer('20190401001035'); return false;" id="r_20190401001035"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:18
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00893987" onclick="openCorpInfo('00893987'); return false;" title="우석 기업개황 새창" >
+								우석
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001034"  onclick="openReportViewer('20190401001034'); return false;" id="r_20190401001034"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="순광공인회계사감사반(제191호)"><div class="nobr" style="width:95px">순광공인회계사감사반(제191호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:18
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00897752" onclick="openCorpInfo('00897752'); return false;" title="천보 기업개황 새창" >
+								천보
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001033"  onclick="openReportViewer('20190401001033'); return false;" id="r_20190401001033"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="천보"><div class="nobr" style="width:95px">천보</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:18
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01145179" onclick="openCorpInfo('01145179'); return false;" title="오디오링크 기업개황 새창" >
+								오디오링크
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001032"  onclick="openReportViewer('20190401001032'); return false;" id="r_20190401001032"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:17
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01079645" onclick="openCorpInfo('01079645'); return false;" title="윤성 기업개황 새창" >
+								윤성
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001031"  onclick="openReportViewer('20190401001031'); return false;" id="r_20190401001031"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="중앙회계법인"><div class="nobr" style="width:95px">중앙회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:16
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00367118" onclick="openCorpInfo('00367118'); return false;" title="태원식품산업 기업개황 새창" >
+								태원식품산업
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001030"  onclick="openReportViewer('20190401001030'); return false;" id="r_20190401001030"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:16
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01219526" onclick="openCorpInfo('01219526'); return false;" title="인천유니온약품 기업개황 새창" >
+								인천유니온약품
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001029"  onclick="openReportViewer('20190401001029'); return false;" id="r_20190401001029"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:15
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00759124" onclick="openCorpInfo('00759124'); return false;" title="지앤지홀딩스 기업개황 새창" >
+								지앤지홀딩스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001028"  onclick="openReportViewer('20190401001028'); return false;" id="r_20190401001028"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:15
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00501633" onclick="openCorpInfo('00501633'); return false;" title="사람과자연건설 기업개황 새창" >
+								사람과자연건설
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001027"  onclick="openReportViewer('20190401001027'); return false;" id="r_20190401001027"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="태율회계법인"><div class="nobr" style="width:95px">태율회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:15
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00758259" onclick="openCorpInfo('00758259'); return false;" title="지앤지프로덕션 기업개황 새창" >
+								지앤지프로덕션
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001026"  onclick="openReportViewer('20190401001026'); return false;" id="r_20190401001026"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:14
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00812575" onclick="openCorpInfo('00812575'); return false;" title="미도컴퍼니 기업개황 새창" >
+								미도컴퍼니
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001025"  onclick="openReportViewer('20190401001025'); return false;" id="r_20190401001025"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:14
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00580667" onclick="openCorpInfo('00580667'); return false;" title="S&K폴리텍 기업개황 새창" >
+								S&K폴리텍
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001024"  onclick="openReportViewer('20190401001024'); return false;" id="r_20190401001024"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="S&K폴리텍"><div class="nobr" style="width:95px">S&K폴리텍</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:14
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00140177" onclick="openCorpInfo('00140177'); return false;" title="GS리테일 기업개황 새창" >
+								GS리테일
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001023"  onclick="openReportViewer('20190401001023'); return false;" id="r_20190401001023"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="GS리테일"><div class="nobr" style="width:95px">GS리테일</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" />&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:13
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00239408" onclick="openCorpInfo('00239408'); return false;" title="남화통상 기업개황 새창" >
+								남화통상
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001022"  onclick="openReportViewer('20190401001022'); return false;" id="r_20190401001022"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:13
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00445540" onclick="openCorpInfo('00445540'); return false;" title="디더블유디 기업개황 새창" >
+								디더블유디
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001021"  onclick="openReportViewer('20190401001021'); return false;" id="r_20190401001021"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="지성회계법인"><div class="nobr" style="width:95px">지성회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:13
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00224512" onclick="openCorpInfo('00224512'); return false;" title="국제산공 기업개황 새창" >
+								국제산공
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001020"  onclick="openReportViewer('20190401001020'); return false;" id="r_20190401001020"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:12
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01077577" onclick="openCorpInfo('01077577'); return false;" title="우리산업 기업개황 새창" >
+								우리산업
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001018"  onclick="openReportViewer('20190401001018'); return false;" id="r_20190401001018"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="우리산업"><div class="nobr" style="width:95px">우리산업</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" />&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:12
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01290734" onclick="openCorpInfo('01290734'); return false;" title="엠엔비 기업개황 새창" >
+								엠엔비
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001017"  onclick="openReportViewer('20190401001017'); return false;" id="r_20190401001017"
+							title="동일인등출자계열회사와의상품ㆍ용역거래변경 공시뷰어 새창" >동일인등출자계열회사와의상품ㆍ용역거래변경
+							
+  							
+						</a>
+					</td>
+					<td title="엠엔비"><div class="nobr" style="width:95px">엠엔비</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark08.gif" hspace="1"
+			title="본 공시사항은 공정거래위원회 소관임" alt="본 공시사항은 공정거래위원회 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:10
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00612090" onclick="openCorpInfo('00612090'); return false;" title="에스디산업개발 기업개황 새창" >
+								에스디산업개발
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001016"  onclick="openReportViewer('20190401001016'); return false;" id="r_20190401001016"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:10
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00532855" onclick="openCorpInfo('00532855'); return false;" title="한국유니온제약 기업개황 새창" >
+								한국유니온제약
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001015"  onclick="openReportViewer('20190401001015'); return false;" id="r_20190401001015"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="한국유니온제약"><div class="nobr" style="width:95px">한국유니온제약</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+						
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:10
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_konex.gif"  title="코넥스시장" alt="코넥스시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01264234" onclick="openCorpInfo('01264234'); return false;" title="엘에이티 기업개황 새창" >
+								엘에이티
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401600614"  onclick="openReportViewer('20190401600614'); return false;" id="r_20190401600614"
+							title="증권발행결과(자율공시) 공시뷰어 새창" >증권발행결과(자율공시)
+							
+  							
+						</a>
+					</td>
+					<td title="엘에이티"><div class="nobr" style="width:95px">엘에이티</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark09.gif" hspace="1" title="본 문서는 한국거래소 코넥스시장 소관임" alt="본 문서는 한국거래소 코넥스시장 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:10
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00812706" onclick="openCorpInfo('00812706'); return false;" title="이천실크밸리 기업개황 새창" >
+								이천실크밸리
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001014"  onclick="openReportViewer('20190401001014'); return false;" id="r_20190401001014"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:09
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01222478" onclick="openCorpInfo('01222478'); return false;" title="신안건설 기업개황 새창" >
+								신안건설
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001013"  onclick="openReportViewer('20190401001013'); return false;" id="r_20190401001013"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:08
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00136527" onclick="openCorpInfo('00136527'); return false;" title="신안건설산업 기업개황 새창" >
+								신안건설산업
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001012"  onclick="openReportViewer('20190401001012'); return false;" id="r_20190401001012"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인세일원"><div class="nobr" style="width:95px">회계법인세일원</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:08
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01291168" onclick="openCorpInfo('01291168'); return false;" title="유신당 기업개황 새창" >
+								유신당
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001011"  onclick="openReportViewer('20190401001011'); return false;" id="r_20190401001011"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="대정공인회계사감사반(제412호)"><div class="nobr" style="width:95px">대정공인회계사감사반(제412호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:08
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00510640" onclick="openCorpInfo('00510640'); return false;" title="에스디플렉스 기업개황 새창" >
+								에스디플렉스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001010"  onclick="openReportViewer('20190401001010'); return false;" id="r_20190401001010"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="삼정회계법인"><div class="nobr" style="width:95px">삼정회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:08
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01085725" onclick="openCorpInfo('01085725'); return false;" title="영안상사 기업개황 새창" >
+								영안상사
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001009"  onclick="openReportViewer('20190401001009'); return false;" id="r_20190401001009"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="중앙회계법인"><div class="nobr" style="width:95px">중앙회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:07
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00124504" onclick="openCorpInfo('00124504'); return false;" title="포스코인터내셔널 기업개황 새창" >
+								포스코인터내셔널
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001008"  onclick="openReportViewer('20190401001008'); return false;" id="r_20190401001008"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="포스코인터내셔널"><div class="nobr" style="width:95px">포스코인터내셔널</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:07
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00443898" onclick="openCorpInfo('00443898'); return false;" title="원영씰 기업개황 새창" >
+								원영씰
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001007"  onclick="openReportViewer('20190401001007'); return false;" id="r_20190401001007"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="인일회계법인"><div class="nobr" style="width:95px">인일회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:06
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00627029" onclick="openCorpInfo('00627029'); return false;" title="ITX-AI 기업개황 새창" >
+								ITX-AI
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001006"  onclick="openReportViewer('20190401001006'); return false;" id="r_20190401001006"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="ITX-AI"><div class="nobr" style="width:95px">ITX-AI</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:06
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00638788" onclick="openCorpInfo('00638788'); return false;" title="지산물류 기업개황 새창" >
+								지산물류
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001005"  onclick="openReportViewer('20190401001005'); return false;" id="r_20190401001005"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="대원공인회계사감사반(제239호)"><div class="nobr" style="width:95px">대원공인회계사감사반(제239호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:06
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01243772" onclick="openCorpInfo('01243772'); return false;" title="신한제4호기업인수목적 기업개황 새창" >
+								신한제4호기업인수목적
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001004"  onclick="openReportViewer('20190401001004'); return false;" id="r_20190401001004"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="신한제4호기업인수목적"><div class="nobr" style="width:95px">신한제4호기업인수목적</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:06
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00115180" onclick="openCorpInfo('00115180'); return false;" title="동명스틸 기업개황 새창" >
+								동명스틸
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001003"  onclick="openReportViewer('20190401001003'); return false;" id="r_20190401001003"
+							title="감사보고서 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인원지"><div class="nobr" style="width:95px">회계법인원지</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:05
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00770561" onclick="openCorpInfo('00770561'); return false;" title="백년약속 기업개황 새창" >
+								백년약속
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001002"  onclick="openReportViewer('20190401001002'); return false;" id="r_20190401001002"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="세영회계법인"><div class="nobr" style="width:95px">세영회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:05
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01142118" onclick="openCorpInfo('01142118'); return false;" title="정훈정보시스템 기업개황 새창" >
+								정훈정보시스템
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401001000"  onclick="openReportViewer('20190401001000'); return false;" id="r_20190401001000"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="지성회계법인"><div class="nobr" style="width:95px">지성회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:05
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00317210" onclick="openCorpInfo('00317210'); return false;" title="성호전자 기업개황 새창" >
+								성호전자
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000999"  onclick="openReportViewer('20190401000999'); return false;" id="r_20190401000999"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="성호전자"><div class="nobr" style="width:95px">성호전자</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:05
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01032583" onclick="openCorpInfo('01032583'); return false;" title="고려시멘트 기업개황 새창" >
+								고려시멘트
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000998"  onclick="openReportViewer('20190401000998'); return false;" id="r_20190401000998"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="고려시멘트"><div class="nobr" style="width:95px">고려시멘트</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:04
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00970781" onclick="openCorpInfo('00970781'); return false;" title="청암홈 기업개황 새창" >
+								청암홈
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000996"  onclick="openReportViewer('20190401000996'); return false;" id="r_20190401000996"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="청림공인회계사감사반(제443호)"><div class="nobr" style="width:95px">청림공인회계사감사반(제443호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:04
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00495402" onclick="openCorpInfo('00495402'); return false;" title="영안양행 기업개황 새창" >
+								영안양행
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000995"  onclick="openReportViewer('20190401000995'); return false;" id="r_20190401000995"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="중앙회계법인"><div class="nobr" style="width:95px">중앙회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:03
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00103510" onclick="openCorpInfo('00103510'); return false;" title="인지컨트롤스 기업개황 새창" >
+								인지컨트롤스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000994"  onclick="openReportViewer('20190401000994'); return false;" id="r_20190401000994"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="인지컨트롤스"><div class="nobr" style="width:95px">인지컨트롤스</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:03
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00351427" onclick="openCorpInfo('00351427'); return false;" title="와이즈넛 기업개황 새창" >
+								와이즈넛
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000993"  onclick="openReportViewer('20190401000993'); return false;" id="r_20190401000993"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="삼정회계법인"><div class="nobr" style="width:95px">삼정회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:03
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01315325" onclick="openCorpInfo('01315325'); return false;" title="승현 기업개황 새창" >
+								승현
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000992"  onclick="openReportViewer('20190401000992'); return false;" id="r_20190401000992"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="대정공인회계사감사반(제412호)"><div class="nobr" style="width:95px">대정공인회계사감사반(제412호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:03
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01013542" onclick="openCorpInfo('01013542'); return false;" title="리프앤바인 기업개황 새창" >
+								리프앤바인
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000991"  onclick="openReportViewer('20190401000991'); return false;" id="r_20190401000991"
+							title="연결감사보고서 공시뷰어 새창" >연결감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인성지"><div class="nobr" style="width:95px">회계법인성지</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:02
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01013542" onclick="openCorpInfo('01013542'); return false;" title="리프앤바인 기업개황 새창" >
+								리프앤바인
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000990"  onclick="openReportViewer('20190401000990'); return false;" id="r_20190401000990"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인성지"><div class="nobr" style="width:95px">회계법인성지</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:02
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00973511" onclick="openCorpInfo('00973511'); return false;" title="퍼스트이개발 기업개황 새창" >
+								퍼스트이개발
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000989"  onclick="openReportViewer('20190401000989'); return false;" id="r_20190401000989"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인성지"><div class="nobr" style="width:95px">회계법인성지</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:02
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00655262" onclick="openCorpInfo('00655262'); return false;" title="씨에이케이인터내셔날 기업개황 새창" >
+								씨에이케이인터내셔날
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000988"  onclick="openReportViewer('20190401000988'); return false;" id="r_20190401000988"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="회계법인성지"><div class="nobr" style="width:95px">회계법인성지</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:01
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01158854" onclick="openCorpInfo('01158854'); return false;" title="대한콘트롤 기업개황 새창" >
+								대한콘트롤
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000987"  onclick="openReportViewer('20190401000987'); return false;" id="r_20190401000987"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="청아공인회계사감사반(제169호)"><div class="nobr" style="width:95px">청아공인회계사감사반(제169호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:01
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01028182" onclick="openCorpInfo('01028182'); return false;" title="센트럴디벨롭먼트 기업개황 새창" >
+								센트럴디벨롭먼트
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000985"  onclick="openReportViewer('20190401000985'); return false;" id="r_20190401000985"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="태율회계법인"><div class="nobr" style="width:95px">태율회계법인</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:01
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00681249" onclick="openCorpInfo('00681249'); return false;" title="씨유메디칼 기업개황 새창" >
+								씨유메디칼
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000986"  onclick="openReportViewer('20190401000986'); return false;" id="r_20190401000986"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="씨유메디칼"><div class="nobr" style="width:95px">씨유메디칼</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+					
+						
+						
+							
+						
+					
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:01
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:135px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00318316" onclick="openCorpInfo('00318316'); return false;" title="대아티아이 기업개황 새창" >
+								대아티아이
+							</a>
+						</span>
+						<span style="padding-left: 4px;"><a href="http://www.daeati.co.kr" target="new">
+								<img src="/images/sub/btn_ir.gif" 	title="기업 IR페이지 연결" alt="기업 IR페이지 연결" /></a></span>
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000984"  onclick="openReportViewer('20190401000984'); return false;" id="r_20190401000984"
+							title="사업보고서 공시뷰어 새창" >사업보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="대아티아이"><div class="nobr" style="width:95px">대아티아이</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark03.gif" hspace="1"
+			title="본 보고서는 연결부분을 포함한 것임" alt="본 보고서는 연결부분을 포함한 것임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						12:00
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00668558" onclick="openCorpInfo('00668558'); return false;" title="현우 기업개황 새창" >
+								현우
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190401000983"  onclick="openReportViewer('20190401000983'); return false;" id="r_20190401000983"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2018.12)
+  							
+						</a>
+					</td>
+					<td title="태화공인회계사감사반(제96호)"><div class="nobr" style="width:95px">태화공인회계사감사반(제96호)</div></td>
+					<td class="cen_txt">2019.04.01</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+		
+		
+	
+</table>
+</div>
+<div class = "page_list">
+	
+
+
+
+		<input type="image" src="/images/btn/page_prev2.gif" alt="맨앞으로" title="맨앞으로" style="cursor:pointer;"	onclick="search(1)" />
+
+		<!-- prev 버튼 -->
+		
+			
+			
+				
+					
+					
+					
+						
+
+						<input type="image" src="/images/btn/page_prev.gif" alt="이전" style="cursor:pointer;"	onclick="search(30)" />
+
+					
+				
+			
+		
+
+
+		<!-- 페이지 숫자 시작부분 설정 -->
+		
+			
+			
+				
+			
+		
+
+
+		<!-- 페이지 숫자 출력 -->
+		
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(31)" value="31" alt="31"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(32)" value="32" alt="32"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(33)" value="33" alt="33"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(34)" value="34" alt="34"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(35)" value="35" alt="35"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(36)" value="36" alt="36"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(37)" value="37" alt="37"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(38)" value="38" alt="38"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+					<a href="#num"><span class="on" >39</span></a>
+				
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(40)" value="40" alt="40"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+
+
+		<!-- next 버튼 -->
+		
+			
+			
+				
+					
+					
+						
+
+						<input type="image" src="/images/btn/page_next.gif" alt="다음" style="cursor:pointer;"	onclick="search(41)" />
+					
+				
+			
+		
+
+		<!-- last 버튼 비활성화 시에도 화면안내를 위해서 title을 추가. 2012/06/09 유영근  -->
+		<input type="image" src="/images/btn/page_next2.gif" alt="맨끝으로" title="맨끝으로" style="cursor:pointer;"	onclick="search(50)" />
+
+
+
+	<p class="page_info">
+		[39/50] [총 4,949건]
+	</p>
+
+
+
+
+</div>

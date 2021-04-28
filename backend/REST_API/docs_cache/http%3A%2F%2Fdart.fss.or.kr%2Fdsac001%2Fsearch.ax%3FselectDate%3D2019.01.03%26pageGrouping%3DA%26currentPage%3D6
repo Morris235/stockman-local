@@ -1,0 +1,568 @@
+
+
+
+
+	<!--검색건수-->
+<div class="table_list"><p class="table_tit">
+	<b>
+		
+		
+		
+		
+        
+        
+		전체
+		 &nbsp;508건
+		
+			
+				
+					
+					(2019년 01월 03일)
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+	</b></p>
+
+	<!--검색 sort -->
+	<div class="sort" >
+		
+	    	
+			
+			
+		
+		
+			
+			   <a href="#time1" id="time1" onclick="setOrder(time); return false;">
+					<img name="sortImg" id="time" src="/images/sort/time/on_desc.gif" alt="시간 내림차순" title="시간 내림차순" /></a>
+				<a href="#crp1" id="crp1" onclick="setOrder(crp);  return false;">
+					<img name="sortImg" id="crp" src="/images/sort/crp/off_asc.gif" alt="회사별 오름차순" title="회사별 오름차순" /></a>
+				<a href="#rpt1"  id="rpt1" onclick="setOrder(rpt);  return false;">
+					<img name="sortImg"  id="rpt" src="/images/sort/rpt/off_asc.gif" alt="보고서별 오름차순" title="보고서별 오름차순" /></a>
+			
+			
+			
+			
+		
+	</div>
+
+<!--목록 -->
+<table summary="유가증권시장에 대한 시간, 공시대상회사, 보고서명, 제출인, 접수일자, 비고 등을 알리는 표입니다." style="table-layout: fixed;">
+	<caption>유가증권시장 목록</caption>
+	<colgroup>
+		<col width="6%" />
+		<col width="23%" />
+		<col width="*" />
+		<col width="15%" />
+		<col width="9%" />
+		<col width="8%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">시간</th>
+			<th scope="col">공시대상회사</th>
+			<th scope="col">보고서명</th>
+			<th scope="col">제출인</th>
+			<th scope="col">접수일자</th>
+			<th scope="col">비고</th>
+		</tr>
+	</thead>
+	
+		
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						07:59
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00164830" onclick="openCorpInfo('00164830'); return false;" title="한국조선해양 기업개황 새창" >
+								한국조선해양
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190103800011"  onclick="openReportViewer('20190103800011'); return false;" id="r_20190103800011"
+							title="영업실적등에대한전망(공정공시) 공시뷰어 새창" >영업실적등에대한전망(공정공시)
+							
+  							
+						</a>
+					</td>
+					<td title="한국조선해양"><div class="nobr" style="width:95px">한국조선해양</div></td>
+					<td class="cen_txt">2019.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						07:52
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01205851" onclick="openCorpInfo('01205851'); return false;" title="현대일렉트릭 기업개황 새창" >
+								현대일렉트릭
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190103800007"  onclick="openReportViewer('20190103800007'); return false;" id="r_20190103800007"
+							title="연결재무제표기준영업실적등에대한전망(공정공시) 공시뷰어 새창" >연결재무제표기준영업실적등에대한전망(공정공시)
+							
+  							
+						</a>
+					</td>
+					<td title="현대일렉트릭"><div class="nobr" style="width:95px">현대일렉트릭</div></td>
+					<td class="cen_txt">2019.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						07:35
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01205842" onclick="openCorpInfo('01205842'); return false;" title="현대건설기계 기업개황 새창" >
+								현대건설기계
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190103800003"  onclick="openReportViewer('20190103800003'); return false;" id="r_20190103800003"
+							title="연결재무제표기준영업실적등에대한전망(공정공시) 공시뷰어 새창" >연결재무제표기준영업실적등에대한전망(공정공시)
+							
+  							
+						</a>
+					</td>
+					<td title="현대건설기계"><div class="nobr" style="width:95px">현대건설기계</div></td>
+					<td class="cen_txt">2019.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						07:05
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00766106" onclick="openCorpInfo('00766106'); return false;" title="트루윈 기업개황 새창" >
+								트루윈
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190103900002"  onclick="openReportViewer('20190103900002'); return false;" id="r_20190103900002"
+							title="타법인주식및출자증권취득결정(중국 남경오렌자동차와 JV(Joint Venture) 설립(1차 출자 완료)) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>타법인주식및출자증권취득결정
+							
+  							(중국 남경오렌자동차와 JV(Joint Venture) 설립(1차 출자 완료))
+						</a>
+					</td>
+					<td title="트루윈"><div class="nobr" style="width:95px">트루윈</div></td>
+					<td class="cen_txt">2019.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						07:00
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00115694" onclick="openCorpInfo('00115694'); return false;" title="DB금융투자 기업개황 새창" >
+								DB금융투자
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190102000459"  onclick="openReportViewer('20190102000459'); return false;" id="r_20190102000459"
+							title="일괄신고추가서류(파생결합사채-주가연계파생결합사채) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>일괄신고추가서류(파생결합사채-주가연계파생결합사채)
+							
+  							
+						</a>
+					</td>
+					<td title="DB금융투자"><div class="nobr" style="width:95px">DB금융투자</div></td>
+					<td class="cen_txt">2019.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						07:00
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00115694" onclick="openCorpInfo('00115694'); return false;" title="DB금융투자 기업개황 새창" >
+								DB금융투자
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190102000461"  onclick="openReportViewer('20190102000461'); return false;" id="r_20190102000461"
+							title="투자설명서(일괄신고) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>투자설명서(일괄신고)
+							
+  							
+						</a>
+					</td>
+					<td title="DB금융투자"><div class="nobr" style="width:95px">DB금융투자</div></td>
+					<td class="cen_txt">2019.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						07:00
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00131018" onclick="openCorpInfo('00131018'); return false;" title="서울제약 기업개황 새창" >
+								서울제약
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190102000460"  onclick="openReportViewer('20190102000460'); return false;" id="r_20190102000460"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="정종근"><div class="nobr" style="width:95px">정종근</div></td>
+					<td class="cen_txt">2019.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						07:00
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00581569" onclick="openCorpInfo('00581569'); return false;" title="지에스아이티엠 기업개황 새창" >
+								지에스아이티엠
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20190102000464"  onclick="openReportViewer('20190102000464'); return false;" id="r_20190102000464"
+							title="최대주주등의주식보유변동 공시뷰어 새창" >최대주주등의주식보유변동
+							
+  							
+						</a>
+					</td>
+					<td title="지에스아이티엠"><div class="nobr" style="width:95px">지에스아이티엠</div></td>
+					<td class="cen_txt">2019.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark08.gif" hspace="1"
+			title="본 공시사항은 공정거래위원회 소관임" alt="본 공시사항은 공정거래위원회 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+		
+		
+	
+</table>
+</div>
+<div class = "page_list">
+	
+
+
+
+		<input type="image" src="/images/btn/page_prev2.gif" alt="맨앞으로" title="맨앞으로" style="cursor:pointer;"	onclick="search(1)" />
+
+		<!-- prev 버튼 -->
+		
+			
+				<a href="#prev"><img src="/images/btn/page_prev.gif" alt="이전" title="이전" /></a>
+			
+			
+		
+
+
+		<!-- 페이지 숫자 시작부분 설정 -->
+		
+			
+			
+				
+			
+		
+
+
+		<!-- 페이지 숫자 출력 -->
+		
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(1)" value="1" alt="1"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(2)" value="2" alt="2"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(3)" value="3" alt="3"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(4)" value="4" alt="4"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(5)" value="5" alt="5"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+					<a href="#num"><span class="on" >6</span></a>
+				
+
+				
+			
+			
+				
+			
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+
+
+		<!-- next 버튼 -->
+		
+			
+			
+				
+					
+						<a href="#next"><img src="/images/btn/page_next.gif" alt="다음"  title="다음"/></a>
+					
+					
+				
+			
+		
+
+		<!-- last 버튼 비활성화 시에도 화면안내를 위해서 title을 추가. 2012/06/09 유영근  -->
+		<input type="image" src="/images/btn/page_next2.gif" alt="맨끝으로" title="맨끝으로" style="cursor:pointer;"	onclick="search(6)" />
+
+
+
+	<p class="page_info">
+		[6/6] [총 508건]
+	</p>
+
+
+
+
+</div>

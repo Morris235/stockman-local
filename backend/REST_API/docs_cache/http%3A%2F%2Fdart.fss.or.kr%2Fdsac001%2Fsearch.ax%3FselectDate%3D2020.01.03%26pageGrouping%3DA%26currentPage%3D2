@@ -1,0 +1,4394 @@
+
+
+
+
+	<!--검색건수-->
+<div class="table_list"><p class="table_tit">
+	<b>
+		
+		
+		
+		
+        
+        
+		전체
+		 &nbsp;581건
+		
+			
+				
+					
+					(2020년 01월 03일)
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+	</b></p>
+
+	<!--검색 sort -->
+	<div class="sort" >
+		
+	    	
+			
+			
+		
+		
+			
+			   <a href="#time1" id="time1" onclick="setOrder(time); return false;">
+					<img name="sortImg" id="time" src="/images/sort/time/on_desc.gif" alt="시간 내림차순" title="시간 내림차순" /></a>
+				<a href="#crp1" id="crp1" onclick="setOrder(crp);  return false;">
+					<img name="sortImg" id="crp" src="/images/sort/crp/off_asc.gif" alt="회사별 오름차순" title="회사별 오름차순" /></a>
+				<a href="#rpt1"  id="rpt1" onclick="setOrder(rpt);  return false;">
+					<img name="sortImg"  id="rpt" src="/images/sort/rpt/off_asc.gif" alt="보고서별 오름차순" title="보고서별 오름차순" /></a>
+			
+			
+			
+			
+		
+	</div>
+
+<!--목록 -->
+<table summary="유가증권시장에 대한 시간, 공시대상회사, 보고서명, 제출인, 접수일자, 비고 등을 알리는 표입니다." style="table-layout: fixed;">
+	<caption>유가증권시장 목록</caption>
+	<colgroup>
+		<col width="6%" />
+		<col width="23%" />
+		<col width="*" />
+		<col width="15%" />
+		<col width="9%" />
+		<col width="8%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">시간</th>
+			<th scope="col">공시대상회사</th>
+			<th scope="col">보고서명</th>
+			<th scope="col">제출인</th>
+			<th scope="col">접수일자</th>
+			<th scope="col">비고</th>
+		</tr>
+	</thead>
+	
+		
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						17:04
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00142865" onclick="openCorpInfo('00142865'); return false;" title="WISCOM 기업개황 새창" >
+								WISCOM
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000554"  onclick="openReportViewer('20200103000554'); return false;" id="r_20200103000554"
+							title="주식등의대량보유상황보고서(약식) 공시뷰어 새창" >주식등의대량보유상황보고서(약식)
+							
+  							
+						</a>
+					</td>
+					<td title="신영자산운용"><div class="nobr" style="width:95px">신영자산운용</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						17:03
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00132886" onclick="openCorpInfo('00132886'); return false;" title="성안기계 기업개황 새창" >
+								성안기계
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000553"  onclick="openReportViewer('20200103000553'); return false;" id="r_20200103000553"
+							title="감사보고서 공시뷰어 새창" >감사보고서
+							 (2019.09)
+  							
+						</a>
+					</td>
+					<td title="일호공인회계사감사반(제1호)"><div class="nobr" style="width:95px">일호공인회계사감사반(제1호)</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						17:03
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00235147" onclick="openCorpInfo('00235147'); return false;" title="에이팸 기업개황 새창" >
+								에이팸
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900545"  onclick="openReportViewer('20200103900545'); return false;" id="r_20200103900545"
+							title="전환청구권행사 공시뷰어 새창" >전환청구권행사
+							
+  							
+						</a>
+					</td>
+					<td title="에이팸"><div class="nobr" style="width:95px">에이팸</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						17:02
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00104573" onclick="openCorpInfo('00104573'); return false;" title="국일제지 기업개황 새창" >
+								국일제지
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000552"  onclick="openReportViewer('20200103000552'); return false;" id="r_20200103000552"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="임성근"><div class="nobr" style="width:95px">임성근</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						17:01
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00812362" onclick="openCorpInfo('00812362'); return false;" title="포티스 기업개황 새창" >
+								포티스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000551"  onclick="openReportViewer('20200103000551'); return false;" id="r_20200103000551"
+							title="주식등의대량보유상황보고서(약식) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>주식등의대량보유상황보고서(약식)
+							
+  							
+						</a>
+					</td>
+					<td title="피아이엠자산운용"><div class="nobr" style="width:95px">피아이엠자산운용</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						17:01
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01248096" onclick="openCorpInfo('01248096'); return false;" title="농업회사법인농협식품 기업개황 새창" >
+								농업회사법인농협식품
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000550"  onclick="openReportViewer('20200103000550'); return false;" id="r_20200103000550"
+							title="계열금융회사를거래상대방으로한단기금융상품거래의분기별공시 공시뷰어 새창" >계열금융회사를거래상대방으로한단기금융상품거래의분기별공시
+							
+  							
+						</a>
+					</td>
+					<td title="농업회사법인농협식품"><div class="nobr" style="width:95px">농업회사법인농협식품</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark08.gif" hspace="1"
+			title="본 공시사항은 공정거래위원회 소관임" alt="본 공시사항은 공정거래위원회 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						17:01
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00261443" onclick="openCorpInfo('00261443'); return false;" title="엔씨소프트 기업개황 새창" >
+								엔씨소프트
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800539"  onclick="openReportViewer('20200103800539'); return false;" id="r_20200103800539"
+							title="최대주주등소유주식변동신고서 공시뷰어 새창" >최대주주등소유주식변동신고서
+							
+  							
+						</a>
+					</td>
+					<td title="엔씨소프트"><div class="nobr" style="width:95px">엔씨소프트</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						17:00
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00458562" onclick="openCorpInfo('00458562'); return false;" title="에이티세미콘 기업개황 새창" >
+								에이티세미콘
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000549"  onclick="openReportViewer('20200103000549'); return false;" id="r_20200103000549"
+							title="주식등의대량보유상황보고서(약식) 공시뷰어 새창" >주식등의대량보유상황보고서(약식)
+							
+  							
+						</a>
+					</td>
+					<td title="이한식"><div class="nobr" style="width:95px">이한식</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+					
+						
+						
+							
+						
+					
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:59
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:135px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00111722" onclick="openCorpInfo('00111722'); return false;" title="미래에셋증권 기업개황 새창" >
+								미래에셋증권
+							</a>
+						</span>
+						<span style="padding-left: 4px;"><a href="http://ci.securities.miraeasset.com" target="new">
+								<img src="/images/sub/btn_ir.gif" 	title="기업 IR페이지 연결" alt="기업 IR페이지 연결" /></a></span>
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000546"  onclick="openReportViewer('20200103000546'); return false;" id="r_20200103000546"
+							title="증권발행실적보고서 공시뷰어 새창" >증권발행실적보고서
+							
+  							
+						</a>
+					</td>
+					<td title="미래에셋증권"><div class="nobr" style="width:95px">미래에셋증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:58
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00139214" onclick="openCorpInfo('00139214'); return false;" title="삼성화재해상보험 기업개황 새창" >
+								삼성화재해상보험
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000545"  onclick="openReportViewer('20200103000545'); return false;" id="r_20200103000545"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="삼성생명"><div class="nobr" style="width:95px">삼성생명</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:58
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00618410" onclick="openCorpInfo('00618410'); return false;" title="상상인인더스트리 기업개황 새창" >
+								상상인인더스트리
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900524"  onclick="openReportViewer('20200103900524'); return false;" id="r_20200103900524"
+							title="전환청구권행사(제10회차) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>전환청구권행사
+							
+  							(제10회차)
+						</a>
+					</td>
+					<td title="상상인인더스트리"><div class="nobr" style="width:95px">상상인인더스트리</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:57
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00126292" onclick="openCorpInfo('00126292'); return false;" title="삼성카드 기업개황 새창" >
+								삼성카드
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000544"  onclick="openReportViewer('20200103000544'); return false;" id="r_20200103000544"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="삼성생명"><div class="nobr" style="width:95px">삼성생명</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:56
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00913689" onclick="openCorpInfo('00913689'); return false;" title="세경하이테크 기업개황 새창" >
+								세경하이테크
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000543"  onclick="openReportViewer('20200103000543'); return false;" id="r_20200103000543"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="정인수"><div class="nobr" style="width:95px">정인수</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:55
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00428729" onclick="openCorpInfo('00428729'); return false;" title="대호에이엘 기업개황 새창" >
+								대호에이엘
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000538"  onclick="openReportViewer('20200103000538'); return false;" id="r_20200103000538"
+							title="주요사항보고서(전환사채권발행결정) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>주요사항보고서(전환사채권발행결정)
+							
+  							
+						</a>
+					</td>
+					<td title="대호에이엘"><div class="nobr" style="width:95px">대호에이엘</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:54
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00453488" onclick="openCorpInfo('00453488'); return false;" title="세화아이엠씨 기업개황 새창" >
+								세화아이엠씨
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000519"  onclick="openReportViewer('20200103000519'); return false;" id="r_20200103000519"
+							title="주요사항보고서(회생절차개시신청) 공시뷰어 새창" >주요사항보고서(회생절차개시신청)
+							
+  							
+						</a>
+					</td>
+					<td title="세화아이엠씨"><div class="nobr" style="width:95px">세화아이엠씨</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:54
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00153524" onclick="openCorpInfo('00153524'); return false;" title="태림포장 기업개황 새창" >
+								태림포장
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800525"  onclick="openReportViewer('20200103800525'); return false;" id="r_20200103800525"
+							title="최대주주등소유주식변동신고서(최대주주변경시) 공시뷰어 새창" >최대주주등소유주식변동신고서(최대주주변경시)
+							
+  							
+						</a>
+					</td>
+					<td title="태림포장"><div class="nobr" style="width:95px">태림포장</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:54
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01420089" onclick="openCorpInfo('01420089'); return false;" title="애쉬모어시카브 기업개황 새창" >
+								애쉬모어시카브
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191219000068"  onclick="openReportViewer('20191219000068'); return false;" id="r_20191219000068"
+							title="일괄신고서(집합투자증권-회사형)(애쉬모어시카브(AshmoreSICAV)) 공시뷰어 새창" >일괄신고서(집합투자증권-회사형)
+							
+  							(애쉬모어시카브(AshmoreSICAV))
+						</a>
+					</td>
+					<td title="애쉬모어시카브"><div class="nobr" style="width:95px">애쉬모어시카브</div></td>
+					<td class="cen_txt">2019.12.19</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191231000530"  onclick="openReportViewer('20191231000530'); return false;" id="r_20191231000530"
+							title="증권신고서(집합투자증권-신탁형)(HDC인피니티리자드지수연계증권투자신탁SEN-2호(ELS-파생형)) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>증권신고서(집합투자증권-신탁형)
+							
+  							(HDC인피니티리자드지수연계증권투자신탁SEN-2호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.31</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000645"  onclick="openReportViewer('20191220000645'); return false;" id="r_20191220000645"
+							title="증권신고서(집합투자증권-신탁형)(HDC인피니티리자드지수연계증권투자신탁SEN-2호(ELS-파생형)) 공시뷰어 새창" >증권신고서(집합투자증권-신탁형)
+							
+  							(HDC인피니티리자드지수연계증권투자신탁SEN-2호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191231000525"  onclick="openReportViewer('20191231000525'); return false;" id="r_20191231000525"
+							title="증권신고서(집합투자증권-신탁형)(HDC지수연계더블플러스증권투자신탁SEN-2호(ELS-파생형)) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>증권신고서(집합투자증권-신탁형)
+							
+  							(HDC지수연계더블플러스증권투자신탁SEN-2호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.31</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000644"  onclick="openReportViewer('20191220000644'); return false;" id="r_20191220000644"
+							title="증권신고서(집합투자증권-신탁형)(HDC지수연계더블플러스증권투자신탁SEN-2호(ELS-파생형)) 공시뷰어 새창" >증권신고서(집합투자증권-신탁형)
+							
+  							(HDC지수연계더블플러스증권투자신탁SEN-2호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191231000529"  onclick="openReportViewer('20191231000529'); return false;" id="r_20191231000529"
+							title="증권신고서(집합투자증권-신탁형)(HDC3INDEX지수연계증권투자신탁KSN-2호(ELS-파생형)) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>증권신고서(집합투자증권-신탁형)
+							
+  							(HDC3INDEX지수연계증권투자신탁KSN-2호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.31</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000642"  onclick="openReportViewer('20191220000642'); return false;" id="r_20191220000642"
+							title="증권신고서(집합투자증권-신탁형)(HDC3INDEX지수연계증권투자신탁KSN-2호(ELS-파생형)) 공시뷰어 새창" >증권신고서(집합투자증권-신탁형)
+							
+  							(HDC3INDEX지수연계증권투자신탁KSN-2호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191231000493"  onclick="openReportViewer('20191231000493'); return false;" id="r_20191231000493"
+							title="증권신고서(집합투자증권-신탁형)(HDC트와이스리자드지수연계증권투자신탁SHE-69호(ELS-파생형)) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>증권신고서(집합투자증권-신탁형)
+							
+  							(HDC트와이스리자드지수연계증권투자신탁SHE-69호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.31</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000607"  onclick="openReportViewer('20191220000607'); return false;" id="r_20191220000607"
+							title="증권신고서(집합투자증권-신탁형)(HDC트와이스리자드지수연계증권투자신탁SHE-69호(ELS-파생형)) 공시뷰어 새창" >증권신고서(집합투자증권-신탁형)
+							
+  							(HDC트와이스리자드지수연계증권투자신탁SHE-69호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00160047" onclick="openCorpInfo('00160047'); return false;" title="한국앤컴퍼니 기업개황 새창" >
+								한국앤컴퍼니
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000541"  onclick="openReportViewer('20200103000541'); return false;" id="r_20200103000541"
+							title="주식등의대량보유상황보고서(약식) 공시뷰어 새창" >주식등의대량보유상황보고서(약식)
+							
+  							
+						</a>
+					</td>
+					<td title="신영자산운용"><div class="nobr" style="width:95px">신영자산운용</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00188380" onclick="openCorpInfo('00188380'); return false;" title="유진자산운용 기업개황 새창" >
+								유진자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191231000359"  onclick="openReportViewer('20191231000359'); return false;" id="r_20191231000359"
+							title="증권신고서(집합투자증권-신탁형)(유진지수연계더블리자드증권투자신탁SNE-50호(USD)[ELS-파생형]) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>증권신고서(집합투자증권-신탁형)
+							
+  							(유진지수연계더블리자드증권투자신탁SNE-50호(USD)[ELS-파생형])
+						</a>
+					</td>
+					<td title="유진자산운용"><div class="nobr" style="width:95px">유진자산운용</div></td>
+					<td class="cen_txt">2019.12.31</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00188380" onclick="openCorpInfo('00188380'); return false;" title="유진자산운용 기업개황 새창" >
+								유진자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000603"  onclick="openReportViewer('20191220000603'); return false;" id="r_20191220000603"
+							title="증권신고서(집합투자증권-신탁형)(유진지수연계더블리자드증권투자신탁SNE-50호(USD)[ELS-파생형]) 공시뷰어 새창" >증권신고서(집합투자증권-신탁형)
+							
+  							(유진지수연계더블리자드증권투자신탁SNE-50호(USD)[ELS-파생형])
+						</a>
+					</td>
+					<td title="유진자산운용"><div class="nobr" style="width:95px">유진자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00153524" onclick="openCorpInfo('00153524'); return false;" title="태림포장 기업개황 새창" >
+								태림포장
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800522"  onclick="openReportViewer('20200103800522'); return false;" id="r_20200103800522"
+							title="대표이사(대표집행임원)변경(안내공시) 공시뷰어 새창" >대표이사(대표집행임원)변경(안내공시)
+							
+  							
+						</a>
+					</td>
+					<td title="태림포장"><div class="nobr" style="width:95px">태림포장</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:53
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00123143" onclick="openCorpInfo('00123143'); return false;" title="보령제약 기업개황 새창" >
+								보령제약
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000540"  onclick="openReportViewer('20200103000540'); return false;" id="r_20200103000540"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="정웅제"><div class="nobr" style="width:95px">정웅제</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:52
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00198378" onclick="openCorpInfo('00198378'); return false;" title="녹십자셀 기업개황 새창" >
+								녹십자셀
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000537"  onclick="openReportViewer('20200103000537'); return false;" id="r_20200103000537"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="정규철"><div class="nobr" style="width:95px">정규철</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:52
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00104856" onclick="openCorpInfo('00104856'); return false;" title="삼성증권 기업개황 새창" >
+								삼성증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000536"  onclick="openReportViewer('20200103000536'); return false;" id="r_20200103000536"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="삼성생명"><div class="nobr" style="width:95px">삼성생명</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:52
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00153524" onclick="openCorpInfo('00153524'); return false;" title="태림포장 기업개황 새창" >
+								태림포장
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800491"  onclick="openReportViewer('20200103800491'); return false;" id="r_20200103800491"
+							title="최대주주변경 공시뷰어 새창" >최대주주변경
+							
+  							
+						</a>
+					</td>
+					<td title="태림포장"><div class="nobr" style="width:95px">태림포장</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:52
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00913689" onclick="openCorpInfo('00913689'); return false;" title="세경하이테크 기업개황 새창" >
+								세경하이테크
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000535"  onclick="openReportViewer('20200103000535'); return false;" id="r_20200103000535"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="김영록"><div class="nobr" style="width:95px">김영록</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:51
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00111111" onclick="openCorpInfo('00111111'); return false;" title="대양금속 기업개황 새창" >
+								대양금속
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800490"  onclick="openReportViewer('20200103800490'); return false;" id="r_20200103800490"
+							title="주주총회소집결의 공시뷰어 새창" >주주총회소집결의
+							
+  							
+						</a>
+					</td>
+					<td title="대양금속"><div class="nobr" style="width:95px">대양금속</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" />&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:50
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00198378" onclick="openCorpInfo('00198378'); return false;" title="녹십자셀 기업개황 새창" >
+								녹십자셀
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000534"  onclick="openReportViewer('20200103000534'); return false;" id="r_20200103000534"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="강기원"><div class="nobr" style="width:95px">강기원</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:50
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00506009" onclick="openCorpInfo('00506009'); return false;" title="돈돈팜 기업개황 새창" >
+								돈돈팜
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000533"  onclick="openReportViewer('20200103000533'); return false;" id="r_20200103000533"
+							title="임원의변동 공시뷰어 새창" >임원의변동
+							
+  							
+						</a>
+					</td>
+					<td title="돈돈팜"><div class="nobr" style="width:95px">돈돈팜</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark08.gif" hspace="1"
+			title="본 공시사항은 공정거래위원회 소관임" alt="본 공시사항은 공정거래위원회 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:50
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00109161" onclick="openCorpInfo('00109161'); return false;" title="태경케미컬 기업개황 새창" >
+								태경케미컬
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000532"  onclick="openReportViewer('20200103000532'); return false;" id="r_20200103000532"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="김해련"><div class="nobr" style="width:95px">김해련</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:49
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00116426" onclick="openCorpInfo('00116426'); return false;" title="코센 기업개황 새창" >
+								코센
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900498"  onclick="openReportViewer('20200103900498'); return false;" id="r_20200103900498"
+							title="주주총회소집결의 공시뷰어 새창" >주주총회소집결의
+							
+  							
+						</a>
+					</td>
+					<td title="코센"><div class="nobr" style="width:95px">코센</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" />&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00685935" onclick="openCorpInfo('00685935'); return false;" title="메리츠자산운용 기업개황 새창" >
+								메리츠자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200102000423"  onclick="openReportViewer('20200102000423'); return false;" id="r_20200102000423"
+							title="일괄신고서(집합투자증권-신탁형)(메리츠글로벌리츠부동산투자신탁[리츠-재간접형]) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>일괄신고서(집합투자증권-신탁형)
+							
+  							(메리츠글로벌리츠부동산투자신탁[리츠-재간접형])
+						</a>
+					</td>
+					<td title="메리츠자산운용"><div class="nobr" style="width:95px">메리츠자산운용</div></td>
+					<td class="cen_txt">2020.01.02</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00685935" onclick="openCorpInfo('00685935'); return false;" title="메리츠자산운용 기업개황 새창" >
+								메리츠자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000592"  onclick="openReportViewer('20191220000592'); return false;" id="r_20191220000592"
+							title="일괄신고서(집합투자증권-신탁형)(메리츠글로벌리츠부동산투자신탁[리츠-재간접형]) 공시뷰어 새창" >일괄신고서(집합투자증권-신탁형)
+							
+  							(메리츠글로벌리츠부동산투자신탁[리츠-재간접형])
+						</a>
+					</td>
+					<td title="메리츠자산운용"><div class="nobr" style="width:95px">메리츠자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00260514" onclick="openCorpInfo('00260514'); return false;" title="브이아이자산운용 기업개황 새창" >
+								브이아이자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191231000446"  onclick="openReportViewer('20191231000446'); return false;" id="r_20191231000446"
+							title="증권신고서(집합투자증권-신탁형)(브이아이지수연계증권투자신탁SEK-9호[ELS-파생형]) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>증권신고서(집합투자증권-신탁형)
+							
+  							(브이아이지수연계증권투자신탁SEK-9호[ELS-파생형])
+						</a>
+					</td>
+					<td title="브이아이자산운용"><div class="nobr" style="width:95px">브이아이자산운용</div></td>
+					<td class="cen_txt">2019.12.31</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00260514" onclick="openCorpInfo('00260514'); return false;" title="브이아이자산운용 기업개황 새창" >
+								브이아이자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000535"  onclick="openReportViewer('20191220000535'); return false;" id="r_20191220000535"
+							title="증권신고서(집합투자증권-신탁형)(브이아이지수연계증권투자신탁SEK-9호[ELS-파생형]) 공시뷰어 새창" >증권신고서(집합투자증권-신탁형)
+							
+  							(브이아이지수연계증권투자신탁SEK-9호[ELS-파생형])
+						</a>
+					</td>
+					<td title="브이아이자산운용"><div class="nobr" style="width:95px">브이아이자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191231000457"  onclick="openReportViewer('20191231000457'); return false;" id="r_20191231000457"
+							title="증권신고서(집합투자증권-신탁형)(HDC투타임즈리자드지수연계증권투자신탁KSE-17호(ELS-파생형)) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>증권신고서(집합투자증권-신탁형)
+							
+  							(HDC투타임즈리자드지수연계증권투자신탁KSE-17호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.31</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00405463" onclick="openCorpInfo('00405463'); return false;" title="에이치디씨자산운용 기업개황 새창" >
+								에이치디씨자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000298"  onclick="openReportViewer('20191220000298'); return false;" id="r_20191220000298"
+							title="증권신고서(집합투자증권-신탁형)(HDC투타임즈리자드지수연계증권투자신탁KSE-17호(ELS-파생형)) 공시뷰어 새창" >증권신고서(집합투자증권-신탁형)
+							
+  							(HDC투타임즈리자드지수연계증권투자신탁KSE-17호(ELS-파생형))
+						</a>
+					</td>
+					<td title="에이치디씨자산운용"><div class="nobr" style="width:95px">에이치디씨자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00685935" onclick="openCorpInfo('00685935'); return false;" title="메리츠자산운용 기업개황 새창" >
+								메리츠자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191230000669"  onclick="openReportViewer('20191230000669'); return false;" id="r_20191230000669"
+							title="증권신고서(집합투자증권-신탁형)(메리츠지수연계트리플플러스증권투자신탁SEN-6호(온라인전용)[ELS-파생형]) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>증권신고서(집합투자증권-신탁형)
+							
+  							(메리츠지수연계트리플플러스증권투자신탁SEN-6호(온라인전용)[ELS-파생형])
+						</a>
+					</td>
+					<td title="메리츠자산운용"><div class="nobr" style="width:95px">메리츠자산운용</div></td>
+					<td class="cen_txt">2019.12.30</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00685935" onclick="openCorpInfo('00685935'); return false;" title="메리츠자산운용 기업개황 새창" >
+								메리츠자산운용
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20191220000126"  onclick="openReportViewer('20191220000126'); return false;" id="r_20191220000126"
+							title="증권신고서(집합투자증권-신탁형)(메리츠지수연계트리플플러스증권투자신탁SEN-6호(온라인전용)[ELS-파생형]) 공시뷰어 새창" >증권신고서(집합투자증권-신탁형)
+							
+  							(메리츠지수연계트리플플러스증권투자신탁SEN-6호(온라인전용)[ELS-파생형])
+						</a>
+					</td>
+					<td title="메리츠자산운용"><div class="nobr" style="width:95px">메리츠자산운용</div></td>
+					<td class="cen_txt">2019.12.20</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:48
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00198378" onclick="openCorpInfo('00198378'); return false;" title="녹십자셀 기업개황 새창" >
+								녹십자셀
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000530"  onclick="openReportViewer('20200103000530'); return false;" id="r_20200103000530"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="안종성"><div class="nobr" style="width:95px">안종성</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:47
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00552859" onclick="openCorpInfo('00552859'); return false;" title="지트리비앤티 기업개황 새창" >
+								지트리비앤티
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000529"  onclick="openReportViewer('20200103000529'); return false;" id="r_20200103000529"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="구본주"><div class="nobr" style="width:95px">구본주</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:47
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00144720" onclick="openCorpInfo('00144720'); return false;" title="유양디앤유 기업개황 새창" >
+								유양디앤유
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000528"  onclick="openReportViewer('20200103000528'); return false;" id="r_20200103000528"
+							title="주식매수선택권부여에관한신고 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>주식매수선택권부여에관한신고
+							
+  							
+						</a>
+					</td>
+					<td title="유양디앤유"><div class="nobr" style="width:95px">유양디앤유</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:46
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00359395" onclick="openCorpInfo('00359395'); return false;" title="헬릭스미스 기업개황 새창" >
+								헬릭스미스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000527"  onclick="openReportViewer('20200103000527'); return false;" id="r_20200103000527"
+							title="주식등의대량보유상황보고서(일반) 공시뷰어 새창" >주식등의대량보유상황보고서(일반)
+							
+  							
+						</a>
+					</td>
+					<td title="김선영"><div class="nobr" style="width:95px">김선영</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:45
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00198378" onclick="openCorpInfo('00198378'); return false;" title="녹십자셀 기업개황 새창" >
+								녹십자셀
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000526"  onclick="openReportViewer('20200103000526'); return false;" id="r_20200103000526"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="한준희"><div class="nobr" style="width:95px">한준희</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:45
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00164724" onclick="openCorpInfo('00164724'); return false;" title="현대엘리베이터 기업개황 새창" >
+								현대엘리베이터
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000525"  onclick="openReportViewer('20200103000525'); return false;" id="r_20200103000525"
+							title="주식등의대량보유상황보고서(일반) 공시뷰어 새창" >주식등의대량보유상황보고서(일반)
+							
+  							
+						</a>
+					</td>
+					<td title="현정은"><div class="nobr" style="width:95px">현정은</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:45
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00945208" onclick="openCorpInfo('00945208'); return false;" title="THE MIDONG 기업개황 새창" >
+								THE MIDONG
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900505"  onclick="openReportViewer('20200103900505'); return false;" id="r_20200103900505"
+							title="조회공시요구(현저한시황변동) 공시뷰어 새창" >조회공시요구(현저한시황변동)
+							
+  							
+						</a>
+					</td>
+					<td title="코스닥시장본부"><div class="nobr" style="width:95px">코스닥시장본부</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:44
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00105961" onclick="openCorpInfo('00105961'); return false;" title="LG이노텍 기업개황 새창" >
+								LG이노텍
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000524"  onclick="openReportViewer('20200103000524'); return false;" id="r_20200103000524"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="황정호"><div class="nobr" style="width:95px">황정호</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:43
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00113465" onclick="openCorpInfo('00113465'); return false;" title="하나금융투자 기업개황 새창" >
+								하나금융투자
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000522"  onclick="openReportViewer('20200103000522'); return false;" id="r_20200103000522"
+							title="투자설명서(일괄신고) 공시뷰어 새창" >투자설명서(일괄신고)
+							
+  							
+						</a>
+					</td>
+					<td title="하나금융투자"><div class="nobr" style="width:95px">하나금융투자</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:43
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00913689" onclick="openCorpInfo('00913689'); return false;" title="세경하이테크 기업개황 새창" >
+								세경하이테크
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000521"  onclick="openReportViewer('20200103000521'); return false;" id="r_20200103000521"
+							title="주식등의대량보유상황보고서(일반) 공시뷰어 새창" >주식등의대량보유상황보고서(일반)
+							
+  							
+						</a>
+					</td>
+					<td title="이영민"><div class="nobr" style="width:95px">이영민</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:42
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00109161" onclick="openCorpInfo('00109161'); return false;" title="태경케미컬 기업개황 새창" >
+								태경케미컬
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800499"  onclick="openReportViewer('20200103800499'); return false;" id="r_20200103800499"
+							title="최대주주등소유주식변동신고서 공시뷰어 새창" >최대주주등소유주식변동신고서
+							
+  							
+						</a>
+					</td>
+					<td title="태경케미컬"><div class="nobr" style="width:95px">태경케미컬</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:42
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00612294" onclick="openCorpInfo('00612294'); return false;" title="피엔티 기업개황 새창" >
+								피엔티
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000518"  onclick="openReportViewer('20200103000518'); return false;" id="r_20200103000518"
+							title="주식등의대량보유상황보고서(약식) 공시뷰어 새창" >주식등의대량보유상황보고서(약식)
+							
+  							
+						</a>
+					</td>
+					<td title="브레인자산운용"><div class="nobr" style="width:95px">브레인자산운용</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:41
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00138321" onclick="openCorpInfo('00138321'); return false;" title="신한금융투자 기업개황 새창" >
+								신한금융투자
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000515"  onclick="openReportViewer('20200103000515'); return false;" id="r_20200103000515"
+							title="투자설명서(일괄신고) 공시뷰어 새창" >투자설명서(일괄신고)
+							
+  							
+						</a>
+					</td>
+					<td title="신한금융투자"><div class="nobr" style="width:95px">신한금융투자</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:40
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00160144" onclick="openCorpInfo('00160144'); return false;" title="한국투자증권 기업개황 새창" >
+								한국투자증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000512"  onclick="openReportViewer('20200103000512'); return false;" id="r_20200103000512"
+							title="증권발행실적보고서 공시뷰어 새창" >증권발행실적보고서
+							
+  							
+						</a>
+					</td>
+					<td title="한국투자증권"><div class="nobr" style="width:95px">한국투자증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:40
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00587925" onclick="openCorpInfo('00587925'); return false;" title="바이오리더스 기업개황 새창" >
+								바이오리더스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000511"  onclick="openReportViewer('20200103000511'); return false;" id="r_20200103000511"
+							title="주식매수선택권부여에관한신고 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>주식매수선택권부여에관한신고
+							
+  							
+						</a>
+					</td>
+					<td title="바이오리더스"><div class="nobr" style="width:95px">바이오리더스</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:40
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00564562" onclick="openCorpInfo('00564562'); return false;" title="엠씨넥스 기업개황 새창" >
+								엠씨넥스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000510"  onclick="openReportViewer('20200103000510'); return false;" id="r_20200103000510"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="서보홍"><div class="nobr" style="width:95px">서보홍</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:40
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00136721" onclick="openCorpInfo('00136721'); return false;" title="신영증권 기업개황 새창" >
+								신영증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000509"  onclick="openReportViewer('20200103000509'); return false;" id="r_20200103000509"
+							title="투자설명서(일괄신고) 공시뷰어 새창" >투자설명서(일괄신고)
+							
+  							
+						</a>
+					</td>
+					<td title="신영증권"><div class="nobr" style="width:95px">신영증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:40
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00188715" onclick="openCorpInfo('00188715'); return false;" title="현진소재 기업개황 새창" >
+								현진소재
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900483"  onclick="openReportViewer('20200103900483'); return false;" id="r_20200103900483"
+							title="전환청구권행사(제19회차) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>전환청구권행사
+							
+  							(제19회차)
+						</a>
+					</td>
+					<td title="현진소재"><div class="nobr" style="width:95px">현진소재</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" />&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:38
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00138321" onclick="openCorpInfo('00138321'); return false;" title="신한금융투자 기업개황 새창" >
+								신한금융투자
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000507"  onclick="openReportViewer('20200103000507'); return false;" id="r_20200103000507"
+							title="투자설명서(일괄신고) 공시뷰어 새창" >투자설명서(일괄신고)
+							
+  							
+						</a>
+					</td>
+					<td title="신한금융투자"><div class="nobr" style="width:95px">신한금융투자</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:38
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01110678" onclick="openCorpInfo('01110678'); return false;" title="유틸렉스 기업개황 새창" >
+								유틸렉스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900470"  onclick="openReportViewer('20200103900470'); return false;" id="r_20200103900470"
+							title="주식매수선택권행사 공시뷰어 새창" >주식매수선택권행사
+							
+  							
+						</a>
+					</td>
+					<td title="유틸렉스"><div class="nobr" style="width:95px">유틸렉스</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:37
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00160144" onclick="openCorpInfo('00160144'); return false;" title="한국투자증권 기업개황 새창" >
+								한국투자증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000506"  onclick="openReportViewer('20200103000506'); return false;" id="r_20200103000506"
+							title="증권발행실적보고서 공시뷰어 새창" >증권발행실적보고서
+							
+  							
+						</a>
+					</td>
+					<td title="한국투자증권"><div class="nobr" style="width:95px">한국투자증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:37
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00137997" onclick="openCorpInfo('00137997'); return false;" title="현대차증권 기업개황 새창" >
+								현대차증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000505"  onclick="openReportViewer('20200103000505'); return false;" id="r_20200103000505"
+							title="증권발행실적보고서 공시뷰어 새창" >증권발행실적보고서
+							
+  							
+						</a>
+					</td>
+					<td title="현대차증권"><div class="nobr" style="width:95px">현대차증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:36
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00579999" onclick="openCorpInfo('00579999'); return false;" title="고영 기업개황 새창" >
+								고영
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900488"  onclick="openReportViewer('20200103900488'); return false;" id="r_20200103900488"
+							title="기업설명회(IR)개최 공시뷰어 새창" >기업설명회(IR)개최
+							
+  							
+						</a>
+					</td>
+					<td title="고영"><div class="nobr" style="width:95px">고영</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:35
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00203023" onclick="openCorpInfo('00203023'); return false;" title="시노펙스 기업개황 새창" >
+								시노펙스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000502"  onclick="openReportViewer('20200103000502'); return false;" id="r_20200103000502"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="황지호"><div class="nobr" style="width:95px">황지호</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:35
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00136864" onclick="openCorpInfo('00136864'); return false;" title="신원 기업개황 새창" >
+								신원
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000501"  onclick="openReportViewer('20200103000501'); return false;" id="r_20200103000501"
+							title="주식등의대량보유상황보고서(일반) 공시뷰어 새창" >주식등의대량보유상황보고서(일반)
+							
+  							
+						</a>
+					</td>
+					<td title="티앤엠커뮤니케이션즈"><div class="nobr" style="width:95px">티앤엠커뮤니케이션즈</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:35
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00243979" onclick="openCorpInfo('00243979'); return false;" title="수성 기업개황 새창" >
+								수성
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900465"  onclick="openReportViewer('20200103900465'); return false;" id="r_20200103900465"
+							title="주주명부폐쇄기간또는기준일설정 공시뷰어 새창" >주주명부폐쇄기간또는기준일설정
+							
+  							
+						</a>
+					</td>
+					<td title="수성"><div class="nobr" style="width:95px">수성</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+						
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:34
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_konex.gif"  title="코넥스시장" alt="코넥스시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01063237" onclick="openCorpInfo('01063237'); return false;" title="플럼라인생명과학 기업개황 새창" >
+								플럼라인생명과학
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103600454"  onclick="openReportViewer('20200103600454'); return false;" id="r_20200103600454"
+							title="증권발행결과(자율공시) 공시뷰어 새창" >증권발행결과(자율공시)
+							
+  							
+						</a>
+					</td>
+					<td title="플럼라인생명과학"><div class="nobr" style="width:95px">플럼라인생명과학</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark09.gif" hspace="1" title="본 문서는 한국거래소 코넥스시장 소관임" alt="본 문서는 한국거래소 코넥스시장 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+						
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:34
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_konex.gif"  title="코넥스시장" alt="코넥스시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01022902" onclick="openCorpInfo('01022902'); return false;" title="애드바이오텍 기업개황 새창" >
+								애드바이오텍
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103600435"  onclick="openReportViewer('20200103600435'); return false;" id="r_20200103600435"
+							title="기타주요경영사항(자율공시)(감사보고서 제출) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>기타주요경영사항(자율공시)
+							
+  							(감사보고서 제출)
+						</a>
+					</td>
+					<td title="애드바이오텍"><div class="nobr" style="width:95px">애드바이오텍</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark09.gif" hspace="1" title="본 문서는 한국거래소 코넥스시장 소관임" alt="본 문서는 한국거래소 코넥스시장 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:34
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00384717" onclick="openCorpInfo('00384717'); return false;" title="넥스트BT 기업개황 새창" >
+								넥스트BT
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000492"  onclick="openReportViewer('20200103000492'); return false;" id="r_20200103000492"
+							title="주요사항보고서(전환사채권발행결정) 공시뷰어 새창" >주요사항보고서(전환사채권발행결정)
+							
+  							
+						</a>
+					</td>
+					<td title="넥스트BT"><div class="nobr" style="width:95px">넥스트BT</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:33
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01029394" onclick="openCorpInfo('01029394'); return false;" title="에코마케팅 기업개황 새창" >
+								에코마케팅
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000499"  onclick="openReportViewer('20200103000499'); return false;" id="r_20200103000499"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="김철웅"><div class="nobr" style="width:95px">김철웅</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:32
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00188715" onclick="openCorpInfo('00188715'); return false;" title="현진소재 기업개황 새창" >
+								현진소재
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900478"  onclick="openReportViewer('20200103900478'); return false;" id="r_20200103900478"
+							title="전환청구권행사(제19회차,제21회차) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>전환청구권행사
+							
+  							(제19회차,제21회차)
+						</a>
+					</td>
+					<td title="현진소재"><div class="nobr" style="width:95px">현진소재</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" />&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+					
+						
+							
+						
+						
+					
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:32
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:135px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00120526" onclick="openCorpInfo('00120526'); return false;" title="롯데쇼핑 기업개황 새창" >
+								롯데쇼핑
+							</a>
+						</span>
+						<span style="padding-left: 4px;"><a href="http://www.lotteshoppingir.com/"
+									target="new"><img src="/images/sub/btn_ir.gif"
+										border="0" title="기업 IR페이지 연결" alt="기업 IR페이지 연결" /> </a></span>
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000496"  onclick="openReportViewer('20200103000496'); return false;" id="r_20200103000496"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="정후식"><div class="nobr" style="width:95px">정후식</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:32
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00164779" onclick="openCorpInfo('00164779'); return false;" title="SK하이닉스 기업개황 새창" >
+								SK하이닉스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000495"  onclick="openReportViewer('20200103000495'); return false;" id="r_20200103000495"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="서강봉"><div class="nobr" style="width:95px">서강봉</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:31
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00363246" onclick="openCorpInfo('00363246'); return false;" title="우원개발 기업개황 새창" >
+								우원개발
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900442"  onclick="openReportViewer('20200103900442'); return false;" id="r_20200103900442"
+							title="전환청구권행사(제4회차) 공시뷰어 새창" >전환청구권행사
+							
+  							(제4회차)
+						</a>
+					</td>
+					<td title="우원개발"><div class="nobr" style="width:95px">우원개발</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:31
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00164876" onclick="openCorpInfo('00164876'); return false;" title="케이비증권 기업개황 새창" >
+								케이비증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000494"  onclick="openReportViewer('20200103000494'); return false;" id="r_20200103000494"
+							title="투자설명서(일괄신고) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>투자설명서(일괄신고)
+							
+  							
+						</a>
+					</td>
+					<td title="케이비증권"><div class="nobr" style="width:95px">케이비증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:31
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00833064" onclick="openCorpInfo('00833064'); return false;" title="엠플러스 기업개황 새창" >
+								엠플러스
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000493"  onclick="openReportViewer('20200103000493'); return false;" id="r_20200103000493"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="전두성"><div class="nobr" style="width:95px">전두성</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:30
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00295370" onclick="openCorpInfo('00295370'); return false;" title="에이아이비트 기업개황 새창" >
+								에이아이비트
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900446"  onclick="openReportViewer('20200103900446'); return false;" id="r_20200103900446"
+							title="전환사채(해외전환사채포함)발행후만기전사채취득(제15회차) 공시뷰어 새창" >전환사채(해외전환사채포함)발행후만기전사채취득
+							
+  							(제15회차)
+						</a>
+					</td>
+					<td title="에이아이비트"><div class="nobr" style="width:95px">에이아이비트</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:30
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00295370" onclick="openCorpInfo('00295370'); return false;" title="에이아이비트 기업개황 새창" >
+								에이아이비트
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900441"  onclick="openReportViewer('20200103900441'); return false;" id="r_20200103900441"
+							title="전환사채(해외전환사채포함)발행후만기전사채취득(제9회차) 공시뷰어 새창" >전환사채(해외전환사채포함)발행후만기전사채취득
+							
+  							(제9회차)
+						</a>
+					</td>
+					<td title="에이아이비트"><div class="nobr" style="width:95px">에이아이비트</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:30
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00104786" onclick="openCorpInfo('00104786'); return false;" title="미래아이앤지 기업개황 새창" >
+								미래아이앤지
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800474"  onclick="openReportViewer('20200103800474'); return false;" id="r_20200103800474"
+							title="유형자산처분결정 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>유형자산처분결정
+							
+  							
+						</a>
+					</td>
+					<td title="미래아이앤지"><div class="nobr" style="width:95px">미래아이앤지</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+					
+						
+							
+						
+						
+					
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:28
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:135px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00120526" onclick="openCorpInfo('00120526'); return false;" title="롯데쇼핑 기업개황 새창" >
+								롯데쇼핑
+							</a>
+						</span>
+						<span style="padding-left: 4px;"><a href="http://www.lotteshoppingir.com/"
+									target="new"><img src="/images/sub/btn_ir.gif"
+										border="0" title="기업 IR페이지 연결" alt="기업 IR페이지 연결" /> </a></span>
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000489"  onclick="openReportViewer('20200103000489'); return false;" id="r_20200103000489"
+							title="임원ㆍ주요주주특정증권등소유상황보고서 공시뷰어 새창" >임원ㆍ주요주주특정증권등소유상황보고서
+							
+  							
+						</a>
+					</td>
+					<td title="이종성"><div class="nobr" style="width:95px">이종성</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:28
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00795135" onclick="openCorpInfo('00795135'); return false;" title="코오롱인더 기업개황 새창" >
+								코오롱인더
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800464"  onclick="openReportViewer('20200103800464'); return false;" id="r_20200103800464"
+							title="지속가능경영보고서등관련사항(자율공시) 공시뷰어 새창" >지속가능경영보고서등관련사항(자율공시)
+							
+  							
+						</a>
+					</td>
+					<td title="코오롱인더"><div class="nobr" style="width:95px">코오롱인더</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:28
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00104768" onclick="openCorpInfo('00104768'); return false;" title="가온전선 기업개황 새창" >
+								가온전선
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103800471"  onclick="openReportViewer('20200103800471'); return false;" id="r_20200103800471"
+							title="최대주주등소유주식변동신고서 공시뷰어 새창" >최대주주등소유주식변동신고서
+							
+  							
+						</a>
+					</td>
+					<td title="가온전선"><div class="nobr" style="width:95px">가온전선</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark04.gif" hspace="1"
+				title="본 공시사항은 한국거래소 유가증권시장본부 소관임" alt="본 공시사항은 한국거래소 유가증권시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:28
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00148610" onclick="openCorpInfo('00148610'); return false;" title="한화투자증권 기업개황 새창" >
+								한화투자증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000488"  onclick="openReportViewer('20200103000488'); return false;" id="r_20200103000488"
+							title="투자설명서(일괄신고) 공시뷰어 새창" >투자설명서(일괄신고)
+							
+  							
+						</a>
+					</td>
+					<td title="한화투자증권"><div class="nobr" style="width:95px">한화투자증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:27
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00164876" onclick="openCorpInfo('00164876'); return false;" title="케이비증권 기업개황 새창" >
+								케이비증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000485"  onclick="openReportViewer('20200103000485'); return false;" id="r_20200103000485"
+							title="일괄신고추가서류(파생결합사채-주가연계파생결합사채) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>일괄신고추가서류(파생결합사채-주가연계파생결합사채)
+							
+  							
+						</a>
+					</td>
+					<td title="케이비증권"><div class="nobr" style="width:95px">케이비증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:27
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00855163" onclick="openCorpInfo('00855163'); return false;" title="미원화학 기업개황 새창" >
+								미원화학
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000484"  onclick="openReportViewer('20200103000484'); return false;" id="r_20200103000484"
+							title="주식등의대량보유상황보고서(일반) 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>주식등의대량보유상황보고서(일반)
+							
+  							
+						</a>
+					</td>
+					<td title="김정돈"><div class="nobr" style="width:95px">김정돈</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:26
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00136721" onclick="openCorpInfo('00136721'); return false;" title="신영증권 기업개황 새창" >
+								신영증권
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000483"  onclick="openReportViewer('20200103000483'); return false;" id="r_20200103000483"
+							title="일괄신고추가서류(기타파생결합증권) 공시뷰어 새창" >일괄신고추가서류(기타파생결합증권)
+							
+  							
+						</a>
+					</td>
+					<td title="신영증권"><div class="nobr" style="width:95px">신영증권</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:26
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00113465" onclick="openCorpInfo('00113465'); return false;" title="하나금융투자 기업개황 새창" >
+								하나금융투자
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000482"  onclick="openReportViewer('20200103000482'); return false;" id="r_20200103000482"
+							title="일괄신고추가서류(기타파생결합증권) 공시뷰어 새창" >일괄신고추가서류(기타파생결합증권)
+							
+  							
+						</a>
+					</td>
+					<td title="하나금융투자"><div class="nobr" style="width:95px">하나금융투자</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:26
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00442905" onclick="openCorpInfo('00442905'); return false;" title="대성파인텍 기업개황 새창" >
+								대성파인텍
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900450"  onclick="openReportViewer('20200103900450'); return false;" id="r_20200103900450"
+							title="불성실공시법인지정예고(공시변경) 공시뷰어 새창" >불성실공시법인지정예고
+							
+  							(공시변경)
+						</a>
+					</td>
+					<td title="코스닥시장본부"><div class="nobr" style="width:95px">코스닥시장본부</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:25
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00657002" onclick="openCorpInfo('00657002'); return false;" title="에이디테크놀로지 기업개황 새창" >
+								에이디테크놀로지
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900430"  onclick="openReportViewer('20200103900430'); return false;" id="r_20200103900430"
+							title="단일판매ㆍ공급계약체결 공시뷰어 새창" ><span title="본 보고서명으로 이미 제출된 보고서의 기재내용이 변경되어 제출된 것임">[기재정정]</span>단일판매ㆍ공급계약체결
+							
+  							
+						</a>
+					</td>
+					<td title="에이디테크놀로지"><div class="nobr" style="width:95px">에이디테크놀로지</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+					
+					
+						
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:25
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_others.gif" title="기타법인" alt="기타법인" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00138321" onclick="openCorpInfo('00138321'); return false;" title="신한금융투자 기업개황 새창" >
+								신한금융투자
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000481"  onclick="openReportViewer('20200103000481'); return false;" id="r_20200103000481"
+							title="일괄신고추가서류(기타파생결합증권) 공시뷰어 새창" >일괄신고추가서류(기타파생결합증권)
+							
+  							
+						</a>
+					</td>
+					<td title="신한금융투자"><div class="nobr" style="width:95px">신한금융투자</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:25
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00243979" onclick="openCorpInfo('00243979'); return false;" title="수성 기업개황 새창" >
+								수성
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103900416"  onclick="openReportViewer('20200103900416'); return false;" id="r_20200103900416"
+							title="주주총회소집결의 공시뷰어 새창" >주주총회소집결의
+							
+  							
+						</a>
+					</td>
+					<td title="수성"><div class="nobr" style="width:95px">수성</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark05.gif" hspace="1" title="본 공시사항은 한국거래소 코스닥시장본부 소관임" alt="본 공시사항은 한국거래소 코스닥시장본부 소관임" />&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+					
+						
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:25
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kosdaq.gif"  title="코스닥시장" alt="코스닥시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=00243979" onclick="openCorpInfo('00243979'); return false;" title="수성 기업개황 새창" >
+								수성
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000435"  onclick="openReportViewer('20200103000435'); return false;" id="r_20200103000435"
+							title="주요사항보고서(전환사채권발행결정) 공시뷰어 새창" >주요사항보고서(전환사채권발행결정)
+							
+  							
+						</a>
+					</td>
+					<td title="수성"><div class="nobr" style="width:95px">수성</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end">&nbsp;<img src="/images/sub/remark01.gif" hspace="1"
+			title="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" alt="본 보고서 제출 후 정정신고가 있으니 관련 보고서를 참조하시기 바람" /></td>
+				</tr>
+				
+				
+				
+				
+			
+				
+					
+						
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				<tr>
+					<td class="cen_txt">
+						16:25
+					</td>
+					<td>
+					    <span class="nobr1" style="max-width:150px;">
+					    	<img src="/images/ico_kospi.gif"  title="유가증권시장" alt="유가증권시장" />&nbsp;
+							<a href="/dsae001/selectPopup.ax?selectKey=01391033" onclick="openCorpInfo('01391033'); return false;" title="NH프라임리츠 기업개황 새창" >
+								NH프라임리츠
+							</a>
+						</span>
+						
+					</td>
+					<td>
+						<a href="/dsaf001/main.do?rcpNo=20200103000480"  onclick="openReportViewer('20200103000480'); return false;" id="r_20200103000480"
+							title="주식등의대량보유상황보고서(약식) 공시뷰어 새창" >주식등의대량보유상황보고서(약식)
+							
+  							
+						</a>
+					</td>
+					<td title="플랫폼파트너스자산운용"><div class="nobr" style="width:95px">플랫폼파트너스자산운용</div></td>
+					<td class="cen_txt">2020.01.03</td>
+					<td class="cen_txt end"></td>
+				</tr>
+				
+				
+				
+				
+			
+		
+		
+	
+</table>
+</div>
+<div class = "page_list">
+	
+
+
+
+		<input type="image" src="/images/btn/page_prev2.gif" alt="맨앞으로" title="맨앞으로" style="cursor:pointer;"	onclick="search(1)" />
+
+		<!-- prev 버튼 -->
+		
+			
+				<a href="#prev"><img src="/images/btn/page_prev.gif" alt="이전" title="이전" /></a>
+			
+			
+		
+
+
+		<!-- 페이지 숫자 시작부분 설정 -->
+		
+			
+			
+				
+			
+		
+
+
+		<!-- 페이지 숫자 출력 -->
+		
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(1)" value="1" alt="1"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+					<a href="#num"><span class="on" >2</span></a>
+				
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(3)" value="3" alt="3"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(4)" value="4" alt="4"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(5)" value="5" alt="5"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+			
+		
+			
+			
+				
+
+				
+
+
+				<input type="button" onclick="search(6)" value="6" alt="6"
+				style="cursor:pointer;background-color:#ffffff;border:0 solid #ffffff;" />
+
+				
+			
+			
+				
+			
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+
+
+		<!-- next 버튼 -->
+		
+			
+			
+				
+					
+						<a href="#next"><img src="/images/btn/page_next.gif" alt="다음"  title="다음"/></a>
+					
+					
+				
+			
+		
+
+		<!-- last 버튼 비활성화 시에도 화면안내를 위해서 title을 추가. 2012/06/09 유영근  -->
+		<input type="image" src="/images/btn/page_next2.gif" alt="맨끝으로" title="맨끝으로" style="cursor:pointer;"	onclick="search(6)" />
+
+
+
+	<p class="page_info">
+		[2/6] [총 581건]
+	</p>
+
+
+
+
+</div>
