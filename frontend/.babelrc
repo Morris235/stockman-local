@@ -1,0 +1,9 @@
+// jsx,ECMAScript 등의 코드를 브라우저에서 실행(트랜스파일)할 수 있도록 변환. 
+// babel 스크립트 실행시 compiled.js 파일 생성
+{
+    "presets": 
+    [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
+}

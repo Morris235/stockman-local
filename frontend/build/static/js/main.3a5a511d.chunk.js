@@ -1,0 +1,2 @@
+(this.webpackJsonpfrontend=this.webpackJsonpfrontend||[]).push([[0],{9:function(e,n,t){"use strict";t.r(n);var r=t(1),c=(t(0),t(3));var o=function(){return Object(r.jsx)("div",{className:"App",children:"Hello React with Django!"})};t.n(c).a.render(Object(r.jsx)(o,{}),document.getElementById("root"))}},[[9,1,2]]]);
+//# sourceMappingURL=main.3a5a511d.chunk.js.map
