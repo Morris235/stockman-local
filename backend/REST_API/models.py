@@ -77,52 +77,71 @@ class DailyPrice(models.Model):
 #         db_table = 'yearly_comp_state_analysis'
 #         unique_together = (('code', 'date'),)
 
-class CompState(models.Model):
-    # 업데이트
+# class CompState(models.Model):
+#     # 업데이트 날짜
+#     date = models.DateField()
+#     # 보고서 업데이트 날짜
+#     set_base_date = models.CharField(primary_key=True, max_length=20)
+#     # 기업코드
+#     code = models.CharField(primary_key=True, max_length=20)
+#     # 기업명
+#     company_name = models.CharField(max_length=40)
+#     # 자본총계
+#     equity = models.BigIntegerField(blank=True, null=True)
+#     # 전년도 자본총계
+#     last_equity = models.BigIntegerField(blank=True, null=True)
+#     # 부채총계
+#     liabilities = models.BigIntegerField(blank=True, null=True)
+#     # 유동 부채
+#     currentLiabilities = models.BigIntegerField(blank=True, null=True)
+#     # 전년도 부채총계
+#     last_liabilities = models.BigIntegerField(blank=True, null=True)
+#     # 유동자산
+#     currentAssets = models.BigIntegerField(blank=True, null=True)
+#     # 매출액, 영업수익
+#     revenue = models.BigIntegerField(blank=True, null=True)
+#     # 전년도 매출액
+#     last_revenue = models.BigIntegerField(blank=True, null=True)
+#     # 재고자산
+#     inventories = models.BigIntegerField(blank=True, null=True)
+#     # 당기순이익
+#     netIncome = models.BigIntegerField(blank=True, null=True)
+#     # 전년도 당기순이익
+#     last_netIncome = models.BigIntegerField(blank=True, null=True)
+#     # 영업비용
+#     operatingExpenses = models.BigIntegerField(blank=True, null=True)
+#     # 금융수익
+#     financialIncome = models.BigIntegerField(blank=True, null=True)
+#     # 금융비용
+#     financeCosts = models.BigIntegerField(blank=True, null=True)
+#     # 영업외비용
+#     nonOperExpenses = models.BigIntegerField(blank=True, null=True)
+#     # 법인세
+#     corporateTax = models.BigIntegerField(blank=True, null=True)
+#
+#     class Meta:
+#         managed = True
+#         db_table = 'yearly_comp_state'
+#         unique_together = (('code', 'date', 'set_base_date'),)
+
+class CompanyState(models.Model):
+    # 기업코드
+    code = models.CharField(primary_key=True, max_length=20)
+    # 업데이트 날짜
     date = models.DateField()
     # 보고서 업데이트 날짜
     set_base_date = models.CharField(primary_key=True, max_length=20)
-    # 기업코드
-    code = models.CharField(primary_key=True, max_length=20)
     # 기업명
     company_name = models.CharField(max_length=40)
-    # 자본총계
-    equity = models.BigIntegerField(blank=True, null=True)
-    # 전년도 자본총계
-    last_equity = models.BigIntegerField(blank=True, null=True)
-    # 부채총계
-    liabilities = models.BigIntegerField(blank=True, null=True)
-    # 유동 부채
-    currentLiabilities = models.BigIntegerField(blank=True, null=True)
-    # 전년도 부채총계
-    last_liabilities = models.BigIntegerField(blank=True, null=True)
-    # 유동자산
-    currentAssets = models.BigIntegerField(blank=True, null=True)
-    # 매출액, 영업수익
-    revenue = models.BigIntegerField(blank=True, null=True)
-    # 전년도 매출액
-    last_revenue = models.BigIntegerField(blank=True, null=True)
-    # 재고자산
-    inventories = models.BigIntegerField(blank=True, null=True)
-    # 당기순이익
-    netIncome = models.BigIntegerField(blank=True, null=True)
-    # 전년도 당기순이익
-    last_netIncome = models.BigIntegerField(blank=True, null=True)
-    # 영업비용
-    operatingExpenses = models.BigIntegerField(blank=True, null=True)
-    # 금융수익
-    financialIncome = models.BigIntegerField(blank=True, null=True)
-    # 금융비용
-    financeCosts = models.BigIntegerField(blank=True, null=True)
-    # 영업외비용
-    nonOperExpenses = models.BigIntegerField(blank=True, null=True)
-    # 법인세
-    corporateTax = models.BigIntegerField(blank=True, null=True)
+    # 업종 코드
+    sec = models.IntegerField()
+    # 업종명
+    sec_nm = models.CharField(max_length=40)
+    # 시장구분
+    mk = models.CharField(max_length=20)
+    # 보고서 타입
+    rp_type = models.CharField(max_length=40)
 
-    class Meta:
-        managed = True
-        db_table = 'yearly_comp_state'
-        unique_together = (('code', 'date', 'set_base_date'),)
 
 
 
