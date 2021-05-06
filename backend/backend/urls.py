@@ -12,6 +12,7 @@ from django.conf.urls.static import static
 router = routers.DefaultRouter()
 router.register(r'company', views.CompViewSet, basename='comp')
 router.register(r'daily_price', views.DailyPriceViewSet, basename='daily')
+router.register(r'company_state', views.CompanyStateViewSet, basename='comp_state')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

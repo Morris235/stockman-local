@@ -1,17 +1,11 @@
+from django.utils import timezone
+import time
+
 from django.db import models
 # 모델의 하나의 클래스는 DB에서 하나의 테이블이다.
 # 따라서 패키지 네임인 REST-API는 잘못되었음, 현재 종목이름만 가져다 쓰고 있으니 CompanyNames-REST 정도로 해야함. 그렇다는건 필요한 테이블마다 하나씩 장고 앱을 가져야 한다는 말인가?
 # 모델을 다 작성하였으면 migrate 하기
 # 그리고 필요없는 테이블도 분리해야함.=> 정말로 분리가 필요한가? 여기서 다 관리하고 프론트에서 필요한 데이터만 시리얼라이즈해서 내보내면 되지 않을까?
-
-# class Stocks(models.Model):
-#     code = models.CharField(db_column='CODE', primary_key=True)
-#     date = models.DateField(db_column='DATE', primary_key=True)
-#     open = models.BigIntegerField(db_column='OPEN', null=True)
-#     high = models.BigIntegerField(db_column='HIGH', null=True)
-#     low = models.BigIntegerField(db_column='LOW', null=True)
-#     diff = models.BigIntegerField(db_column='DIFF', null=True)
-#     volume = models.BigIntegerField(db_column='VOL', null=True)
 
 # 기업이름, 각 종목의 가격
 class CompanyInfo(models.Model):
@@ -37,110 +31,74 @@ class DailyPrice(models.Model):
     class Meta:
         managed = False
         db_table = 'daily_price'
-        unique_together = (('code', 'date'),)
+        constraints = [
+            models.UniqueConstraint(fields=['code', 'date'], name='company code and update')
+        ]
 
-
-# class CompStateAnalysis(models.Model):
-#     # 기업코드
-#     code = models.CharField(primary_key=True, max_length=20)
-#     # 업데이트 일자
-#     date = models.DateField()
-#     # 유동부채
-#     currentRatio = models.FloatField(blank=True, null=True)
-#     # 부채비율
-#     debtRatio = models.FloatField(blank=True, null=True)
-#     # 당좌비율
-#     quickRatio = models.FloatField(blank=True, null=True)
-#     # 자기자본율
-#     BIS = models.FloatField(blank=True, null=True)
-#     # 주당순자산가치
-#     BPS = models.FloatField(blank=True, null=True)
-#     # 매출액증가율
-#     salesGrowthRate = models.FloatField(blank=True, null=True)
-#     # 총자산증가율
-#     totalAssetGrowthRate = models.FloatField(blank=True, null=True)
-#     # 순이익증가율
-#     netProfitGrowthRate = models.FloatField(blank=True, null=True)
-#     # 총자산이익률
-#     ROA = models.FloatField(blank=True, null=True)
-#     # 매출액총이익률
-#     grossMargin = models.FloatField(blank=True, null=True)
-#     # 총자산회전율
-#     totalAssetTurnover = models.FloatField(blank=True, null=True)
-#     # 자기자본이익률
-#     ROE = models.FloatField(blank=True, null=True)
-#     # 재무불량도
-#     financialBadness = models.FloatField(blank=True, null=True)
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'yearly_comp_state_analysis'
-#         unique_together = (('code', 'date'),)
-
-# class CompState(models.Model):
-#     # 업데이트 날짜
-#     date = models.DateField()
-#     # 보고서 업데이트 날짜
-#     set_base_date = models.CharField(primary_key=True, max_length=20)
-#     # 기업코드
-#     code = models.CharField(primary_key=True, max_length=20)
-#     # 기업명
-#     company_name = models.CharField(max_length=40)
-#     # 자본총계
-#     equity = models.BigIntegerField(blank=True, null=True)
-#     # 전년도 자본총계
-#     last_equity = models.BigIntegerField(blank=True, null=True)
-#     # 부채총계
-#     liabilities = models.BigIntegerField(blank=True, null=True)
-#     # 유동 부채
-#     currentLiabilities = models.BigIntegerField(blank=True, null=True)
-#     # 전년도 부채총계
-#     last_liabilities = models.BigIntegerField(blank=True, null=True)
-#     # 유동자산
-#     currentAssets = models.BigIntegerField(blank=True, null=True)
-#     # 매출액, 영업수익
-#     revenue = models.BigIntegerField(blank=True, null=True)
-#     # 전년도 매출액
-#     last_revenue = models.BigIntegerField(blank=True, null=True)
-#     # 재고자산
-#     inventories = models.BigIntegerField(blank=True, null=True)
-#     # 당기순이익
-#     netIncome = models.BigIntegerField(blank=True, null=True)
-#     # 전년도 당기순이익
-#     last_netIncome = models.BigIntegerField(blank=True, null=True)
-#     # 영업비용
-#     operatingExpenses = models.BigIntegerField(blank=True, null=True)
-#     # 금융수익
-#     financialIncome = models.BigIntegerField(blank=True, null=True)
-#     # 금융비용
-#     financeCosts = models.BigIntegerField(blank=True, null=True)
-#     # 영업외비용
-#     nonOperExpenses = models.BigIntegerField(blank=True, null=True)
-#     # 법인세
-#     corporateTax = models.BigIntegerField(blank=True, null=True)
-#
-#     class Meta:
-#         managed = True
-#         db_table = 'yearly_comp_state'
-#         unique_together = (('code', 'date', 'set_base_date'),)
 
 class CompanyState(models.Model):
     # 기업코드
-    code = models.CharField(primary_key=True, max_length=20)
-    # 업데이트 날짜
-    date = models.DateField()
-    # 보고서 업데이트 날짜
-    set_base_date = models.CharField(primary_key=True, max_length=20)
+    code = models.CharField(primary_key=True, max_length=10,unique=True)
     # 기업명
-    company_name = models.CharField(max_length=40)
+    company_nm = models.CharField(max_length=20)
+    # 보고서 날짜
+    set_base_date = models.CharField(max_length=20)
+    # 업데이트 날짜
+    update = models.DateField(default=timezone.now())
     # 업종 코드
-    sec = models.IntegerField()
+    sec = models.CharField(max_length=10)
     # 업종명
-    sec_nm = models.CharField(max_length=40)
+    sec_nm = models.CharField(max_length=30)
     # 시장구분
     mk = models.CharField(max_length=20)
     # 보고서 타입
-    rp_type = models.CharField(max_length=40)
+    rp_type = models.CharField(max_length=30)
+
+    # <안정성 지표>
+    # 유동비율
+    current_ratio = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 부채비율
+    debt_ratio = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 당좌비율
+    quick_ratio = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 자기자본율
+    bis = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 재무불량도
+    fin_badness = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+
+    # <성장성 지표>
+    # 매출액 증가율
+    sales_growth_rate = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 총자산증가율 max_digits=7, decimal_places=3 -> 1111.234
+    asset_growth_rate = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 순이익증가율
+    net_profit_growth_rate = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+
+    # <수익성 지표>
+    # 주당순이익
+    eps = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 총자산이익률
+    roa = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 매출액 총이익률
+    gross_margin = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+
+    # <기업가치 관련 지수>
+    # 주가 순자산배율
+    pbr = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 주당 수익비율
+    per = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 자기자본이익률
+    roe = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    # 총자산회전율
+    asset_turnover = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+
+    class Meta:
+        managed = True
+        db_table = 'company_state'
+        constraints = [
+            models.UniqueConstraint(fields=['code', 'set_base_date'], name='company code')
+        ]
+
 
 
 
@@ -151,112 +109,117 @@ class CompanyState(models.Model):
 
 
 # Django 관련 테이블들
-class AuthGroup(models.Model):
-    name = models.CharField(unique=True, max_length=150)
-
-    class Meta:
-        managed = False
-        db_table = 'auth_group'
-
-
-class AuthGroupPermissions(models.Model):
-    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
-    permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'auth_group_permissions'
-        unique_together = (('group', 'permission'),)
-
-
-class AuthPermission(models.Model):
-    name = models.CharField(max_length=255)
-    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
-    codename = models.CharField(max_length=100)
-
-    class Meta:
-        managed = False
-        db_table = 'auth_permission'
-        unique_together = (('content_type', 'codename'),)
-
-
-class AuthUser(models.Model):
-    password = models.CharField(max_length=128)
-    last_login = models.DateTimeField(blank=True, null=True)
-    is_superuser = models.IntegerField()
-    username = models.CharField(unique=True, max_length=150)
-    first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=150)
-    email = models.CharField(max_length=254)
-    is_staff = models.IntegerField()
-    is_active = models.IntegerField()
-    date_joined = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'auth_user'
-
-
-class AuthUserGroups(models.Model):
-    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
-    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'auth_user_groups'
-        unique_together = (('user', 'group'),)
-
-
-class AuthUserUserPermissions(models.Model):
-    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
-    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'auth_user_user_permissions'
-        unique_together = (('user', 'permission'),)
-
-
-class DjangoAdminLog(models.Model):
-    action_time = models.DateTimeField()
-    object_id = models.TextField(blank=True, null=True)
-    object_repr = models.CharField(max_length=200)
-    action_flag = models.PositiveSmallIntegerField()
-    change_message = models.TextField()
-    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
-    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'django_admin_log'
-
-
-class DjangoContentType(models.Model):
-    app_label = models.CharField(max_length=100)
-    model = models.CharField(max_length=100)
-
-    class Meta:
-        managed = False
-        db_table = 'django_content_type'
-        unique_together = (('app_label', 'model'),)
-
-
-class DjangoMigrations(models.Model):
-    app = models.CharField(max_length=255)
-    name = models.CharField(max_length=255)
-    applied = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'django_migrations'
-
-
-class DjangoSession(models.Model):
-    session_key = models.CharField(primary_key=True, max_length=40)
-    session_data = models.TextField()
-    expire_date = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'django_session'
+# class AuthGroup(models.Model):
+#     name = models.CharField(unique=True, max_length=150)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_group'
+#
+#
+# class AuthGroupPermissions(models.Model):
+#     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+#     permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_group_permissions'
+#         constraints = [
+#             models.UniqueConstraint(fields=['group', 'permission'], name='AuthGroupPermissions')
+#         ]
+#
+# class AuthPermission(models.Model):
+#     name = models.CharField(max_length=255)
+#     content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
+#     codename = models.CharField(max_length=100)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_permission'
+#         constraints = [
+#             models.UniqueConstraint(fields=['content_type', 'codename'], name='AuthPermission')
+#         ]
+#
+# class AuthUser(models.Model):
+#     password = models.CharField(max_length=128)
+#     last_login = models.DateTimeField(blank=True, null=True)
+#     is_superuser = models.IntegerField()
+#     username = models.CharField(unique=True, max_length=150)
+#     first_name = models.CharField(max_length=150)
+#     last_name = models.CharField(max_length=150)
+#     email = models.CharField(max_length=254)
+#     is_staff = models.IntegerField()
+#     is_active = models.IntegerField()
+#     date_joined = models.DateTimeField()
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_user'
+#
+#
+# class AuthUserGroups(models.Model):
+#     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+#     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_user_groups'
+#         constraints = [
+#             models.UniqueConstraint(fields=['user', 'group'], name='AuthUserGroups')
+#         ]
+#
+# class AuthUserUserPermissions(models.Model):
+#     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+#     permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_user_user_permissions'
+#         constraints = [
+#             models.UniqueConstraint(fields=['user', 'permission'], name='AuthUserUserPermissions')
+#         ]
+#
+# class DjangoAdminLog(models.Model):
+#     action_time = models.DateTimeField()
+#     object_id = models.TextField(blank=True, null=True)
+#     object_repr = models.CharField(max_length=200)
+#     action_flag = models.PositiveSmallIntegerField()
+#     change_message = models.TextField()
+#     content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+#     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'django_admin_log'
+#
+#
+# class DjangoContentType(models.Model):
+#     app_label = models.CharField(max_length=100)
+#     model = models.CharField(max_length=100)
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'django_content_type'
+#         constraints = [
+#             models.UniqueConstraint(fields=['app_label', 'model'], name='DjangoContentType')
+#         ]
+#
+# class DjangoMigrations(models.Model):
+#     app = models.CharField(max_length=255)
+#     name = models.CharField(max_length=255)
+#     applied = models.DateTimeField()
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'django_migrations'
+#
+#
+# class DjangoSession(models.Model):
+#     session_key = models.CharField(primary_key=True, max_length=40)
+#     session_data = models.TextField()
+#     expire_date = models.DateTimeField()
+#
+#     class Meta:
+#         managed = False
+#         db_table = 'django_session'
 

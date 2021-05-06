@@ -17,7 +17,7 @@ class LogReader:
 
         # 0501
         self.not_included_code_dir = "log/stateReaderFiles_copy/20210501/stateReader/not_included_code/statements/code_list.txt"
-        self.filed_log_income = "log/stateReaderFiles_copy/20210501/stateReaderFiles/income/filed.txt"
+        self.filed_log_income = "log/stateReaderFiles_copy/20210501/state_year/income/filed.txt"
 
         # 0502
         self.no_code_fin_dir = 'log/stateReaderFiles_copy/20210502/no_code_fin.txt'

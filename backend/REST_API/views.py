@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from .models import CompanyInfo, DailyPrice, CompState
-from .serializers import CompSerializer, DailyPriceSerializer, CompStateSerializer
+from .models import CompanyInfo, DailyPrice, CompanyState
+from .serializers import CompSerializer, DailyPriceSerializer, CompanyStateSerializer
 
 
 # rest_framework에 있는 viewset에서 modelViewSet을 가져와 연동시킨다.
@@ -20,7 +20,7 @@ class DailyPriceViewSet(viewsets.ModelViewSet):
     queryset = DailyPrice.objects.all()
     serializer_class = DailyPriceSerializer
 
-class CompStateViewSet(viewsets.ModelViewSet):
-    queryset = CompState.objects.all()
-    serializer_class = CompStateSerializer
+class CompanyStateViewSet(viewsets.ModelViewSet):
+    queryset = CompanyState.objects.all()
+    serializer_class = CompanyStateSerializer
 

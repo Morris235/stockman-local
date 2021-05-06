@@ -17,18 +17,5 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
-    # try:
-    #     if sys.argv[2] == 'react':
-    #        backend_root = os.getcwd()
-    #        react_root = 'C:\\Pyvenv\\projects\\site\stockman\\frontend'
-    #        os.chdir(react_root)
-    #        os.system('yarn run build')
-    #        os.chdir(backend_root)
-    #        sys.argv.pop(2)
-    # except IndexError:
-    #     execute_from_command_line(sys.argv)
-    # else:
-    #     execute_from_command_line(sys.argv)
-
 if __name__ == '__main__':
     main()
