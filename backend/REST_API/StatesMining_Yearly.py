@@ -237,7 +237,7 @@ class StateReader:
 
             # 항목 필터링 함수
             def income_filtering(query_str: str, comp_code: str, target_nm: str, comp_nm: str):
-                global key, account_nm
+                # global key, account_nm
                 try:
                     # key : 해당 항목을 필터링하는데 필요한 account_id, 쿼리문으로 특정, 쿼리문을 사용하면 프로그램 전체 처리속도가 떨어진다.
                     # 각 칼럼을 기준으로 필터링된 첫번째 값을 구한다. (내가 지금 생각해봐도 기적의 논리로 작동한다.)
@@ -289,7 +289,7 @@ class StateReader:
                         writer = csv.DictWriter(file_filed_log,
                                                 fieldnames=['comp_nm', 'code', 'target_nm', 'type'])
                         writer.writerow(filed_dict)
-                        print('<손익 항목 취득실패>')
+                        print(f'<손익 항목 취득실패 [{code}] : {target_nm}>')
                         # print(str(logging.error(traceback.format_exc())))
                     return filed_dict
 
@@ -297,25 +297,33 @@ class StateReader:
             # 매출액
             def revenue():
                 query_str = "(account_id == 'ifrs-full_Revenue') " \
-                            "or (account_nm == '영업수익') " \
+                            "or (account_id == 'ifrs_Revenue')" \
+                            "or (account_nm == '매출')" \
                             "or (account_nm == '수익(매출액)')" \
-                            "or (account_nm == '매출액')"
+                            "or (account_nm == '매출액')" \
+                            "or (account_nm == '영업수익')"
                 return income_filtering(query_str, code, '매출액', company_name)
 
             # 당기순이익 or 당기순이익(손실)
             def net_income():
-                query_str = "(account_id == 'ifrs-full_ProfitLoss') or (account_nm == '당기순이익') or (account_nm == '당기손익') or " \
-                            "(account_nm == '당기순이익(손실)')"
+                query_str = "(account_id == 'ifrs-full_ProfitLoss') " \
+                            "or (account_id == 'ifrs_ProfitLoss')" \
+                            "or (account_nm == '당기순이익') " \
+                            "or (account_nm == '당기손익') " \
+                            "or (account_nm == '당기순이익(손실)')"
                 return income_filtering(query_str, code, '당기순이익', company_name)
 
             # 주당손익
             def basic_earnings_loss_per_share():
-                query_str = "(account_id == 'ifrs-full_BasicEarningsLossPerShareFromContinuingOperations') " \
+                query_str = "(account_id == 'ifrs-full_BasicEarningsLossPerShareFromContinuingOperations')" \
+                            "or (account_id == 'ifrs_BasicEarningsLossPerShareFromContinuingOperations')" \
+                            "or (account_id == 'ifrs_EarningsPerShareAbstract')" \
                             "or (account_id == 'ifrs-full_BasicEarningsLossPerShare')" \
                             "or (account_nm == '보통주 기본및희석주당손익 (단위 : 원)') " \
                             "or (account_nm == '보통주의 기본주당순이익') " \
                             "or (account_nm == '보통주기본주당순이익') " \
                             "or (account_nm == '주당손익') " \
+                            "or (account_nm == '주당순이익')" \
                             "or (account_nm == '주당이익') " \
                             "or (account_nm == '기본주당이익') " \
                             "or (account_nm == '기본주당손익') " \
@@ -326,7 +334,10 @@ class StateReader:
 
             # 금융수익
             def financial_income():
-                query_str = "(account_id == 'ifrs-full_FinanceIncome') or (account_nm == '금융수익') " \
+                query_str = "(account_id == 'ifrs-full_FinanceIncome') " \
+                            "or (account_id == 'ifrs_FinanceIncome')" \
+                            "or (account_nm == '금융수익') " \
+                            "or (account_nm == '금융 수익')" \
                             "or (account_nm == '금융손익') " \
                             "or (account_nm == '순금융수익(원가)') " \
                             "or (account_nm == '1. 금융수익')"
@@ -335,6 +346,7 @@ class StateReader:
             # 금융비용
             def finance_cost():
                 query_str = "(account_id == 'ifrs-full_FinanceCosts') " \
+                            "or (account_id == 'ifrs_FinanceCosts')" \
                             "or (account_nm == '금융비용') " \
                             "or (account_nm == '금융원가')" \
                             "or (account_nm == '2. 금융비용')"
@@ -342,24 +354,33 @@ class StateReader:
 
             # 영업비용
             def cost_of_sales():
-                query_str = "(account_id == 'dart_TotalSellingGeneralAdministrativeExpenses') or (account_nm == '영업비용') or" \
-                            " (account_id == 'ifrs-full_CostOfSales')"
+                query_str = "(account_id == 'dart_TotalSellingGeneralAdministrativeExpenses')" \
+                            "or (account_id == 'ifrs_AdministrativeExpense')" \
+                            "or (account_id == 'ifrs-full_CostOfSales')" \
+                            "or (account_nm == '영업비용')"
                 return income_filtering(query_str, code, '영업비용', company_name)
 
             # 영업외손익 or 기타손익 or 기타포괄손익
             def non_oper_income():
-                query_str = "(account_id == 'dart_OtherGains') or (account_id == 'ifrs-full_OtherComprehensiveIncome') or (account_nm == '영업외손익') or " \
-                            "(account_nm == '기타포괄손익') or (account_nm == '기타손익')"
+                query_str = "(account_id == 'dart_OtherGains') " \
+                            "or (account_id == 'ifrs-full_OtherComprehensiveIncome') " \
+                            "or (account_id == 'ifrs_OtherComprehensiveIncome')" \
+                            "or (account_nm == '영업외손익') or " \
+                            "(account_nm == '기타포괄손익') " \
+                            "or (account_nm == '기타손익')"
                 return income_filtering(query_str, code, '영업외손익', company_name)
 
             # 영업외비용
             def non_oper_expenses():
-                query_str = "(account_id == 'dart_OtherLosses') or (account_nm == '영업외비용') or (account_nm == '기타영업외비용')"
+                query_str = "(account_id == 'dart_OtherLosses') " \
+                            "or (account_nm == '영업외비용') " \
+                            "or (account_nm == '기타영업외비용')"
                 return income_filtering(query_str, code, '영업외비용', company_name)
 
             # 법인세비용
             def corporate_tax():
                 query_str = "(account_id == 'ifrs-full_IncomeTaxExpenseContinuingOperations') " \
+                            "or (account_id == 'ifrs_IncomeTaxExpenseContinuingOperations')" \
                             "or (account_nm == '법인세비용')"
                 return income_filtering(query_str, code, '법인세비용', company_name)
 
@@ -405,7 +426,7 @@ class StateReader:
 
             # 항목 필터링 함수
             def fin_filtering(query_str: str, comp_code: str, target_nm: str, comp_nm: str):
-                global key, account_nm
+                # global key, account_nm
                 try:
                     key = comp_state.query(query_str)['account_id'].values[0]
                     account_nm = comp_state.query(query_str)['account_nm'].values[0]
@@ -454,7 +475,7 @@ class StateReader:
                                                 fieldnames=['comp_nm', 'code', 'target_nm'])
                         writer.writerow(filed_dict)
                         # print(str(logging.error(traceback.format_exc())))
-                        print('<재무 항목 취득실패>')
+                        print(f'<재무 항목 취득실패 [{code}] : {target_nm}>')
                     return filed_dict
 
             # 자본총계
@@ -469,7 +490,10 @@ class StateReader:
 
             # 유동부채
             def current_liabilities():
-                query_str = "(account_id == 'ifrs-full_CurrentLiabilities') or (account_nm == '유동부채총계')"
+                query_str = "(account_id == 'ifrs-full_CurrentLiabilities') " \
+                            "or (account_id == 'ifrs_CurrentLiabilities')" \
+                            "or (account_nm == '유동부채')" \
+                            "or (account_nm == '유동부채총계')"
                 return fin_filtering(query_str, code, '유동부채', company_name)
 
             # 유동자산
