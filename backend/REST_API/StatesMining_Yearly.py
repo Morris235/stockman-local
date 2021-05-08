@@ -24,16 +24,21 @@ logging.basicConfig(level=logging.ERROR)
 # db 입력시 날짜 칼럼 구분은 set_base_date 를 기준으로 계산한다.
 # 디렉토리 생성, 구조화 설계 작업, 각 보고서 순회 방법 -> 2015~2020이상, year/2020_사업보고서_n_rp_nm_date.txt
 class StateReader:
+
+
+
+
+
     def __init__(self):
         # global cash_txt, flu_txt
 
-        print('StateReader Start')
+        print('Company State Mining Start')
         # krx 공시 전체 기업 코드 조회용
         krx = self.read_krx_code()
-        krx_count = len(krx)
+        krx_count = 20
 
-        # 디렉토리/파일 이름 리스트 : 연도별 보고서 순환
-        txt_dic = self.read_file_list()
+        # 디렉토리/파일 이름 리스트 : 연도별 보고서 순환용
+        txt_dic = self.read_state_report_file()
         self.year_list = txt_dic.get('year_list')
         self.fin_txt_list = txt_dic.get('fin_txt_list')
         self.income_txt_list = txt_dic.get('income_txt_list')
@@ -48,6 +53,9 @@ class StateReader:
         self.last_year = 'last_year'  # 전기
         self.year_before = 'year_before'  # 전전기
 
+
+
+
         # 전체 디렉토리 체크및 생성 순회
         # 순환구조 :
         # 디렉토리, 파일 순환 : state_all_report/ {년도:디렉토리}/ 분기:연간/ {file name: 재무,손익,+@}
@@ -56,15 +64,13 @@ class StateReader:
         for position in range(len(self.year_list)):
             check_dir = self.check_dir_name(self.year_list[position])
             year_dir = str(self.year_list[position])
-
             # 루트 디렉토리에 파일이 없다면 실행할 코드
             if check_dir:
                 os.makedirs(f'refined_state_files/state_year/{str(self.year_list[position])}')
                 self.fin_txt = self.fin_txt_list[position]
                 self.income_txt = self.income_txt_list[position]
 
-                # 개인 : 일 10,000건 (서비스별 한도가 아닌 오픈 API 23종 전체 서비스 기준)
-                # 일일한도를 준수하더라도 서비스의 안정적인 운영을 위하여 과도한 네트워크 접속(분당 100회 이상)은 서비스 이용이 제한
+
                 # 전체 krx 기업코드 순회
                 for idx in range(krx_count):
                     if (idx + 1) % 100 != 0:
@@ -74,13 +80,22 @@ class StateReader:
                         self.income_state(code, year_dir)
 
                         tmnow = datetime.now().strftime('%Y-%m-%d %H:%M')
-                        print(f"[{tmnow}] {idx + 1 :04d} / {len(krx)} code: {code} (READING REPORT)")
+                        print(f"[{tmnow}] {idx + 1 :04d} / {len(krx)} code: {code} ({year_dir} year report mining)")
                     else:
-                        time.sleep(62)
+                        # dart에 접속하지 않으면 사실상 필요가 없음
+                        # 총주식수를 어떻게 얻어서 처리할것인지 생각해봐야함, (연도별 계산에 필요한데...)
+                        time.sleep(0)
 
+                # 모든 krx 코드를 순회후 다음 연도의 보고서를 읽기전 대기 시간
+                time.sleep(0)
             #  루트 디렉토리에 파일이 있다면 실행할 코드
             else:
                 pass
+
+
+
+
+
 
     # krx 전종목 코드 리턴
     @staticmethod
@@ -95,8 +110,13 @@ class StateReader:
         krx = krx.sort_values(by='code')  # 종목코드 칼럼의 값으로 정렬, 기본은 오름차순 정렬이며, ascending=False를 인수로 추가하면 내림차순으로 정렬된다.
         return krx
 
+
+
+
+
+
     @staticmethod
-    def read_file_list():
+    def read_state_report_file():
         # 재무상태표 2개, 손익계산서 4개, 현금흐름표 2개, 자본변동표 2개
         all_fin_txt_list = []
         all_income_txt_list = []
@@ -124,6 +144,11 @@ class StateReader:
                          'flu_txt_list': all_flu_txt_list,
                          'year_list': year_list}
         return txt_name_dict
+
+
+
+
+
 
     # 손익/재무상태 보고서 데이터프레임 가공
     @staticmethod
@@ -153,6 +178,11 @@ class StateReader:
         except:
             logging.error(traceback.format_exc())
 
+
+
+
+
+
     # 디렉토리 유무 체크
     @staticmethod
     def check_dir_name(year_dir_name):
@@ -169,6 +199,11 @@ class StateReader:
         else:
             return True
 
+
+
+
+
+
     # 연결/별도 손익 계산서 결합
     def concat_income_state(self, code: str, year_dir: str):
         try:
@@ -184,7 +219,7 @@ class StateReader:
             coverage_df = self.convert_dataframe(coverage_dir, code)
             normal_df = self.convert_dataframe(normal_dir, code)
 
-            # 두 계산서를 합쳤을때 문제점 : 같은 항목명이 있을때 필터링 실패 확률이 높아진다.
+            # 값을 확인하고 정확도 최적화 하기
             concat_report = pd.concat([coverage_df, normal_df, coverage_link_df, normal_link_df])
             if len(concat_report) > 0:
                 return concat_report
@@ -193,6 +228,11 @@ class StateReader:
                 return 0
         except:
             logging.error(traceback.format_exc())
+
+
+
+
+
 
     # 연결/별도 재무상태 보고서 결합
     def concat_fin_state(self, code: str, year_dir: str):
@@ -214,6 +254,11 @@ class StateReader:
         except:
             logging.error(traceback.format_exc())
 
+
+
+
+
+
     # 연간 손익보고서
     def income_state(self, code: str, year_dir: str):
         # 항목 수집률도 같이 표기하면 어떨까?
@@ -228,12 +273,15 @@ class StateReader:
             mk = comp_state['mk'].values[0]  # 시장구분
 
             # 필터링된 항목 csv 파일 저장위치와 파일명
-            success_log_dir = f'refined_state_files/state_year/{year_dir}/income_success.txt'
-            filed_log_dir = f'refined_state_files/state_year/{year_dir}/income_filed.txt'
+            success_log_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_02_income_success.txt'
+            filed_log_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_06_income_filed.txt'
 
             curr_year = self.curr_year  # 당기
             last_year = self.last_year  # 전기
             year_before = self.year_before  # 전전기
+
+
+
 
             # 항목 필터링 함수
             def income_filtering(query_str: str, comp_code: str, target_nm: str, comp_nm: str):
@@ -296,40 +344,40 @@ class StateReader:
             # 각 항목 코드의 요구사항 : 필터링 키값, 항목값 취득 실패시 0과 해당 기업코드 리턴, 정규화된 항목명 리턴
             # 매출액
             def revenue():
-                query_str = "(account_id == 'ifrs-full_Revenue') " \
-                            "or (account_id == 'ifrs_Revenue')" \
-                            "or (account_nm == '매출')" \
-                            "or (account_nm == '수익(매출액)')" \
-                            "or (account_nm == '매출액')" \
-                            "or (account_nm == '영업수익')"
+                query_str = "(account_id == 'ifrs-full_Revenue')" \
+                            " or (account_id == 'ifrs_Revenue')" \
+                            " or (account_nm == '매출')" \
+                            " or (account_nm == '수익(매출액)')" \
+                            " or (account_nm == '매출액')" \
+                            " or (account_nm == '영업수익')"
                 return income_filtering(query_str, code, '매출액', company_name)
 
             # 당기순이익 or 당기순이익(손실)
             def net_income():
-                query_str = "(account_id == 'ifrs-full_ProfitLoss') " \
-                            "or (account_id == 'ifrs_ProfitLoss')" \
-                            "or (account_nm == '당기순이익') " \
-                            "or (account_nm == '당기손익') " \
-                            "or (account_nm == '당기순이익(손실)')"
+                query_str = "(account_id == 'ifrs-full_ProfitLoss')" \
+                            " or (account_id == 'ifrs_ProfitLoss')" \
+                            " or (account_nm == '당기순이익') " \
+                            " or (account_nm == '당기손익') " \
+                            " or (account_nm == '당기순이익(손실)')"
                 return income_filtering(query_str, code, '당기순이익', company_name)
 
             # 주당손익
             def basic_earnings_loss_per_share():
                 query_str = "(account_id == 'ifrs-full_BasicEarningsLossPerShareFromContinuingOperations')" \
-                            "or (account_id == 'ifrs_BasicEarningsLossPerShareFromContinuingOperations')" \
-                            "or (account_id == 'ifrs_EarningsPerShareAbstract')" \
-                            "or (account_id == 'ifrs-full_BasicEarningsLossPerShare')" \
-                            "or (account_nm == '보통주 기본및희석주당손익 (단위 : 원)') " \
-                            "or (account_nm == '보통주의 기본주당순이익') " \
-                            "or (account_nm == '보통주기본주당순이익') " \
-                            "or (account_nm == '주당손익') " \
-                            "or (account_nm == '주당순이익')" \
-                            "or (account_nm == '주당이익') " \
-                            "or (account_nm == '기본주당이익') " \
-                            "or (account_nm == '기본주당손익') " \
-                            "or (account_nm == '기본주당이익 및 희석주당이익')" \
-                            "or (account_nm == '1. 기본주당순이익(손실)')" \
-                            "or (account_nm == '기본 및 희석주당이익')"
+                            " or (account_id == 'ifrs_BasicEarningsLossPerShareFromContinuingOperations')" \
+                            " or (account_id == 'ifrs_EarningsPerShareAbstract')" \
+                            " or (account_id == 'ifrs-full_BasicEarningsLossPerShare')" \
+                            " or (account_nm == '보통주 기본및희석주당손익 (단위 : 원)') " \
+                            " or (account_nm == '보통주의 기본주당순이익') " \
+                            " or (account_nm == '보통주기본주당순이익') " \
+                            " or (account_nm == '주당손익') " \
+                            " or (account_nm == '주당순이익')" \
+                            " or (account_nm == '주당이익') " \
+                            " or (account_nm == '기본주당이익') " \
+                            " or (account_nm == '기본주당손익') " \
+                            " or (account_nm == '기본주당이익 및 희석주당이익')" \
+                            " or (account_nm == '1. 기본주당순이익(손실)')" \
+                            " or (account_nm == '기본 및 희석주당이익')"
                 return income_filtering(query_str, code, '주당손익', company_name)
 
             # 금융수익
@@ -345,43 +393,45 @@ class StateReader:
 
             # 금융비용
             def finance_cost():
-                query_str = "(account_id == 'ifrs-full_FinanceCosts') " \
-                            "or (account_id == 'ifrs_FinanceCosts')" \
-                            "or (account_nm == '금융비용') " \
-                            "or (account_nm == '금융원가')" \
-                            "or (account_nm == '2. 금융비용')"
+                query_str = "(account_id == 'ifrs-full_FinanceCosts')" \
+                            " or (account_id == 'ifrs_FinanceCosts')" \
+                            " or (account_nm == '금융비용') " \
+                            " or (account_nm == '금융원가')" \
+                            " or (account_nm == '2. 금융비용')"
                 return income_filtering(query_str, code, '금융비용', company_name)
 
             # 영업비용
             def cost_of_sales():
                 query_str = "(account_id == 'dart_TotalSellingGeneralAdministrativeExpenses')" \
-                            "or (account_id == 'ifrs_AdministrativeExpense')" \
-                            "or (account_id == 'ifrs-full_CostOfSales')" \
-                            "or (account_nm == '영업비용')"
+                            " or (account_id == 'ifrs_AdministrativeExpense')" \
+                            " or (account_id == 'ifrs-full_CostOfSales')" \
+                            " or (account_nm == '영업비용')"
                 return income_filtering(query_str, code, '영업비용', company_name)
 
             # 영업외손익 or 기타손익 or 기타포괄손익
             def non_oper_income():
-                query_str = "(account_id == 'dart_OtherGains') " \
-                            "or (account_id == 'ifrs-full_OtherComprehensiveIncome') " \
-                            "or (account_id == 'ifrs_OtherComprehensiveIncome')" \
-                            "or (account_nm == '영업외손익') or " \
-                            "(account_nm == '기타포괄손익') " \
-                            "or (account_nm == '기타손익')"
+                query_str = "(account_id == 'dart_OtherGains')" \
+                            " or (account_id == 'ifrs-full_OtherComprehensiveIncome') " \
+                            " or (account_id == 'ifrs_OtherComprehensiveIncome')" \
+                            " or (account_nm == '영업외손익')" \
+                            " or (account_nm == '기타포괄손익') " \
+                            " or (account_nm == '기타손익')" \
+                            " or (account_nm == '기타 수익')"
                 return income_filtering(query_str, code, '영업외손익', company_name)
 
             # 영업외비용
             def non_oper_expenses():
-                query_str = "(account_id == 'dart_OtherLosses') " \
-                            "or (account_nm == '영업외비용') " \
-                            "or (account_nm == '기타영업외비용')"
+                query_str = "(account_id == 'dart_OtherLosses')" \
+                            " or (account_nm == '영업외비용') " \
+                            " or (account_nm == '기타영업외비용')" \
+                            " or (account_nm == '기타비용')"
                 return income_filtering(query_str, code, '영업외비용', company_name)
 
             # 법인세비용
             def corporate_tax():
-                query_str = "(account_id == 'ifrs-full_IncomeTaxExpenseContinuingOperations') " \
-                            "or (account_id == 'ifrs_IncomeTaxExpenseContinuingOperations')" \
-                            "or (account_nm == '법인세비용')"
+                query_str = "(account_id == 'ifrs-full_IncomeTaxExpenseContinuingOperations')" \
+                            " or (account_id == 'ifrs_IncomeTaxExpenseContinuingOperations')" \
+                            " or (account_nm == '법인세비용')"
                 return income_filtering(query_str, code, '법인세비용', company_name)
 
             # 필터링 함수를 실핼하기 위한 호출
@@ -399,8 +449,13 @@ class StateReader:
         except:
             print(f'<손익 보고서에서 기업코드 [{code}] 를 읽을수가 없습니다. 로그를 확인하세요>')
             # print(str(logging.error(traceback.format_exc())))
-            with open(f'refined_state_files/state_year/{year_dir}/no_code_income.txt', mode='a') as f:
+            with open(f'refined_state_files/state_year/{year_dir}/{year_dir}_07_no_code_income.txt', mode='a') as f:
                 f.write('' + code + '\n')
+
+
+
+
+
 
     # 연간 재무보고서 :
     def financial_state(self, code: str, year_dir: str):  # year : 2020 => 2019
@@ -420,9 +475,12 @@ class StateReader:
             last_year = self.last_year  # 전기
             year_before = self.year_before  # 전전기
 
-            success_log_dir = f'refined_state_files/state_year/{year_dir}/statements_success.txt'
-            filed_log_dir = f'refined_state_files/state_year/{year_dir}/statements_filed.txt'
-            include_coed_list_dir = f'refined_state_files/state_year/{year_dir}/state_code_list.txt'
+            success_log_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_01_statements_success.txt'
+            filed_log_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_06_statements_filed.txt'
+            include_coed_list_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_05_state_code_list.txt'
+
+
+
 
             # 항목 필터링 함수
             def fin_filtering(query_str: str, comp_code: str, target_nm: str, comp_nm: str):
@@ -468,11 +526,13 @@ class StateReader:
                 except:
                     filed_dict = {'comp_nm': comp_nm,
                                   'code': comp_code,
-                                  'target_nm': target_nm}
+                                  'target_nm': target_nm,
+                                  'type': rp_type
+                                  }
 
                     with open(filed_log_dir, mode='a', newline='') as file_filed_log:
                         writer = csv.DictWriter(file_filed_log,
-                                                fieldnames=['comp_nm', 'code', 'target_nm'])
+                                                fieldnames=['comp_nm', 'code', 'target_nm', 'type'])
                         writer.writerow(filed_dict)
                         # print(str(logging.error(traceback.format_exc())))
                         print(f'<재무 항목 취득실패 [{code}] : {target_nm}>')
@@ -480,12 +540,18 @@ class StateReader:
 
             # 자본총계
             def equity():
-                query_str = "(account_id == 'ifrs-full_Equity') or (account_nm == '자본총계')"
+                query_str = "(account_id == 'ifrs-full_Equity') " \
+                            " or (account_id == 'ifrs_Equity')" \
+                            " or (account_nm == '자본총계')" \
+                            " or (account_nm == '자본 총계')" \
+                            " or (account_nm == '자본금')"
                 return fin_filtering(query_str, code, '자본총계', company_name)
 
             # 부채총계
             def liabilities():
-                query_str = "(account_id == 'ifrs-full_Liabilities') or (account_nm == '부채총계')"
+                query_str = "(account_id == 'ifrs-full_Liabilities') " \
+                            " or (account_id == 'ifrs_Liabilities')" \
+                            " or (account_nm == '부채총계')"
                 return fin_filtering(query_str, code, '부채총계', company_name)
 
             # 유동부채
@@ -498,17 +564,23 @@ class StateReader:
 
             # 유동자산
             def current_assets():
-                query_str = "(account_id == 'ifrs-full_CurrentAssets') or (account_nm == '유동자산')"
+                query_str = "(account_id == 'ifrs-full_CurrentAssets') " \
+                            " or (account_id == 'ifrs_CurrentAssets')" \
+                            " or (account_nm == '유동자산')"
                 return fin_filtering(query_str, code, '유동자산', company_name)
 
             # 재고자산
             def inventories():
-                query_str = "(account_id == 'ifrs-full_Inventories') or (account_nm == '재고자산')"
+                query_str = "(account_id == 'ifrs-full_Inventories') " \
+                            " or (account_nm == '재고자산')"
                 return fin_filtering(query_str, code, '재고자산', company_name)
 
             # 자산총계
             def assets():
-                query_str = "(account_id == 'ifrs-full_Assets') or (account_nm == '자산총계')"
+                query_str = "(account_id == 'ifrs-full_Assets') " \
+                            " or (account_id == 'ifrs_Assets')" \
+                            " or (account_nm == '자산총계')" \
+                            " or (account_nm == '자산 총계')"
                 return fin_filtering(query_str, code, '자산총계', company_name)
 
             # 필터링 함수를 실핼하기 위한 호출
@@ -525,7 +597,7 @@ class StateReader:
         except:
             print(f'<재무 보고서에서 기업코드 [{code}] 를 읽을수가 없습니다. 로그를 확인하세요>')
             # print(str(logging.error(traceback.format_exc())))
-            with open(f'refined_state_files/state_year/{year_dir}/no_code.txt', mode='a') as f:
+            with open(f'refined_state_files/state_year/{year_dir}/{year_dir}_07_no_code_state.txt', mode='a') as f:
                 f.write('' + code + '\n')
 
 
