@@ -1,9 +1,7 @@
-import time
 from datetime import datetime
+import pymysql
 import os
 import traceback
-import OpenDartReader
-import FinanceDataReader as fdr
 import pandas as pd
 import logging
 import csv
@@ -17,79 +15,41 @@ pd.set_option('display.max_columns', 100000)
 logging.basicConfig(level=logging.ERROR)
 
 
-# 시가조회를 위해 하루에 한번씩 업데이트가 필요?
-# 이제 전체 정제된(refined_state_files) 재무제표에 접근할수 있게됐다.
-# 자동으로 읽어드리는 코드 만들기 (dir 손보기)
-# 4년간의 재무제표 데이터로 지표 계산하기
+# 시가조회를 위해 하루에 한번씩 전체 데이터 업데이트가 필요함 -> 따로 클래스로 만들어서 시가 데이터만 업데이트 하면 된다.
 # 칼럼 수정하기
 # 계산된 지표 업데이트 하기
 class StatesUpdater:
 
     def __init__(self):
-        # 테이블 create query 작성
-
+        self.conn = pymysql.connect(host='localhost', port=3306, db='STOCKS', user='root', passwd='Lsm11875**',
+                                    charset='utf8', autocommit=True)
         # 현재 날짜 객체
         year = format(datetime.today().year)
         month = format(datetime.today().month)
         date = format(datetime.today().day)
 
-        api_key = '1df1a3c433cb50c187e45bb35461f17a5c28f255'
-        dart = OpenDartReader(api_key)
-
         # 디렉토리/파일 이름 리스트 : 연도별 보고서 순환용
-        self.year_list = self.read_refined_year_file()
+        state_year_dir = 'refined_state_files/state_year'
+        self.year_list = os.listdir(state_year_dir)
 
-        # self.fin_txt_list = txt_dic.get('refined_fin_list')
-        # self.income_txt_list = txt_dic.get('refined_income_list')
-
-        # state_year dir : 연간 디렉토리명 넣기기 -> 보고서 연도별 순회, 보고서 안에 curr_year, last_year, before_year 값들로 비율 계산하기
-
-        # 보고서 타입
-        # FIRST_QUARTER = 11013
-        # HALF_QUARTER = 110123
-        # THIRD_QUARTER = 11014
-        REPORT_CODE = 11011  # 연간 보고서
-
-        # krx 전체 공시 기업코드 조회용
-
-
-        # FinanceDataReader: 해당 기업의 현재 시가만 조회하면 되기 때문에 시작일과 종료일이 같음
-        start = str(datetime(year=int(year), month=int(month), day=int(date) - 1))
-        end = start
-
+        # 상장된 전체 기업코드
         krx = self.read_krx_code()
 
-        # refined 보고서 순회
+        # refined 전체 보고서 순회
         for position in range(len(self.year_list)):
             year = self.year_list[position]
-            # fin_txt_name = self.fin_txt_list[position]
-            # income_txt_name = self.income_txt_list[position]
 
             # refined 보고서에서 추출한 기업코드 리스트
-            state_code_list = self.get_state_code_list(year)
+            state_code_list = self.read_state_code_list(year)
             krx_count = len(state_code_list)
 
             # 기업코드 순회 & csv 읽기
             for idx in range(krx_count):
-                if (idx + 1) % 100 != 0:
-                    code = state_code_list[idx]
-                    # 기업의 현재 시가 조회
-                    self.open_price = self.get_stock_price(code, start, end)
-                    # 총발행주식 조회 : 연도별 조회 필요 year은 보고서의 연도다. 보고서내의 curr, last, before 연도가 필요함
-                    small = dart.report(krx.code.values[idx], '소액주주', year, reprt_code=REPORT_CODE)
-                    self.read_state_csv(code, year, small)
-                else:
-                    time.sleep(60)
+                code = state_code_list[idx]
+                self.cal_ratio(code, year)
 
-
-    # 시장이 아직 열리지 않았다면 현재주가를 받아올수 없다
     @staticmethod
-    def get_stock_price(code: str, start_year: str, end_year: str):
-        df = fdr.DataReader(code, start_year, end_year)
-        open_price = df['Open'].values[0]
-        return open_price
-
-    def get_state_code_list(self, year):
+    def read_state_code_list(year):
         # 연도별 기업 코드 리스트 순회
         # 만약 기업코드가 state엔 없는데 income에는 있다면? : 재점검 필요
         state_code_dir = f'refined_state_files/state_year/{year}/{year}_05_state_code_list.txt'
@@ -111,45 +71,13 @@ class StatesUpdater:
         return krx
 
     @staticmethod
-    def read_refined_year_file():
-        # 순서
-        # 01_state_succ, 02_income_succ, 03_cash_succ, 04_flu_succ,
-        # 05_{state,income,cash,flu}_code_list, 06_{state,income,cash,flu}_filed, 07_{state,income,cash,flu}_no_code
-
-        # refined_fin_list = []
-        # refined_income_list = []
-        # refined_cash_list = []
-        # refined_flu_list = []
-
-        # 디렉토리명에서 연도 얻기
-        state_year_dir = 'refined_state_files/state_year'
-        year_list = os.listdir(state_year_dir)
-
-        # for year in year_list:
-        #     path_dir = f'refined_state_files/state_year/{year}'
-        #     file_list = os.listdir(path_dir)
-
-            # refined_fin_list.append(file_list[0])
-            # refined_income_list.append(file_list[1])
-
-        # # txt_list 크기 = n년치 보고서 -> n개
-        # # 접근 = [0]=>보고서 종류 (0~n), [0][n]=>연도별 보고서
-        # year_report_name_txt_dict = {'refined_fin_list': refined_fin_list,
-        #                              'refined_income_list': refined_income_list,
-        #                              'year_list': year_list}
-
-        return year_list
-
-    # 이걸 어떻게 읽어서 기업별로 지표를 구하지? + 시가,발행주식수도 반복문으로 받아서 함께 계산해줘야 한다.
-    # 데이터프레임으로 만들어서 기업코드를 인덱스로 사용하고, 반복문으로 순회, 해당 값들을 딕셔너리로 만들어서 필요한 지표 계산
-    # 반복문이기 때문에 기업별 트리를 만들던지 바로 계산해서 db에 올리던지 해야함. 어떤 형태여야 하지?
-    def read_state_csv(self, code, year, small):
-        # 분기마다 비율 지표를 표시 해야한다 ex) 2018 2019 2020 -> 결국 curr, last, before 전부를 구해서 계산해야함 -> before의 지표값을 구할려면 2017년 값들도 가져와야함
+    def convert_to_dataframe(year):
         try:
+            # init 의 refined 보고서 순회의 큰 흐름
             # refined 보고서 연도별 path
             state_dir = f'refined_state_files/state_year/{year}/{year}_01_statements_success.txt'
             income_dir = f'refined_state_files/state_year/{year}/{year}_02_income_success.txt'
-            
+
             # 재무상태 기업코드 리스트를 칼럼으로 가공
             state_code_columns = []
             with open(state_dir, mode='r', encoding='euc-kr') as state_f:
@@ -164,13 +92,10 @@ class StatesUpdater:
                 for income_line in income_rdr:
                     income_code_columns.append(income_line[1])
 
-
-
-
             # 재무상태 보고서 가공
             state_csv = pd.read_csv(state_dir, engine='python', header=None,
                                     names=['comp_nm', 'code', 'type', 'acc_nm', 'target_nm',
-                                           'set_base_date', 'sec_code', 'sec_nm', 'mk',
+                                           'sec_code', 'sec_nm', 'mk',
                                            'curr_year', 'last_year', 'year_before'],
                                     sep=',',
                                     encoding='euc-kr')
@@ -180,23 +105,34 @@ class StatesUpdater:
             # 손익 계산서 가공
             income_csv = pd.read_csv(income_dir, engine='python', header=None,
                                      names=['comp_nm', 'code', 'type', 'acc_nm', 'target_nm',
-                                            'set_base_date', 'sec_code', 'sec_nm', 'mk',
+                                            'sec_code', 'sec_nm', 'mk',
                                             'curr_year', 'last_year', 'year_before'],
                                      sep=',',
                                      encoding='euc-kr')
             income_csv.drop(columns=['acc_nm'], inplace=True)
             income_csv['code'] = income_code_columns
 
+            refined_report = {'state_csv': state_csv, 'income_csv': income_csv}
+            return refined_report
+        except:
+            pass
+            # logging.error(traceback.format_exc())
+
+    def read_refined_common(self, code, year):
+        try:
+            refined_df = self.convert_to_dataframe(year)
+            state_csv = refined_df.get('state_csv')
+            income_csv = refined_df.get('income_csv')
             # <공통>
             # 기업명
             comp_nm = \
                 state_csv.loc[state_csv['code'].isin([code]), 'comp_nm'].values[0]
-            # 기업코드
-            comp_code = code
             # 보고서 타입
-            rp_type = state_csv.loc[state_csv['code'].isin([code]), 'type'].values[0]
+            state_rp_type = state_csv.loc[state_csv['code'].isin([code]), 'type'].values[0]
+            income_rp_type = income_csv.loc[income_csv['code'].isin([code]), 'type'].values[0]
+
             # 보고서 기준 일자
-            set_base_date = state_csv.loc[state_csv['code'].isin([code]), 'set_base_date'].values[0]
+            # set_base_date = state_csv.loc[state_csv['code'].isin([code]), 'set_base_date'].values[0]
             # 업종코드
             sec_code = state_csv.loc[state_csv['code'].isin([code]), 'sec_code'].values[0]
             # 업종명
@@ -204,83 +140,619 @@ class StatesUpdater:
             # 시장구분
             mk = state_csv.loc[state_csv['code'].isin([code]), 'mk'].values[0]
 
-            # 해당기업 전체 발행주식수
-            # small 변수 콜백함수 처리 필요 : 콜백처리 안하면 5번 반복할 때마다 에러
-            # 개인 : 일 10,000건 (서비스별 한도가 아닌 오픈 API 23종 전체 서비스 기준)
-            # 일일한도를 준수하더라도 서비스의 안정적인 운영을 위하여 과도한 네트워크 접속(분당 100회 이상)은 서비스 이용이 제한
-            def stock_count():
-                try:
-                    stock_total_number = small['stock_tot_co'].str.replace(',', '')
-                    stock_total_number = int(stock_total_number)
-                    return stock_total_number
-                except:
-                    return 0
+            common_item = {'comp_nm': comp_nm,
+                           'state_rp_type': state_rp_type,
+                           'income_rp_type': income_rp_type,
+                           'sec_code': sec_code,
+                           'sec_nm': sec_nm,
+                           'mk': mk}
 
-            # <재무상태 보고서>
-            # 금년도 자산총계
-            assets = \
-                state_csv.loc[
-                    state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['자산총계']), 'curr_year'].values[0]
-            # 전년도 자산총계
-            last_assets = \
-                state_csv.loc[
-                    state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['자산총계']), 'last_year'].values[0]
-            # 자본총계
-            equity = \
-                state_csv.loc[
-                    state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['자본총계']), 'curr_year'].values[0]
-            # 부채총계
-            liabilities = \
-                state_csv.loc[
-                    state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['부채총계']), 'curr_year'].values[0]
-            # 유동부채
-            current_liabilities = \
-                state_csv.loc[
-                    state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['유동부채']), 'curr_year'].values[0]
-            # 유동자산
-            current_assets = \
-                state_csv.loc[
-                    state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['유동자산']), 'curr_year'].values[0]
-
-            # <손익 계산서>
-            # 매출액
-            revenue = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['매출액']), 'curr_year'].values[0]
-            # 전년도 매출액
-            last_revenue = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['매출액']), 'last_year'].values[0]
-            # 당기순이익
-            net_income = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['당기순이익']), 'curr_year'].values[0]
-            # 전년도 당기순이익
-            last_net_income = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['당기순이익']), 'last_year'].values[0]
-            # 주당손익
-            eps = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['주당손익']), 'curr_year'].values[0]
-            # 금융수익
-            fin_income = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['금융수익']), 'curr_year'].values[0]
-            # 금융비용
-            fin_cost = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['금융비용']), 'curr_year'].values[0]
-            # 영업비용
-            cost_of_sales = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['영업비용']), 'curr_year'].values[0]
-            # 영업외손익
-            non_oper_income = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['영업외손익']), 'curr_year'].values[0]
-            # 영업외비용
-            non_oper_expenses = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['영업외비용']), 'curr_year'].values[0]
-            # 법인세비용
-            corporate_tax = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['법인세비용']), 'curr_year'].values[0]
-
-            print(f'{year} 기업명 : {comp_nm}, 코드 : {comp_code}, 보고서 타입 : {rp_type}, 결산기준일 : {set_base_date}, 업종코드 : {sec_code}, 업종명 : {sec_nm}, 시장 :{mk},'
-                  f'자산 : {assets}, 전년도 자산 : {last_assets}, 자본 : {equity}, 부채 : {liabilities}, 유동부채 : {current_liabilities}, 유동자산 : {current_assets}, 발행주식수 : {stock_count()},')
-            print('')
-        # 비율지표 계산
-        # 한 기업씩 기업의 지표를 DB에 업데이트
-
+            return common_item
         except:
-            logging.error(traceback.format_exc())
+            # logging.error(traceback.format_exc())
+            return
 
-    def cal_ratio(self):
-        return
+    def read_refined_state(self, code, year, quarter):
+        try:
+            refined_df = self.convert_to_dataframe(year)
+            state_csv = refined_df.get('state_csv')
+
+            # <재무상태 보고서 항목>
+            # 자산총계
+            def assets():
+                try:
+                    item = state_csv.loc[
+                        state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['자산총계']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 자본총계
+            def equity():
+                try:
+                    item = state_csv.loc[
+                        state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['자본총계']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 부채총계
+            def liabilities():
+                try:
+                    item = state_csv.loc[
+                        state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['부채총계']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 유동부채
+            def current_liabilities():
+                try:
+                    item = state_csv.loc[
+                        state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['유동부채']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 유동자산
+            def current_assets():
+                try:
+                    item = state_csv.loc[
+                        state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['유동자산']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 재고자산
+            def inventories():
+                try:
+                    item = state_csv.loc[
+                        state_csv['code'].isin([code]) & state_csv['target_nm'].isin(['재고자산']), quarter].values[
+                        0]
+                    return item
+                except:
+                    # logging.error(traceback.format_exc())
+                    pass
+
+            state_item = {'assets': assets(),
+                          'equity': equity(),
+                          'liabilities': liabilities(),
+                          'current_liabilities': current_liabilities(),
+                          'current_assets': current_assets(),
+                          'inventories': inventories()}
+
+            return state_item
+        except:
+            pass
+
+    def read_refined_income(self, code, year, quarter):
+        try:
+            refined_df = self.convert_to_dataframe(year)
+            income_csv = refined_df.get('income_csv')
+
+            # <손익 계산서 항목>
+            # 매출액
+            def revenue():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['매출액']), quarter].values[0]
+                    return item
+                except:
+                    pass
+
+            # 당기순이익
+            def net_income():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['당기순이익']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 주당손익
+            def eps():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['주당손익']), quarter].values[0]
+                    return item
+                except:
+                    pass
+
+            # 금융수익
+            def fin_income():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['금융수익']), quarter].values[0]
+                    return item
+                except:
+                    pass
+
+            # 금융비용
+            def fin_cost():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['금융비용']), quarter].values[0]
+                    return item
+                except:
+                    pass
+
+            # 영업이익
+            # def operating_profit():
+            #     try:
+            #         item = income_csv.loc[income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['영업이익'])]
+            #         return item
+            #     except:
+            #         pass
+
+            # 영업비용
+            def cost_of_sales():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['영업비용']), quarter].values[0]
+                    return item
+                except:
+                    pass
+
+            # 영업외손익
+            def non_oper_income():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['영업외손익']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 영업외비용
+            def non_oper_expenses():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['영업외비용']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 법인세비용
+            def corporate_tax():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['법인세비용']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 지배기업지분 -> 값이없는 경우 일반 당기순이익으로 계산
+            def ifrs_owners_of_parent():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['지배기업지분']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 비지배기업지분 -> 어디에 써야하더라?
+            def ifrs_non_controlling_interests():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['비지배기업지분']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            # 매출총이익
+            def gross_profit():
+                try:
+                    item = income_csv.loc[
+                        income_csv['code'].isin([code]) & income_csv['target_nm'].isin(['매출총이익']), quarter].values[
+                        0]
+                    return item
+                except:
+                    pass
+
+            income_item = {'revenue': revenue(),
+                           'net_income': net_income(),
+                           'eps': eps(),
+                           'fin_income': fin_income(),
+                           'fin_cost': fin_cost(),
+                           'cost_of_sales': cost_of_sales(),
+                           'non_oper_income': non_oper_income(),
+                           'non_oper_expenses': non_oper_expenses(),
+                           'corporate_tax': corporate_tax(),
+                           'ifrs_owners_of_parent': ifrs_owners_of_parent(),
+                           'ifrs_non_controlling_interests': ifrs_non_controlling_interests(),
+                           'gross_profit': gross_profit()}
+            return income_item
+        except:
+            return
+
+    # 업데이트 측면에서도 생각해봐야한다.
+    def cal_ratio(self, code, year):
+        # 분기마다 비율 지표를 표시 해야한다 ex) 2018 2019 2020 -> 결국 curr, last, before 전부를 구해서 계산해야함 -> before의 지표값을 구할려면 2017년 값들도 가져와야함
+        global result_dict
+        try:
+
+            quarter_list = ['curr_year', 'last_year', 'year_before']
+            year_dict = {'curr_year': 0, 'last_year': 1, 'year_before': 2}
+            year = int(year)
+
+            # <기업정보>
+            common = self.read_refined_common(code, year)
+            comp_nm = common.get('comp_nm')
+            state_rp_type = common.get('state_rp_type')
+
+            sec_code = common.get('sec_code')
+            sec_nm = common.get('sec_nm')
+            mk = common.get('mk')
+
+            # <별도 계산 함수>
+            # 증가율 수식 보정 함수
+            # ex) 당기: -300만, 전기: -100만,  (-)300+(-)100 / -100 * 100 = -20%, 실제론 30% 증가했지만 표기상으로 -30%가 될수도 있다.
+            def cal_increase_rate(x, y):
+                if y != 0:
+                    result = (x - y) / y * 100
+                    if x > y and 0 > result:
+                        result = -result
+                        return result
+                    elif x > y and 0 < result:
+                        return result
+                    elif x < y and 0 < result:
+                        result = -result
+                        return result
+                    elif x < y and 0 > result:
+                        return result
+                    else:
+                        return result
+                else:
+                    return 0.0
+
+            # 지배기업지분이 있을경우 지배기업지분 리턴, 별도는 일반 리턴
+            def select_net_profit():
+                try:
+                    year_before_last = year - 1
+                    owner_is_none = str(type(self.read_refined_income(code=code, year=year,
+                                                                      quarter='curr_year').get(
+                        'ifrs_owners_of_parent')))
+
+                    # 지배기업지분을 표시한 경우 지배기업지분 항목 리턴
+                    if owner_is_none != "<class 'NoneType'>":
+                        curr_owners_profit = self.read_refined_income(code=code, year=year,
+                                                                      quarter='curr_year').get(
+                            'ifrs_owners_of_parent')
+                        last_owners_profit = self.read_refined_income(code=code, year=year,
+                                                                      quarter='last_year').get(
+                            'ifrs_owners_of_parent')
+                        before_owners_profit = self.read_refined_income(code=code, year=year,
+                                                                        quarter='year_before').get(
+                            'ifrs_owners_of_parent')
+
+                        if year_before_last > 2014:
+                            before_owners_last_profit = self.read_refined_income(code=code, year=year_before_last,
+                                                                                 quarter='year_before').get(
+                                'ifrs_owners_of_parent')
+                        else:
+                            before_owners_last_profit = 0
+
+                        profit_dict = {
+                            'curr_year': curr_owners_profit,
+                            'last_year': last_owners_profit,
+                            'year_before': before_owners_profit,
+                            'before_last': before_owners_last_profit
+                        }
+
+                        return profit_dict
+
+                    # 지배기업지분을 기록하지 않은 경우 일반 당기순이익 항목 리턴
+                    else:
+                        curr_net_profit = self.read_refined_income(code=code, year=year,
+                                                                   quarter='curr_year').get(
+                            'net_income')
+                        last_net_profit = self.read_refined_income(code=code, year=year,
+                                                                   quarter='last_year').get(
+                            'net_income')
+                        before_net_profit = self.read_refined_income(code=code, year=year,
+                                                                     quarter='year_before').get('net_income')
+                        if year_before_last > 2014:
+                            before_last_profit = self.read_refined_income(code=code, year=year_before_last,
+                                                                          quarter='year_before').get(
+                                'net_income')
+                        else:
+                            before_last_profit = 0
+
+                        profit_dict = {
+                            'curr_year': curr_net_profit,
+                            'last_year': last_net_profit,
+                            'year_before': before_net_profit,
+                            'before_last': before_last_profit
+                        }
+                        return profit_dict
+
+                # 데이터가 없는 경우
+                except:
+                    # logging.error(traceback.format_exc())
+                    return 0.0
+
+            # curr, last, before. 각 기업의 연도별 순회 -> 업데이터에 있어야 하지 않나?
+            for position in range(len(quarter_list)):
+                diff = year_dict.get(quarter_list[position])
+                quarter_year = year - diff
+
+                # <계산에 필요한 항목>
+                revenue = self.read_refined_income(code, year, quarter_list[position]).get('revenue')  # 매출액(영업수익)
+                equity = self.read_refined_state(code, year, quarter_list[position]).get('equity')  # 자본총계
+                assets = self.read_refined_state(code, year, quarter_list[position]).get('assets')  # 자산총계
+                gross_profit = self.read_refined_income(code, year, quarter_list[position]).get(
+                    'gross_profit')  # 매출액총이익
+                cost_of_sales = self.read_refined_income(code, year, quarter_list[position]).get('cost_of_sales')  # 영업비용
+                current_assets = self.read_refined_state(code, year, quarter_list[position]).get(
+                    'current_assets')  # 유동자산
+                inventories = self.read_refined_state(code, year, quarter_list[position]).get('inventories')  # 재고자산
+                liabilities = self.read_refined_state(code, year, quarter_list[position]).get('liabilities')  # 부채총계
+                current_liabilities = self.read_refined_state(code, year, quarter_list[position]).get(
+                    'current_liabilities')  # 유동부채
+
+                # <항목 계산>
+                # 당좌자산 -확인
+                def current_asset_cal():
+                    # 유동자산 - 재고자산
+                    try:
+                        return current_assets - inventories
+                    except:
+                        # logging.error(traceback.format_exc())
+                        return ''
+
+                # 매출총액, 매출총이익 -확인
+                def total_sales_cal():
+                    # 영업수익 - 영업비용
+                    try:
+                        return revenue - cost_of_sales
+                    except:
+                        return ''
+
+                # <안정성 지표>
+                # 유동비율 -확인
+                def current_ratio():
+                    # 유동자산 / 유동부채 * 100
+                    try:
+                        result = current_assets / current_liabilities * 100
+                        return round(result, 3)
+                    except:
+                        return 0.0
+
+                # 부채비율 -확인
+                def debt_ratio():
+                    # 부채총계 / 자본총계 * 100
+                    try:
+                        result = liabilities / equity * 100
+                        return round(result, 3)
+                    except:
+                        return 0.0
+
+                # 당좌비율 -확인
+                def quick_ratio():
+                    # (당좌자산{유동자산 - 재고자산} / 유동부채) * 100
+                    try:
+                        result = current_asset_cal() / current_liabilities * 100
+                        return round(result, 3)
+                    except:
+                        return 0.0
+
+                # 자기자본비율 -확인
+                def bis():
+                    # 자본총계 / 자산총계 * 100
+                    try:
+                        result = equity / assets * 100
+                        return round(result, 3)
+                    except:
+                        return 0.0
+
+                # 재무불량도 -확인
+                def fin_badness():
+                    # ROA - ROE
+                    try:
+                        result = roa() - roe()
+                        return round(result, 3)
+                    except:
+                        return 0
+
+                # <성장성 지표>
+
+                # 매출증가율 -확인
+                def sales_growth_rate():
+                    # (금년도 영업수익(매출) - 전년도 영업수익(매출)) / 전년도 영업수익 * 100
+                    try:
+                        year_before_last = year - 1
+                        curr_revenue = self.read_refined_income(code, year, 'curr_year').get('revenue')
+                        last_revenue = self.read_refined_income(code, year, 'last_year').get('revenue')
+                        before_revenue = self.read_refined_income(code, year, 'year_before').get('revenue')
+
+                        curr = cal_increase_rate(curr_revenue, last_revenue)
+                        last = cal_increase_rate(last_revenue, before_revenue)
+
+                        # 2015년 보고서 디렉토리부터 계산
+                        if year_before_last > 2014:
+                            before_last_revenue = self.read_refined_income(code=code, year=year_before_last,
+                                                                           quarter='curr_year').get('revenue')
+
+                            before = cal_increase_rate(before_revenue, before_last_revenue)
+
+                            revenue_dict = {year: round(curr, 3),
+                                            year - 1: round(last, 3),
+                                            year - 2: round(before, 3)}
+
+                            return revenue_dict
+                        # 2014년 보고서 디렉토리가 없으므로 2015년도 보고서의 year_before 칼럼에 속하는 2013년도의 비율은 계산할수 없다.
+                        else:
+                            revenue_dict = {year: round(curr, 3),
+                                            year - 1: round(last, 3),
+                                            year - 2: 0.0}
+                            return revenue_dict
+                    except:
+                        # logging.error(traceback.format_exc())
+                        assets_dict = {year: 0.0,
+                                       year - 1: 0.0,
+                                       year - 2: 0.0
+                                       }
+                        return assets_dict
+
+                # 총자산증가율 -확인
+                def asset_growth_rate():
+                    # (금년도 자산총계 - 전년도 자산총계) / 전년도 자산총계 * 100
+                    try:
+                        year_before_last = year - 1
+                        curr_assets = self.read_refined_state(code, year, 'curr_year').get('assets')
+                        last_assets = self.read_refined_state(code, year, 'last_year').get('assets')
+                        before_assets = self.read_refined_state(code, year, 'year_before').get('assets')
+
+                        curr = cal_increase_rate(curr_assets, last_assets)
+                        last = cal_increase_rate(last_assets, before_assets)
+
+                        # 2015년 보고서 디렉토리부터 계산
+                        if year_before_last > 2014:
+                            before_last_assets = self.read_refined_state(code=code, year=year_before_last,
+                                                                         quarter='curr_year').get('assets')
+                            before = cal_increase_rate(before_assets, before_last_assets)
+
+                            assets_dict = {year: round(curr, 3),
+                                           year - 1: round(last, 3),
+                                           year - 2: round(before, 3)}
+
+                            return assets_dict
+                        # 2014년 보고서 디렉토리가 없으므로 2015년도 보고서의 year_before 칼럼에 속하는 2013년도의 비율은 계산할수 없다.
+                        else:
+                            assets_dict = {year: round(curr, 3),
+                                           year - 1: round(last, 3),
+                                           year - 2: 0.0
+                                           }
+                            return assets_dict
+                    except:
+                        assets_dict = {year: 0.0,
+                                       year - 1: 0.0,
+                                       year - 2: 0.0
+                                       }
+                        return assets_dict
+
+                # 순이익 증가율(지배기업지분이 있을경우 지배기업지분으로 계산) -확인
+                def net_profit_growth_rate():
+                    # (금년도 당기순이익 - 전년도 당기순이익) / 전년도 당기순이익 * 100
+                    try:
+                        net_profit = select_net_profit()  # 당기순이익 셀렉터 함수 호출
+
+                        curr_year = net_profit.get('curr_year')
+                        last_year = net_profit.get('last_year')
+                        year_before = net_profit.get('year_before')
+                        before_last = net_profit.get('before_last')
+
+                        curr = cal_increase_rate(curr_year, last_year)
+                        last = cal_increase_rate(last_year, year_before)
+                        before = cal_increase_rate(year_before, before_last)
+
+                        owner_net_profit_dict = {
+                            year: round(curr, 3),
+                            year - 1: round(last, 3),
+                            year - 2: round(before, 3)}
+                        return owner_net_profit_dict
+
+                    # 데이터가 없는 경우
+                    except:
+                        assets_dict = {year: 0.0,
+                                       year - 1: 0.0,
+                                       year - 2: 0.0
+                                       }
+                        return assets_dict
+
+                # <수익성 지표>
+                # 총자산이익률 -확인
+                def roa():
+                    # (당기?)순이익 / 자산총계 * 100
+                    try:
+                        net_profit = select_net_profit()  # 당기순이익 셀렉터 함수 호출
+                        net_profit = net_profit.get(quarter_list[position])  # 당기순이익
+
+                        result = net_profit / assets * 100
+                        return round(result, 3)
+                    except:
+                        return 0.0
+
+                # 매출액총이익률 -확인
+                # 이익 : 얼마를 벌어서 얼마를 쓰고 남은 돈이 얼마인가?
+                # 수익 : 얼마나 벌어들였냐
+                # 매출총이익과 영업이익은 기업 가치 측면에서 중요함
+                def gross_margin():
+                    # 매출액총이익 / 영업수익(매출액) * 100
+                    try:
+                        result = gross_profit / revenue * 100
+                        return round(result, 3)
+                    except:
+                        return 0.0
+
+                # <기업가치 관련 지수>
+                # 자기자본이익률 -확인
+                # 당기순이익 = 일정기간 동안에 기업이 창출한 순이익
+                def roe():
+                    # 당기순이익 / 자기자본 * 100 -확인
+                    try:
+                        net_profit = select_net_profit()  # 당기순이익 셀렉터 함수 호출
+                        net_profit = net_profit.get(quarter_list[position])  # 당기순이익
+
+                        result = net_profit / equity * 100
+                        return round(result, 3)
+                    except:
+                        return 0.0
+
+                # 총자산회전율 -확인
+                def asset_turnover():
+                    # 영업수익(매출) / 자산총계 * 100
+                    try:
+                        result = revenue / assets * 100
+                        return round(result, 3)
+                    except:
+                        return 0.0
+
+                result_dict = {
+                    'year': quarter_year,
+                    'comp_nm': comp_nm,
+                    'code': code,
+                    'state_type': state_rp_type,
+                    'sec_code': sec_code,
+                    'sec_nm': sec_nm,
+                    'mk': mk,
+                    'current_asset': current_asset_cal(),
+                    'total_sales': total_sales_cal(),
+                    'current_ratio': current_ratio(),
+                    'debt_ratio': debt_ratio(),
+                    'quick_ratio': quick_ratio(),
+                    'bis': bis(),
+                    'fin_badness': fin_badness(),
+                    'sales_growth_rate': sales_growth_rate().get(quarter_year),
+                    'asset_growth_rate': asset_growth_rate().get(quarter_year),
+                    'net_profit_growth_rate': net_profit_growth_rate().get(quarter_year),
+                    'roa': roa(),
+                    'roe': roe(),
+                    'gross_margin': gross_margin(),
+                    'asset_turnover': asset_turnover()
+                }
+            return result_dict
+        except:
+            pass
+            # logging.error(traceback.format_exc())
+
+    def update_ratio(self):
+        try:
+
+            return
+        except:
+            return
 
 
 if __name__ == '__main__':
     execution = StatesUpdater()
-
-    # execution.read_state_csv('000020')
-    # execution.read_income_csv()

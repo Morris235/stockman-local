@@ -30,12 +30,10 @@ class StateReader:
 
 
     def __init__(self):
-        # global cash_txt, flu_txt
-
         print('Company State Mining Start')
         # krx 공시 전체 기업 코드 조회용
         krx = self.read_krx_code()
-        krx_count = 20
+        krx_count = 30
 
         # 디렉토리/파일 이름 리스트 : 연도별 보고서 순환용
         txt_dic = self.read_state_report_file()
@@ -47,13 +45,6 @@ class StateReader:
 
         self.fin_txt = ''
         self.income_txt = ''
-
-        # 항목값의 분기
-        self.curr_year = 'curr_year'  # 당기
-        self.last_year = 'last_year'  # 전기
-        self.year_before = 'year_before'  # 전전기
-
-
 
 
         # 전체 디렉토리 체크및 생성 순회
@@ -69,7 +60,6 @@ class StateReader:
                 os.makedirs(f'refined_state_files/state_year/{str(self.year_list[position])}')
                 self.fin_txt = self.fin_txt_list[position]
                 self.income_txt = self.income_txt_list[position]
-
 
                 # 전체 krx 기업코드 순회
                 for idx in range(krx_count):
@@ -114,7 +104,7 @@ class StateReader:
 
 
 
-
+    # 각 보고서(재무,손익,현금,자본)의 제목을 읽고 리스트로 리턴
     @staticmethod
     def read_state_report_file():
         # 재무상태표 2개, 손익계산서 4개, 현금흐름표 2개, 자본변동표 2개
@@ -159,7 +149,7 @@ class StateReader:
             # 데이터 가공 처리
             unnamed_position = df.columns[df.columns.str.contains('Unnamed: ')]  # Unnamed: num 제거 (공백 columns)
             df.drop(columns=unnamed_position, axis=0, inplace=True)
-            df.drop(columns=["결산월", "보고서종류", "통화"], axis=1, inplace=True)
+            df.drop(columns=["결산월", "보고서종류", "통화", "결산기준일"], axis=1, inplace=True)
             # df.dropna(thresh=3, inplace=True)  # 결측치 포함된 행 자체가 제거된다, 3개 이상이 결측치라면 행 삭제
             df.fillna(0, inplace=True)  # 결측치를 전부 0으로 바꾼다.
 
@@ -167,7 +157,7 @@ class StateReader:
             # 필요없는 칼럼 : 결산월, 보고서종류, 통화
             df = df.rename(
                 {'재무제표종류': 'type', '종목코드': 'code', '회사명': 'comp_name', '시장구분': 'mk', '업종': 'sec', '업종명': 'sec_nm',
-                 '결산기준일': 'set_base_date', '항목코드': 'account_id', '항목명': 'account_nm', '당기': 'curr_year',
+                 '항목코드': 'account_id', '항목명': 'account_nm', '당기': 'curr_year',
                  '전기': 'last_year', '전전기': 'year_before'}, axis='columns')
 
             # 종목 코드를 기준으로 각 항목 데이터 뽑아내기, Empty DataFrame 일 경우 예외처리
@@ -213,14 +203,15 @@ class StateReader:
             coverage_link_df = self.convert_dataframe(coverage_link_dir, code)
             normal_link_df = self.convert_dataframe(normal_link_dir, code)
 
-            # 일반 손익계산서
+            # 별도 손익계산서
             coverage_dir = f'state_all_report/{year_dir}/year/{self.income_txt[2]}'
             normal_dir = f'state_all_report/{year_dir}/year/{self.income_txt[0]}'
             coverage_df = self.convert_dataframe(coverage_dir, code)
             normal_df = self.convert_dataframe(normal_dir, code)
 
             # 값을 확인하고 정확도 최적화 하기
-            concat_report = pd.concat([coverage_df, normal_df, coverage_link_df, normal_link_df])
+            concat_report = pd.concat([normal_link_df, coverage_link_df, normal_df, coverage_df], keys=['link', 'cov_link', 'sep', 'cov_sep'])
+            # print(concat_report)
             if len(concat_report) > 0:
                 return concat_report
             else:
@@ -237,16 +228,16 @@ class StateReader:
     # 연결/별도 재무상태 보고서 결합
     def concat_fin_state(self, code: str, year_dir: str):
         try:
+            # 연결 별도를 섞더라도 필터링 할떄 우선순위를 둬서 가져온다면?
             # 연결 재무상태 보고서
             link_dir = f'state_all_report/{year_dir}/year/{self.fin_txt[1]}'
             fin_state_link_df = self.convert_dataframe(link_dir, code)
 
-            # 일반 재무상태 보고서
+            # 별도 재무상태 보고서
             normal_dir = f'state_all_report/{year_dir}/year/{self.fin_txt[0]}'
             fin_state_df = self.convert_dataframe(normal_dir, code)
 
-            concat_report = pd.concat([fin_state_link_df, fin_state_df])
-
+            concat_report = pd.concat([fin_state_link_df, fin_state_df], keys=['link', 'sep'])
             if len(concat_report) > 0:
                 return concat_report
             else:
@@ -265,9 +256,8 @@ class StateReader:
         try:
             comp_state = self.concat_income_state(code, year_dir)
 
-            rp_type = comp_state['type'].values[0]  # 보고서 타입
+
             company_name = comp_state['comp_name'].values[0]  # 회사명
-            set_base_date = comp_state['set_base_date'].values[0]  # 결산기준일
             sec = comp_state['sec'].values[0]  # 업종코드
             sec_nm = comp_state['sec_nm'].values[0]  # 업종명
             mk = comp_state['mk'].values[0]  # 시장구분
@@ -276,28 +266,27 @@ class StateReader:
             success_log_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_02_income_success.txt'
             filed_log_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_06_income_filed.txt'
 
-            curr_year = self.curr_year  # 당기
-            last_year = self.last_year  # 전기
-            year_before = self.year_before  # 전전기
-
-
-
-
             # 항목 필터링 함수
             def income_filtering(query_str: str, comp_code: str, target_nm: str, comp_nm: str):
                 # global key, account_nm
+                global rp_type
                 try:
-                    # key : 해당 항목을 필터링하는데 필요한 account_id, 쿼리문으로 특정, 쿼리문을 사용하면 프로그램 전체 처리속도가 떨어진다.
+                    # key : 해당 항목을 필터링하는데 필요한 account_id, 쿼리항목은 많을수록 처리 성능이 떨어진다.
                     # 각 칼럼을 기준으로 필터링된 첫번째 값을 구한다. (내가 지금 생각해봐도 기적의 논리로 작동한다.)
-                    key = comp_state.query(query_str)['account_id'].values[0]
+                    key = comp_state.query(query_str)['account_id'].values[0]  # values[n] : 0~n번까지 전부 같은 값의 반복이다.
                     account_nm = comp_state.query(query_str)['account_nm'].values[0]
 
-                    # 당기, 전기, 전전기 항목 금액 : nan에 대한 예외처리 필요
-                    curr_val = comp_state.loc[comp_state['account_id'].isin([key]), curr_year].values[0].replace(",",
+                    # 읽을때부터 각 타입별로 분류해야 하지 않나? (우선순위 정하고 그 순서 대로 있는지 없는지 체크하고 있으면 리턴하고고)
+                    # 애초에 concat으로 순서대로 읽는다는게 논리가 애매한 부분이 있음(쿼리처리를 순서대로 하게 되는건가?)
+                    # concat은 일렬로 늘여뜨리는건 맞아
+                    # 당기, 전기, 전전기 항목 금액 : nan 에 대한 예외처리 필요
+                    rp_type = comp_state.loc[comp_state['account_id'].isin([key]), 'type'].values[0]
+
+                    curr_val = comp_state.loc[comp_state['account_id'].isin([key]), 'curr_year'].values[0].replace(",",
                                                                                                                  "")
-                    last_val = comp_state.loc[comp_state['account_id'].isin([key]), last_year].values[0].replace(",",
+                    last_val = comp_state.loc[comp_state['account_id'].isin([key]), 'last_year'].values[0].replace(",",
                                                                                                                  "")
-                    before_val = comp_state.loc[comp_state['account_id'].isin([key]), year_before].values[0].replace(
+                    before_val = comp_state.loc[comp_state['account_id'].isin([key]), 'year_before'].values[0].replace(
                         ",", "")
 
                     curr_val = int(curr_val)
@@ -309,7 +298,6 @@ class StateReader:
                                     'type': rp_type,
                                     'account_nm': account_nm,
                                     'target_nm': target_nm,
-                                    'set_base_date': set_base_date,
                                     'sec': sec,
                                     'sec_nm': sec_nm,
                                     'mk': mk,
@@ -322,7 +310,7 @@ class StateReader:
                         # 로그작성 필드네임은 기준이 되는 dict의 필드네임수, 이름과 일치해야 제대로 작성됨(이름이 틀릴경우 에러 발생)
                         writer = csv.DictWriter(file_success_log,
                                                 fieldnames=['comp_nm', 'code', 'type', 'account_nm', 'target_nm',
-                                                            'set_base_date', 'sec', 'sec_nm', 'mk',
+                                                            'sec', 'sec_nm', 'mk',
                                                             'curr_year', 'last_year', 'year_before'])
                         writer.writerow(success_dict)
                     return success_dict
@@ -342,7 +330,7 @@ class StateReader:
                     return filed_dict
 
             # 각 항목 코드의 요구사항 : 필터링 키값, 항목값 취득 실패시 0과 해당 기업코드 리턴, 정규화된 항목명 리턴
-            # 매출액
+            # 매출액(영업수익)
             def revenue():
                 query_str = "(account_id == 'ifrs-full_Revenue')" \
                             " or (account_id == 'ifrs_Revenue')" \
@@ -351,6 +339,14 @@ class StateReader:
                             " or (account_nm == '매출액')" \
                             " or (account_nm == '영업수익')"
                 return income_filtering(query_str, code, '매출액', company_name)
+
+            # 매출총이익
+            def gross_profit():
+                query_str = "(account_id == 'ifrs-full_GrossProfit')" \
+                            " or (account_id == 'ifrs_GrossProfit')" \
+                            " or (account_nm == '매출총이익')" \
+                            " or (account_nm == '매출총이익(손실)')"
+                return income_filtering(query_str, code, '매출총이익', company_name)
 
             # 당기순이익 or 당기순이익(손실)
             def net_income():
@@ -365,16 +361,18 @@ class StateReader:
             def basic_earnings_loss_per_share():
                 query_str = "(account_id == 'ifrs-full_BasicEarningsLossPerShareFromContinuingOperations')" \
                             " or (account_id == 'ifrs_BasicEarningsLossPerShareFromContinuingOperations')" \
-                            " or (account_id == 'ifrs_EarningsPerShareAbstract')" \
                             " or (account_id == 'ifrs-full_BasicEarningsLossPerShare')" \
-                            " or (account_nm == '보통주 기본및희석주당손익 (단위 : 원)') " \
-                            " or (account_nm == '보통주의 기본주당순이익') " \
-                            " or (account_nm == '보통주기본주당순이익') " \
-                            " or (account_nm == '주당손익') " \
+                            " or (account_id == 'ifrs_BasicEarningsLossPerShare')" \
+                            " or (account_nm == '보통주 주당이익(손실)')" \
+                            " or (account_nm == '보통주 기본및희석주당손익 (단위 : 원)')" \
+                            " or (account_nm == '보통주의 기본주당순이익')" \
+                            " or (account_nm == '보통주기본주당순이익')" \
+                            " or (account_nm == '주당손익')" \
                             " or (account_nm == '주당순이익')" \
-                            " or (account_nm == '주당이익') " \
-                            " or (account_nm == '기본주당이익') " \
-                            " or (account_nm == '기본주당손익') " \
+                            " or (account_nm == '주당이익')" \
+                            " or (account_nm == '기본주당이익')" \
+                            " or (account_nm == '기본주당손익')" \
+                            " or (account_nm == '기본주당이익(손실)')" \
                             " or (account_nm == '기본주당이익 및 희석주당이익')" \
                             " or (account_nm == '1. 기본주당순이익(손실)')" \
                             " or (account_nm == '기본 및 희석주당이익')"
@@ -395,10 +393,17 @@ class StateReader:
             def finance_cost():
                 query_str = "(account_id == 'ifrs-full_FinanceCosts')" \
                             " or (account_id == 'ifrs_FinanceCosts')" \
-                            " or (account_nm == '금융비용') " \
+                            " or (account_nm == '금융비용')" \
                             " or (account_nm == '금융원가')" \
                             " or (account_nm == '2. 금융비용')"
                 return income_filtering(query_str, code, '금융비용', company_name)
+
+            # 영업이익(손실)
+            # def operating_profit():
+            #     query_str = "(account_id == 'dart_OperatingIncomeLoss')" \
+            #                 "or (account_nm == '영업이익(손실)')" \
+            #                 "or (account_nm == '영업이익')"
+            #     return income_filtering(query_str, code, '영업이익', company_name)
 
             # 영업비용
             def cost_of_sales():
@@ -434,6 +439,27 @@ class StateReader:
                             " or (account_nm == '법인세비용')"
                 return income_filtering(query_str, code, '법인세비용', company_name)
 
+            # 지배기업의 소유주지분 (연결의 당기순이익)
+            def ifrs_owners_of_parent():
+                query_str = "(account_id == 'ifrs-full_ProfitLossAttributableToOwnersOfParent')" \
+                            " or (account_id == 'ifrs_ProfitLossAttributableToOwnersOfParent')" \
+                            " or (account_nm == '지배기업의 소유주지분')" \
+                            " or (account_nm == '지배기업의 소유주')" \
+                            " or (account_nm == '지배기업의 소유주에게 귀속되는 당기순이익(손실)')" \
+                            " or (account_nm == '지배기업 소유주지분 당기순이익(손실)')" \
+                            " or (account_nm == '지배회사의 소유주지분')"
+                return income_filtering(query_str, code, '지배기업지분', company_name)
+
+            # 비지배지분 , 비지배지분에 귀속되는 당기순이익(손실), 비지배지분 당기순이익(손실) 비지배주주지분 ifrs_ProfitLossAttributableToNoncontrollingInterests
+            def ifrs_non_controlling_interests():
+                query_str = "(account_id == 'ifrs_ProfitLossAttributableToNoncontrollingInterests')" \
+                            " or (account_id == 'ifrs-full_ProfitLossAttributableToNoncontrollingInterests')" \
+                            " or (account_nm == '비지배지분')" \
+                            " or (account_nm == '비지배지분에 귀속되는 당기순이익(손실)')" \
+                            " or (account_nm == '비지배지분 당기순이익(손실)')" \
+                            " or (account_nm == '비지배주주지분')"
+                return income_filtering(query_str, code, '비지배기업지분', company_name)
+
             # 필터링 함수를 실핼하기 위한 호출
             revenue()
             net_income()
@@ -444,6 +470,10 @@ class StateReader:
             non_oper_income()
             non_oper_expenses()
             corporate_tax()
+            ifrs_owners_of_parent()
+            ifrs_non_controlling_interests()
+            gross_profit()
+            # operating_profit()
 
             # 항목 취득에 성공한 코드리스트 기록
         except:
@@ -466,21 +496,14 @@ class StateReader:
             # 뭐 하나만 에러가 나서 잘못되도 예외처리로 보고서에 코드가 있어도 없다고 해버리는 문제가 있다.
             rp_type = comp_state['type'].values[0]  # 보고서 타입
             company_name = comp_state['comp_name'].values[0]  # 회사명
-            set_base_date = comp_state['set_base_date'].values[0]  # 결산기준일
+            # set_base_date = comp_state['set_base_date'].values[0]  # 결산기준일
             sec = comp_state['sec'].values[0]  # 업종코드
             sec_nm = comp_state['sec_nm'].values[0]  # 업종명
             mk = comp_state['mk'].values[0]  # 시장구분
 
-            curr_year = self.curr_year  # 당기
-            last_year = self.last_year  # 전기
-            year_before = self.year_before  # 전전기
-
             success_log_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_01_statements_success.txt'
             filed_log_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_06_statements_filed.txt'
             include_coed_list_dir = f'refined_state_files/state_year/{year_dir}/{year_dir}_05_state_code_list.txt'
-
-
-
 
             # 항목 필터링 함수
             def fin_filtering(query_str: str, comp_code: str, target_nm: str, comp_nm: str):
@@ -489,11 +512,11 @@ class StateReader:
                     key = comp_state.query(query_str)['account_id'].values[0]
                     account_nm = comp_state.query(query_str)['account_nm'].values[0]
 
-                    curr_val = comp_state.loc[comp_state['account_id'].isin([key]), curr_year].values[0].replace(",",
+                    curr_val = comp_state.loc[comp_state['account_id'].isin([key]), 'curr_year'].values[0].replace(",",
                                                                                                                  "")
-                    last_val = comp_state.loc[comp_state['account_id'].isin([key]), last_year].values[0].replace(",",
+                    last_val = comp_state.loc[comp_state['account_id'].isin([key]), 'last_year'].values[0].replace(",",
                                                                                                                  "")
-                    before_val = comp_state.loc[comp_state['account_id'].isin([key]), year_before].values[0].replace(
+                    before_val = comp_state.loc[comp_state['account_id'].isin([key]), 'year_before'].values[0].replace(
                         ",", "")
 
                     curr_val = int(curr_val)
@@ -505,7 +528,6 @@ class StateReader:
                                     'type': rp_type,
                                     'account_nm': account_nm,
                                     'target_nm': target_nm,
-                                    'set_base_date': set_base_date,
                                     'sec': sec,
                                     'sec_nm': sec_nm,
                                     'mk': mk,
@@ -518,7 +540,7 @@ class StateReader:
                         # 로그작성 필드네임은 기준이 되는 dict의 필드네임수, 이름과 일치해야 제대로 작성됨(이름이 틀릴경우 에러 발생)
                         writer = csv.DictWriter(file_success_log,
                                                 fieldnames=['comp_nm', 'code', 'type', 'account_nm', 'target_nm',
-                                                            'set_base_date', 'sec', 'sec_nm', 'mk',
+                                                            'sec', 'sec_nm', 'mk',
                                                             'curr_year', 'last_year', 'year_before'])
                         writer.writerow(success_dict)
                     return success_dict
@@ -543,8 +565,7 @@ class StateReader:
                 query_str = "(account_id == 'ifrs-full_Equity') " \
                             " or (account_id == 'ifrs_Equity')" \
                             " or (account_nm == '자본총계')" \
-                            " or (account_nm == '자본 총계')" \
-                            " or (account_nm == '자본금')"
+                            " or (account_nm == '자본 총계')"
                 return fin_filtering(query_str, code, '자본총계', company_name)
 
             # 부채총계
