@@ -1,3 +1,5 @@
+import datetime
+
 from django.utils import timezone
 import time
 
@@ -38,66 +40,74 @@ class DailyPrice(models.Model):
 
 class CompanyState(models.Model):
     # 기업코드
-    code = models.CharField(primary_key=True, max_length=10,unique=True)
-    # 기업명
-    company_nm = models.CharField(max_length=20)
-    # 보고서 날짜
-    set_base_date = models.CharField(max_length=20)
-    # 업데이트 날짜
-    update = models.DateField(default=timezone.now())
+    code = models.CharField(primary_key=True, max_length=20, unique=True)
+    # 연도
+    year = models.SmallIntegerField(blank=False, null=False)
     # 업종 코드
-    sec = models.CharField(max_length=10)
+    sec = models.CharField(max_length=10, blank=False, null=False)
     # 업종명
-    sec_nm = models.CharField(max_length=30)
-    # 시장구분
-    mk = models.CharField(max_length=20)
+    sec_nm = models.CharField(max_length=50, blank=False, null=False)
+    # 기업명
+    company_nm = models.CharField(max_length=20, blank=False, null=False)
     # 보고서 타입
-    rp_type = models.CharField(max_length=30)
+    rp_type = models.CharField(max_length=30, blank=False, null=False)
+    # 시장구분
+    mk = models.CharField(max_length=40, blank=False, null=False)
+    # 업데이트 날짜
+    last_update = models.DateTimeField()
+
+
+    # <금액>
+    # 유동자산
+    current_asset = models.BigIntegerField(blank=True, null=True)
+    # 매출총액
+    total_sales = models.BigIntegerField(blank=True, null=True)
+    # 당기순이익
+    net_profit = models.BigIntegerField(blank=True, null=True)
+    # 영업이익
+    operating_profit = models.BigIntegerField(blank=True, null=True)
 
     # <안정성 지표>
     # 유동비율
-    current_ratio = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    current_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 부채비율
-    debt_ratio = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    debt_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 당좌비율
-    quick_ratio = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    quick_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 자기자본율
-    bis = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
-    # 재무불량도
-    fin_badness = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    bis = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
 
     # <성장성 지표>
     # 매출액 증가율
-    sales_growth_rate = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    sales_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 총자산증가율 max_digits=7, decimal_places=3 -> 1111.234
-    asset_growth_rate = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    asset_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 순이익증가율
-    net_profit_growth_rate = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    net_profit_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
 
     # <수익성 지표>
     # 주당순이익
-    eps = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    eps = models.IntegerField(blank=True, null=True)
     # 총자산이익률
-    roa = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    roa = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 매출액 총이익률
-    gross_margin = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    gross_margin = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
 
     # <기업가치 관련 지수>
     # 주가 순자산배율
-    pbr = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    pbr = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 주당 수익비율
-    per = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    per = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 자기자본이익률
-    roe = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    roe = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    # 주당순자산
+    bps = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
     # 총자산회전율
-    asset_turnover = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=3)
+    asset_turnover = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
 
     class Meta:
         managed = True
         db_table = 'company_state'
-        constraints = [
-            models.UniqueConstraint(fields=['code', 'set_base_date'], name='company code')
-        ]
 
 
 
