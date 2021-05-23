@@ -7,9 +7,10 @@ import ReactDOM from 'react-dom';
 import Routing from './apps/Router';
 
 // material-ui 
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { theme } from './config';
+// import CssBaseline from '@material-ui/core/CssBaseline';
+// import { ThemeProvider } from '@material-ui/core/styles';
+// import { theme } from './config';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 // react-redux
 import CreateStore from './store/index';
@@ -31,10 +32,7 @@ const store = CreateStore(rootReducer, devTools);  // reducer를 바탕으로 st
     <React.StrictMode>
       <BrowserRouter>
         <Provider store={store}>
-         <ThemeProvider theme={theme}>
              <Routing />
-             <CssBaseline />
-          </ThemeProvider>
         </Provider>  
       </BrowserRouter>
     </React.StrictMode>,

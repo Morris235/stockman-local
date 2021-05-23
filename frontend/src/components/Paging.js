@@ -128,7 +128,7 @@ const classes = useStyles();
         // css 적용: className={classes.primary}
         return (
             <div className={classes.div}>
-                <button id='asd' onClick={targetTest}>target test</button>
+                {/* <button id='asd' onClick={targetTest}>target test</button> */}
                 <Button className={classes.startEndBtn} onClick={() => OnStartEndClicked(1)}>처음</Button>
                 {/* <button id='sss'>test button</button> */}
                 {

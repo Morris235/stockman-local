@@ -96,9 +96,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     }
 # }
 
+# 페이징을 url 마다 다른 값을 적용할순 없을까?
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 100,
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ]

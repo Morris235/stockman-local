@@ -23,7 +23,7 @@ logging.basicConfig(level=logging.ERROR)
 # 로그 기록시 기존 파일이 있다면 그 파일을 덮어씌우고 작성하거나 파일이름을 날짜로 구분하여 새로 만들도록 해야한다.
 # db 입력시 날짜 칼럼 구분은 set_base_date 를 기준으로 계산한다.
 # 디렉토리 생성, 구조화 설계 작업, 각 보고서 순회 방법 -> 2015~2020이상, year/2020_사업보고서_n_rp_nm_date.txt
-class StateReader:
+class StatesMining:
 
 
 
@@ -622,5 +622,4 @@ class StateReader:
 
 
 if __name__ == '__main__':
-    # 실행할 클래스 객체화
-    execution = StateReader()
+    execution = StatesMining()

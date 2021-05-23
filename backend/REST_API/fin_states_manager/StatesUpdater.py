@@ -1,10 +1,10 @@
 from datetime import datetime
-import pymysql
 import os
 import traceback
 import pandas as pd
 import logging
 import csv
+from DB_Connect import conn
 
 # 콘솔에 판다스 결과값 최대 표시 설정
 pd.set_option('display.width', 100000)
@@ -22,8 +22,6 @@ class StatesUpdater:
 
     def __init__(self):
         print('Company State Update Start')
-        self.conn = pymysql.connect(host='localhost', port=3306, db='STOCKS', user='root', passwd='Lsm11875**',
-                                    charset='utf8', autocommit=True)
 
         # 디렉토리/파일 이름 리스트 : 연도별 보고서 순환용
         state_year_dir = 'refined_state_files/state_year'
@@ -498,7 +496,7 @@ class StatesUpdater:
         except:
             return
 
-    # 비율 계산된 dict 리턴
+    #  계산된 비율 dict 리턴
     def cal_ratio(self, code, year, quarter_year, quarter_str_list):
         global result_dict
         try:
@@ -814,7 +812,7 @@ class StatesUpdater:
                 roe = result.get('roe')
                 asset_turnover = result.get('asset_turnover')
 
-                with self.conn.cursor() as curs:
+                with conn.cursor() as curs:
                     # pbr, per, bps 는 연간 정기 업데이트에서 제외 : 수시로 업데이트 해야하기 때문에 StatesFrequencyUpdater 클래스에서 처리
                     # update 는 업데이트 날짜에 맞쳐서 자동생성
                     sql = f"REPLACE INTO company_state (code, year, sec, sec_nm, company_nm, rp_type, mk, last_update, " \
@@ -830,7 +828,7 @@ class StatesUpdater:
                           f"'{eps}', '{roa}', '{gross_margin}', " \
                           f"'{roe}', '{asset_turnover}')"
                     curs.execute(sql)
-                    self.conn.commit()
+                    conn.commit()
         except:
             logging.error(traceback.format_exc())
             return

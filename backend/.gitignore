@@ -40,6 +40,7 @@ wheels/
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
+fin_states_manager/DB_Connect.py
 .installed.cfg
 *.egg
 MANIFEST
