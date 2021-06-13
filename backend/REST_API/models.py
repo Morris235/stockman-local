@@ -54,58 +54,63 @@ class CompanyState(models.Model):
     # 시장구분
     mk = models.CharField(max_length=40, blank=False, null=False)
     # 업데이트 날짜
-    last_update = models.DateTimeField()
+    last_update = models.DateField()
 
 
-    # <금액>
+    # <기본 재무 정부>
     # 유동자산
     current_asset = models.BigIntegerField(blank=True, null=True)
-    # 매출총액
-    total_sales = models.BigIntegerField(blank=True, null=True)
-    # 당기순이익
+    # 매출총이익
+    gross_profit = models.BigIntegerField(blank=True, null=True)
+    # 당기순이익 (or 지배기업)
     net_profit = models.BigIntegerField(blank=True, null=True)
     # 영업이익
     operating_profit = models.BigIntegerField(blank=True, null=True)
     # 부채총계
-    # liabilities = models.BigIntegerField(blank=True, null=True)
+    liabilities = models.BigIntegerField(blank=True, null=True)
+    # 시가총액 (해당 연도의 시가총액)
+    mk_cap = models.BigIntegerField(blank=True, null=True)
+    # 유통주식수 합계
+    number_of_stocks = models.BigIntegerField(blank=True, null=True)
 
     # <안정성 지표>
     # 유동비율
-    current_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    current_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 부채비율
-    debt_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    debt_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 당좌비율
-    quick_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    quick_ratio = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 자기자본율
-    bis = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    bis = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
 
     # <성장성 지표>
     # 매출액 증가율
-    sales_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    sales_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 총자산증가율 max_digits=7, decimal_places=3 -> 1111.234
-    asset_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    asset_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 순이익증가율
-    net_profit_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    net_profit_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
 
     # <수익성 지표>
     # 주당순이익
     eps = models.IntegerField(blank=True, null=True)
     # 총자산이익률
-    roa = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    roa = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 매출액 총이익률
-    gross_margin = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    gross_margin = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
+
 
     # <기업가치 관련 지수>
     # 주가 순자산배율
-    pbr = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    pbr = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 주당 수익비율
-    per = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    per = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 자기자본이익률
-    roe = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
-    # 주당순자산
-    bps = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    roe = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
+    # 주당순자산비율
+    bps = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 총자산회전율
-    asset_turnover = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=3)
+    asset_turnover = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
 
     class Meta:
         managed = True
@@ -113,7 +118,27 @@ class CompanyState(models.Model):
 
 
 
+class MarketCap(models.Model):
+    # 기업코드
+    code = models.CharField(primary_key=True, max_length=20, unique=True)
+    # 업종 코드
+    sec = models.CharField(max_length=10, blank=False, null=False)
+    # 업종명
+    sec_nm = models.CharField(max_length=50, blank=False, null=False)
+    # 기업명
+    company_nm = models.CharField(max_length=20, blank=False, null=False)
+    # 시장구분
+    mk = models.CharField(max_length=40, blank=False, null=False)
+    # 시가총액
+    mk_cap = models.BigIntegerField(blank=True, null=True)
+    # 총주식수
+    number_of_stocks = models.BigIntegerField(blank=True, null=True)
+    # 업데이트 날짜
+    last_update = models.DateField()
 
+    class Meta:
+        managed = True
+        db_table = 'market_cap'
 
 
 

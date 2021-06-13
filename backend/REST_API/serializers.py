@@ -15,9 +15,9 @@ class DailyPriceSerializer(serializers.HyperlinkedModelSerializer):
 class CompanyStateSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CompanyState
-        fields = ('code', 'year', 'sec', 'sec_nm', 'company_nm', 'rp_type',
-                  'mk', 'last_update', 'current_asset', 'total_sales', 'net_profit',
-                  'operating_profit', 'current_ratio', 'debt_ratio',
-                  'quick_ratio', 'bis', 'sales_growth_rate',
-                  'asset_growth_rate', 'net_profit_growth_rate', 'eps', 'roa', 'gross_margin',
+        fields = ('code', 'year', 'sec', 'sec_nm', 'company_nm', 'rp_type', 'mk', 'last_update',
+                  'current_asset', 'gross_profit', 'net_profit', 'operating_profit', 'liabilities', 'mk_cap', 'number_of_stocks', 'fair_price',
+                  'current_ratio', 'debt_ratio', 'quick_ratio', 'bis',
+                  'sales_growth_rate', 'asset_growth_rate', 'net_profit_growth_rate',
+                  'eps', 'roa', 'gross_margin',
                   'pbr', 'per', 'roe', 'bps', 'asset_turnover')

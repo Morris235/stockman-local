@@ -22,9 +22,9 @@ export default function Home () {
             const response = await axios.get(url);
 
             console.log(response.data.results.map(comps => {return comps.year}));
-            if (response.data.results.map(comps => {return comps.year}) === '2020'){
-                console.log('ddd');
-            }
+            // if (response.data.results.map(comps => {return comps.year}) === '2020'){
+            //     console.log('ddd');
+            // }
 
             setCompPosts(response.data.results);
         } catch(e) {
@@ -62,7 +62,6 @@ export default function Home () {
                         <th>성장성</th>
                         <th>가치성</th>
                         <th>수익성</th>
-                        <th>분식 이력</th>
                         <th>즐겨찾기</th>
                     </tr>
                 </thead>
@@ -79,7 +78,6 @@ export default function Home () {
                         <td>양호</td>
                         <td>우수</td>
                         <td>위험</td>
-                        <td>유</td>
                         <td>*</td>
                         </tr>);
                 })}

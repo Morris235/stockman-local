@@ -19,7 +19,7 @@ export default function Pagination () {
         }), shallowEqual);
 
     const dispatch = useDispatch();
-    const [postsPerPage] = useState(10); 
+    const [postsPerPage] = useState(100);  // 한페이지에 표시하는 게시물수 -> 백엔드에서 자동으로 참조받을수 있어야함
     const [currentPageNumber, setCurrentPageNumber] = useState(1); // 현재 사용자가 보고 있는 페이지 : 1번
     const [target, setTarget] = useState();
     const pageRef = useRef(0);
