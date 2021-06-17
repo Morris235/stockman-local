@@ -4,6 +4,7 @@ import pandas as pd
 from REST_API.update_manager.DB.Connector import conn
 from datetime import datetime
 import logging
+from multiprocessing import Pool
 
 import time
 
@@ -18,29 +19,37 @@ logging.basicConfig(level=logging.ERROR)
 
 # 전 종목 2021년 1월 8일 부터 업데이트 시작 (code, date, open, high, low, close, diff, volume)
 # IP 차단을 대비한 로직이 필요
+# 업데이트 못한 날짜 부터 차례로 업데이트 하는 로직으로 변경하기
 class DailyUpdater:
+
     def __init__(self):
         print('Stocks price Updating')
         code_list = self.read_krx_code()
         code_list_len = len(code_list)
         progress_count = 0
 
+        pool = Pool(processes=4)
+
         MODE_TEST = 'MODE_TEST'  # 테스트용 쿼리
         MODE_EXECUTE = 'MODE_EXECUTE'  # 자동화 가장 빠른 쿼리
         MODE_SUB_EXECUTE = 'MODE_SUB_EXECUTE'  # 자동화 조금 느리지만 정확한 서브쿼리
 
+        # 코드순회
         for code in code_list:
             progress_count += 1
+            # 마지막 업데이트 날짜 조회
 
-            if progress_count % 50 != 0:
+            if progress_count % 100 != 0:
                 tmnow = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 print(
                     f"[{tmnow}] {progress_count :04d} / {code_list_len} ({round((progress_count / code_list_len) * 100, 2)}%) {code} (REPLACE UPDATE)")
-                self.update_stock_price(code, MODE_TEST)
+                # pool.map(func=self.test_stock_price, iterable=date_list)
+                self.update_stock_price(code)
             else:
                 tmnow = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 print(
                     f"[{tmnow}] {progress_count :04d} / {code_list_len} ({round((progress_count / code_list_len) * 100, 2)}%) {code} (REPLACE UPDATE) 1분 스크랩핑 대기")
+                # pool.map(func=self.test_stock_price, iterable=date_list)
                 self.update_stock_price(code)
                 time.sleep(61)
 
@@ -60,88 +69,127 @@ class DailyUpdater:
         return krx.code
 
     # 주가 데이터 취득 함수
-    def stock_price(self, code, MODE):
+    def update_stock_price(self, code):
         global select_sql, yesterday_close_price
         try:
+            # 해당 종목의 전체 날짜를 비교해야하기 때문에 행이 길어질수록 느려질수 있다.
             # 현재 년도, 월, 일을 기준으로 업데이트
+            # 당일의 종가를 구하는 코드
             # 스케쥴러 등록, 주말, 공휴일을 제외한 당일날짜 없데이트(전일비 계산을 위해 2일치를 불러야함)
             year = datetime.today().year
             month = datetime.today().month
             date = datetime.today().day
 
-            start = f"{year}-{month}-{date}"
-            end = f"{year}-{month}-{date}"
+            # 'DB'로부터 전날의 종가를 구하는 코드. DB에 없는 날짜를 입력하면 에러 발생
+            # 테스트용 쿼리
+            # diff를 계산할 날짜의 전날짜의 행의 date를 입력해야 한다.
+            # ex) 업데이트 해야하는 날짜 (2021-06-02): 종가 (1000), 그 전날의 date (2021-06-01): 종가 (900), 1000 - 900 = 2021-06-02 행에 업데이트되는 diff값 (100)
+            # if MODE == 'MODE_TEST':
+            #     select_sql = f"SELECT close FROM daily_price WHERE code={code} AND date='2021-06-14';"  # 하드코딩된 날짜를 사용한 쿼리
+            #     df = pd.read_sql(select_sql, conn)
+            #     yesterday_close_price = df.iloc[0].close  # 테스트를 위한 하드코딩 코드
+            #
+            # #  가장 빠른 쿼리 : 자동화에 사용
+            # elif MODE == 'MODE_EXECUTE':
+            #     select_sql = f"SELECT close FROM daily_price WHERE code={code};"  # 해당 종목의 전체 종가를 가져오는 쿼리, 지금으로썬 가장 빠름
+            #     df = pd.read_sql(select_sql, conn)
+            #     yesterday_close_price = df.iloc[-1].close  # DB에 저장된 전일 종가 데이터 취득.
+            #
+            # #  가장 정확하지만 느린 쿼리
+            # elif MODE == 'MODE_SUB_EXECUTE':
+            #     select_sql = f"SELECT close FROM daily_price WHERE code={code} AND date=(SELECT MAX(date) FROM daily_price);"  # 서브쿼리 사용. 행이 길어질수록 느림
+            #     df = pd.read_sql(select_sql, conn)
+            #     yesterday_close_price = df.iloc[0].close  # 서브쿼리를 사용한 코드
+
+
+            # 행에 들어가는 date값
+            # MODE_TEST 를 할 때 start 값과 쿼리의 날짜 값은 하루 차이여야 한다.
+            # start = f"{year}-{month}-{date}"
+            # end = start
+
+            get_date_sql = f"SELECT date, close FROM daily_price WHERE code={code};"
+            df = pd.read_sql(get_date_sql, conn)
+
+            today = datetime.today()
+            last_update = str(df.iloc[-1].date)
+
+            last_close_price = df.iloc[-1].close
+
+            # 마지막 업데이트 날짜와 현재까지의 날짜 리스트 만들기
+            date_list = pd.date_range(last_update, today).strftime('%Y-%m-%d').drop(last_update)
+
 
             # 당일 연월일 기준 (스케쥴러에 공휴일을 제외한 날짜로 등록해야함)
-            result_df = fdr.DataReader(code, start, end)
+            result_df = fdr.DataReader(code, date_list[0], date_list[-1])
+            print(result_df.Close)
 
-            # 해당 종목의 전체 날짜를 비교해야하기 때문에 로우가 길어질수록 느려질수 있다.
-            # 차라리 해당 종목의 모든 종가를 가져와서 데이터프레임으로 마지막 데이터를 취득하는게 더 빠를수 있다.
-            # 매번 마지막 date를 기준으로 diff를 계산하기 때문에 여러번 테스트할 수 없음. sql 문을 하드코딩하면 여러번 테스트할수 있음
-            # 테스트용 쿼리
-            if MODE == 'MODE_TEST':
-                select_sql = f"SELECT close FROM daily_price WHERE code={code} AND date='2021-06-11';"  # 하드코딩된 날짜를 사용한 쿼리
-                df = pd.read_sql(select_sql, conn)
-                yesterday_close_price = df.iloc[0].close  # 테스트를 위한 하드코딩 코드
+            for 
 
-            #  가장 빠른 쿼리 : 자동화에 사용
-            elif MODE == 'MODE_EXECUTE':
-                select_sql = f"SELECT close FROM daily_price WHERE code={code};"  # 해당 종목의 전체 종가를 가져오는 쿼리, 지금으로썬 가장 빠름
-                df = pd.read_sql(select_sql, conn)
-                yesterday_close_price = df.iloc[-1].close  # DB에 저장된 전일 종가 데이터 취득.
+                # datareader로 OHLCV를 취득
+                # index: date
 
-            #  가장 정확하지만 느린 쿼리
-            elif MODE == 'MODE_SUB_EXECUTE':
-                select_sql = f"SELECT close FROM daily_price WHERE code={code} AND date=(SELECT MAX(date) FROM daily_price);"  # 서브쿼리 사용. 행이 길어질수록 느림
-                df = pd.read_sql(select_sql, conn)
-                yesterday_close_price = df.iloc[0].close  # 서브쿼리를 사용한 코드
+                # open_price = result_df.Open
+                # high_price = result_df.High
+                # low_price = result_df.Low
+                # close_price = result_df.Close
+                # volume = result_df.Volume
+                #
+                # diff = close_price[start] - yesterday_close_price  # 마지막으로 업데이트된 date를 기준으로 yesterday_close_price를 구해서 diff을 계산한다.
+                #
+                # with conn.cursor() as curs:
+                #     update_sql = f"REPLACE INTO daily_price (code, date, open, high, low, close, diff, volume)" \
+                #                  f"VALUES ('{code}', '{date}', '{open_price}', '{high_price}', '{low_price}', '{close_price}', '{diff}', '{volume}')"
+                #     curs.execute(update_sql)
+                #     conn.commit()
 
-            # index: date
-            open_price = result_df.Open
-            high_price = result_df.High
-            low_price = result_df.Low
-            close_price = result_df.Close
-            volume = result_df.Volume
-            diff = close_price[start] - yesterday_close_price
+                # result_dict = {
+                #     'date': start,
+                #     'open': open_price[start],
+                #     'high': high_price[start],
+                #     'low': low_price[start],
+                #     'close': close_price[start],
+                #     'volume': volume[start],
+                #     'diff': diff
+                # }
+                # return result_dict
 
-            result_dict = {
-                'date': start,
-                'open': open_price[start],
-                'high': high_price[start],
-                'low': low_price[start],
-                'close': close_price[start],
-                'volume': volume[start],
-                'diff': diff
-            }
-            return result_dict
-
+            return
         except:
             logging.error(traceback.format_exc())
-            return 0
+            pass
+
+    def test_stock_price(self, date):
+        try:
+            result_df = fdr.DataReader(self.code, date, date)
+
+            print(result_df.Close.values[0])
+            return
+        except:
+            return
 
     # 주가 업데이트 함수
-    def update_stock_price(self, code, MODE):
-        try:
-            stock_df = self.stock_price(code, MODE)
-
-            date = stock_df.get('date')
-            open_price = stock_df.get('open')
-            high_price = stock_df.get('high')
-            low_price = stock_df.get('low')
-            close_price = stock_df.get('close')
-            diff = stock_df.get('diff')
-            volume = stock_df.get('volume')
-
-            with conn.cursor() as curs:
-                update_sql = f"REPLACE INTO daily_price (code, date, open, high, low, close, diff, volume)" \
-                      f"VALUES ('{code}', '{date}', '{open_price}', '{high_price}', '{low_price}', '{close_price}', '{diff}', '{volume}')"
-                curs.execute(update_sql)
-                conn.commit()
-
-            return 1
-        except:
-            logging.error(traceback.format_exc())
-            return -1
+    # def update_stock_price(self, code, MODE):
+    #     try:
+    #         stock_df = self.get_stock_price(code, MODE)
+    #
+    #         date = stock_df.get('date')
+    #         open_price = stock_df.get('open')
+    #         high_price = stock_df.get('high')
+    #         low_price = stock_df.get('low')
+    #         close_price = stock_df.get('close')
+    #         diff = stock_df.get('diff')
+    #         volume = stock_df.get('volume')
+    #
+    #         with conn.cursor() as curs:
+    #             update_sql = f"REPLACE INTO daily_price (code, date, open, high, low, close, diff, volume)" \
+    #                   f"VALUES ('{code}', '{date}', '{open_price}', '{high_price}', '{low_price}', '{close_price}', '{diff}', '{volume}')"
+    #             curs.execute(update_sql)
+    #             conn.commit()
+    #
+    #         return 1
+    #     except:
+    #         logging.error(traceback.format_exc())
+    #         pass
 
 
 if __name__ == '__main__':

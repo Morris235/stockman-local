@@ -4,14 +4,13 @@ import os
 import time
 import traceback
 import urllib.request
-from datetime import datetime
-
 import FinanceDataReader as fdr
 import OpenDartReader
 import pandas as pd
-from bs4 import BeautifulSoup as bs
 
+from bs4 import BeautifulSoup as bs
 from REST_API.update_manager.DB.Connector import conn
+from datetime import datetime
 
 # 콘솔에 판다스 결과값 최대 표시 설정
 pd.set_option('display.width', 100000)
@@ -1204,7 +1203,6 @@ class StatesUpdater:
                           f"'{roe}', '{bps}', '{asset_turnover}')"
                     curs.execute(sql)
                     conn.commit()
-
             return
         except:
             logging.error(traceback.format_exc())
