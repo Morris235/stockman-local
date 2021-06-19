@@ -9,7 +9,7 @@ import OpenDartReader
 import pandas as pd
 
 from bs4 import BeautifulSoup as bs
-from REST_API.update_manager.DB.Connector import conn
+from REST_API.update_manager.DB.Connector import connector
 from datetime import datetime
 
 # 콘솔에 판다스 결과값 최대 표시 설정
@@ -1187,7 +1187,7 @@ class StatesUpdater:
                 per = cal_ratios.get('per')  # 주가수익비율
                 mk_cap = cal_ratios.get('mk_cap')  # 시가총액
 
-                with conn.cursor() as curs:
+                with connector.cursor() as curs:
                     # update 는 업데이트 날짜에 맞쳐서 자동생성
                     sql = f"REPLACE INTO company_state (code, year, sec, sec_nm, company_nm, rp_type, mk, last_update, " \
                           f"current_asset, gross_profit, net_profit, operating_profit, liabilities, mk_cap, number_of_stocks, " \
@@ -1202,7 +1202,7 @@ class StatesUpdater:
                           f"'{eps}', '{roa}', '{gross_margin}', '{pbr}', '{per}', " \
                           f"'{roe}', '{bps}', '{asset_turnover}')"
                     curs.execute(sql)
-                    conn.commit()
+                    connector.commit()
             return
         except:
             logging.error(traceback.format_exc())

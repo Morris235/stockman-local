@@ -1,6 +1,6 @@
 # DB에 있는 전 종목의 전일비(diff) 수정 클래스. 모두 수정되면 이 클래스는 더 이상 필요가 없으므로 삭제한다. (1회용 코드)
 
-from REST_API.update_manager.DB.Connector import conn
+from REST_API.update_manager.DB.Connector import connector
 import pandas as pd
 import logging
 import FinanceDataReader as fdr
@@ -38,10 +38,10 @@ class modi_test:
             progress = 0
             # 전체 날짜를 가져오고 그 날짜 키값으로 종가를 순회하면서 diff 계산한다.
             sql = f"SELECT code, date, close FROM daily_price WHERE code={code}"
-            df = pd.read_sql(sql, conn)
+            df = pd.read_sql(sql, connector)
 
             for idx in range(len(df)):
-                with conn.cursor() as curs:
+                with connector.cursor() as curs:
                     before_day_close = df.iloc[idx].close
                     before_day = df.iloc[idx].date
 
@@ -52,7 +52,7 @@ class modi_test:
 
                     update_sql = f"UPDATE daily_price SET diff='{diff}' WHERE code='{code}' AND date='{next_day}'"
                     curs.execute(update_sql)
-                    conn.commit()
+                    connector.commit()
 
                     print(f"[{code}] {next_day}[{next_day_close}] - {before_day}[{before_day_close}] = {diff} ")
             return
@@ -63,11 +63,11 @@ class modi_test:
     def get_close_price(self, code):
         try:
             # 해당 종목의 전체 종가 구함?
-            with conn.cursor() as curs:
+            with connector.cursor() as curs:
                 # 해당 종목의 전체 날짜를 구하기, 구해서 첫번째부터 끝까지 종가를 구하고 전일 종가와 후일 종가를 계산하기
                 # 날짜를 구해야 한다. -> db기준 마지막 종가의 이전 종가가 필요하므로. 이전 종가를 구할수 없다면 0으로 저장한다.
                 date_sql = f"SELECT date FROM daily_price WHERE code={code};"
-                df = pd.read_sql(date_sql, conn)
+                df = pd.read_sql(date_sql, connector)
                 date = df.iloc[0].date
 
                 before_date = f"{date.year}-{date.month}-{date.day-1}"
@@ -77,7 +77,7 @@ class modi_test:
                 before_close_price = int(result_df.iloc[0].Close)  # db기준 첫번째 이전의 종가
 
                 first_close_sql = f"SELECT close FROM daily_price WHERE code={code};"
-                df = pd.read_sql(first_close_sql, conn)
+                df = pd.read_sql(first_close_sql, connector)
                 # print(df[:5])
                 close_price = int(df.iloc[0].close)  # DB에 저장된 전일 종가 데이터 취득.
                 diff = close_price - before_close_price
@@ -87,7 +87,7 @@ class modi_test:
                 # 업데이트 쿼리
                 update_sql = f"UPDATE daily_price SET diff='{diff}' WHERE code='{code}' AND date='{date}';"
                 curs.execute(update_sql)
-                conn.commit()
+                connector.commit()
         except:
             logging.error(traceback.format_exc())
             pass

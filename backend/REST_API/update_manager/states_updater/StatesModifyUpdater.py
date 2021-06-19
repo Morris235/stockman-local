@@ -3,7 +3,7 @@ import traceback
 import os
 import pandas as pd
 import logging
-from REST_API.update_manager.DB.Connector import conn
+from REST_API.update_manager.DB.Connector import connector
 # 에러 로깅 설정
 logging.basicConfig(level=logging.ERROR)
 
@@ -41,22 +41,22 @@ class StatesModifyUpdater:
     # 같은 종목 코드를 가진 기업명을 최근 연도 기준으로 통일
     def modify_update(self, recent_year):
         try:
-            with conn.cursor() as curs:
+            with connector.cursor() as curs:
                 # 해당 종목코드칼럼, year칼럼에서 가장 큰 숫자를 기준
                 sql = f"SELECT year, code FROM company_state WHERE year={recent_year}"
-                df = pd.read_sql(sql, conn)
+                df = pd.read_sql(sql, connector)
 
                 # 최근 연도를 기준으로 상호명 조회및 데이터프레임화
                 for code in df.code:
                     sql = f"SELECT code, company_nm FROM company_state WHERE code={code}"
-                    df = pd.read_sql(sql, conn)
+                    df = pd.read_sql(sql, connector)
                     recent_comp_nm = df.company_nm.iloc[-1]
 
                     # 변경된 상호명으로 업데이트. 업종코드, 업종명은 변경하지 않는다.(그 당시 업종간 비교를 위함)
                     sql = f"UPDATE company_state SET company_nm='{recent_comp_nm}' " \
                           f"WHERE code='{code}'"
                     curs.execute(sql)
-                    conn.commit()
+                    connector.commit()
                     print(f"code: {code}, comp_nm: {recent_comp_nm}")
         except:
             logging.error(traceback.format_exc())
