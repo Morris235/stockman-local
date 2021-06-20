@@ -1,9 +1,8 @@
 """종목코드를 company_info 테이블에 업데이트한 후 딕셔너리에 저장 : 현재 사용 안함"""
-from REST_API.update_manager.DB.Connector import connector
+from REST_API.DB.Connector import connector
 import pandas as pd
 from datetime import datetime
-from REST_API.update_manager.downloader.KrxCodeList import read_krx_code
-import logging
+from REST_API.update_manager.downloader.KrxList import read_krx_code
 
 
 class company_updater:

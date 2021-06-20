@@ -1,4 +1,4 @@
-from StatesMining_Yearly import StatesMining
+from StatesMining import StatesMining
 from StatesUpdater import StatesUpdater
 from StatesModifyUpdater import StatesModifyUpdater
 import socket

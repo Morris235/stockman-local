@@ -3,7 +3,7 @@ import traceback
 import os
 import pandas as pd
 import logging
-from REST_API.update_manager.DB.Connector import connector
+from REST_API.DB.Connector import connector
 # 에러 로깅 설정
 logging.basicConfig(level=logging.ERROR)
 

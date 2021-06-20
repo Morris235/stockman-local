@@ -1,8 +1,7 @@
-import traceback
 import FinanceDataReader as fdr
 import pandas as pd
-from REST_API.update_manager.DB.Connector import connector
-from REST_API.update_manager.downloader.KrxCodeList import read_krx_code
+from REST_API.DB.Connector import connector
+from REST_API.update_manager.downloader.KrxList import read_krx_code
 from datetime import datetime
 import logging
 

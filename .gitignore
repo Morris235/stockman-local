@@ -1,14 +1,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/django,python,react,pycharm,visualstudiocode,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,python,react,pycharm,visualstudiocode,windows
 
-### 지정 파일 ###
+### custom ignore files ###
 backend/REST_API/log
-backend/REST_API/update_manager/DB/Connector.py
 backend/REST_API/update_manager/states_updater/business_report
 backend/REST_API/update_manager/states_updater/refined_state_files
-backend/REST_API/etc/
-backend/REST_API/docs_cache/
-backend/REST_API/update_manager/DB
+backend/REST_API/etc
+backend/REST_API/update_manager/states_updater/docs_cache
+backend/REST_API/DB/Connector.py
+backend/REST_API/migrations
 backend/backend/settings.py
 backend/my_settings.py
 

@@ -1,6 +1,6 @@
 # DB에 있는 전 종목의 전일비(diff) 수정 클래스. 모두 수정되면 이 클래스는 더 이상 필요가 없으므로 삭제한다. (1회용 코드)
 
-from REST_API.update_manager.DB.Connector import connector
+from REST_API.DB.Connector import connector
 import pandas as pd
 import logging
 import FinanceDataReader as fdr

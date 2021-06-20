@@ -9,7 +9,7 @@ import OpenDartReader
 import pandas as pd
 
 from bs4 import BeautifulSoup as bs
-from REST_API.update_manager.DB.Connector import connector
+from REST_API.DB.Connector import connector
 from datetime import datetime
 
 # 콘솔에 판다스 결과값 최대 표시 설정
@@ -41,9 +41,6 @@ class StatesUpdater:
         # 이전 업데이트 연도부터 진행을 위한 로직(개발중)
         # 2015~2020
         del self.year_list[:5]
-
-        # 상장된 전체 기업코드
-        # krx = self.read_krx_code()
 
         # 1분당 유통주식수 크롤링 제한 횟수, 다트 api 호출 카운트 변수 선언
         scraping_limit, self.dart_call_count = 10, 0
@@ -89,19 +86,6 @@ class StatesUpdater:
             code_lines = code_file.readlines()
             state_code_list = list(map(lambda s: s.strip(), code_lines))
             return state_code_list
-
-    # 현재 상장된 모든 krx 기업 코드 리턴
-    @staticmethod
-    def read_krx_code():
-        """KRX로부터 상장법인목록 파일을 읽어와서 데이터프레임으로 반환"""
-        url = 'https://kind.krx.co.kr/corpgeneral/corpList.do?method=download&searchType=13'
-        krx = pd.read_html(url, header=0)[0]  # [0]을 붙임으로써 결괏값을 데이터프레임으로 받는다.
-        krx = krx[['종목코드', '회사명']]  # 종목코드 칼럼과 회사명만 남긴다. 데이터프레임에 [[]]을 사용하면 특정 칼럼만 뽑아서 원하는 순서대로 재구성할 수 있다.
-        krx = krx.rename(columns={'종목코드': 'code', '회사명': 'company'})  # 한글 칼럼명을 영문 칼럼명으로 변경
-        krx.code = krx['code'].map(
-            '{:06d}'.format)  # krx_list[0].종목코드 = krx_list[0].종목코드.map('{:06d}'.format) # 종목코드의 앞자리 0 보정 : {:06f}는 여석 자리 숫자 형식으로 표현하되 빈 앞 자리를 0으로 채우라는 뜻
-        krx = krx.sort_values(by='code')  # 종목코드 칼럼의 값으로 정렬, 기본은 오름차순 정렬이며, ascending=False를 인수로 추가하면 내림차순으로 정렬된다.
-        return krx
 
     # 필터링되어 저장한 재무항목 csv 파일을 데이터프레임으로 리턴
     @staticmethod
