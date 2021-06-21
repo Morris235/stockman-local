@@ -1,10 +1,9 @@
 import FinanceDataReader as fdr
 import pandas as pd
 from REST_API.DB.Connector import connector
-from REST_API.update_manager.downloader.KrxList import read_krx_code
+from REST_API.update_manager.downloader.KrxCompanyList import read_krx_code
 from datetime import datetime
 import logging
-
 import time
 
 # 콘솔에 판다스 결과값 최대 표시 설정
@@ -19,7 +18,7 @@ logging.basicConfig(level=logging.ERROR)
 # 전 종목 2021년 1월 8일 부터 업데이트 시작 (code, date, open, high, low, close, diff, volume)
 # IP 차단을 대비한 로직이 필요
 # 업데이트 못한 날짜 부터 차례로 업데이트 하는 로직으로 변경하기
-class DailyUpdater:
+class DailyPriceUpdater:
 
     def __init__(self):
         print('Stocks price Updating')
@@ -91,4 +90,4 @@ class DailyUpdater:
 
 
 if __name__ == '__main__':
-    execution = DailyUpdater()
+    execution = DailyPriceUpdater()

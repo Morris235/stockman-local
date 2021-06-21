@@ -5,7 +5,7 @@ import pandas as pd
 import traceback
 import logging
 from datetime import datetime
-from REST_API.update_manager.downloader.KrxList import read_krx_code
+from REST_API.update_manager.downloader.KrxCompanyList import read_krx_code
 import csv
 
 # 콘솔에 판다스 결과값 최대 표시 설정
@@ -74,14 +74,9 @@ class StatesMining:
                     tmnow = datetime.now().strftime('%Y-%m-%d %H:%M')
                     print(f"[{tmnow}] {idx + 1 :04d} / {len(krx)} code: {code} ({year_dir} year report mining)")
 
-                        # dart에 접속하지 않으면 사실상 필요가 없음
-                        # 총주식수를 어떻게 얻어서 처리할것인지 생각해봐야함, (연도별 계산에 필요한데...)
-                        # time.sleep(0)
-
-                # 모든 krx 코드를 순회후 다음 연도의 보고서를 읽기전 대기 시간
-                # time.sleep(0)
             #  루트 디렉토리에 파일이 있다면 실행할 코드
             else:
+                print(f"가공된 {year_dir}년도 재무 폴더 존재")
                 pass
 
 

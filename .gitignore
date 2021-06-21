@@ -11,6 +11,7 @@ backend/REST_API/DB/Connector.py
 backend/REST_API/migrations
 backend/backend/settings.py
 backend/my_settings.py
+backend/REST_API/TEST
 
 ### Django ###
 *.log

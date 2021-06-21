@@ -40,7 +40,7 @@ class StatesUpdater:
 
         # 이전 업데이트 연도부터 진행을 위한 로직(개발중)
         # 2015~2020
-        del self.year_list[:5]
+        # del self.year_list[:5]
 
         # 1분당 유통주식수 크롤링 제한 횟수, 다트 api 호출 카운트 변수 선언
         scraping_limit, self.dart_call_count = 10, 0
