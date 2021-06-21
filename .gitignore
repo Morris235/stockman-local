@@ -12,6 +12,7 @@ backend/REST_API/migrations
 backend/backend/settings.py
 backend/my_settings.py
 backend/REST_API/TEST
+backend/requirements.txt
 
 ### Django ###
 *.log

@@ -1,4 +1,22 @@
 """
+모든 연도 재무제표 연산 필요 (연도별로 12시간, 총 72시간 이상 소요 예상)
+기업재무 제표를 조회(?), 조건에 따라 기업명 가져오기
+조건 : 안정성, 성장성, 수익성.
+판단 기준:
+이슈, 화제성, 주도업종에서(업종코드 활용) 종목 가져오기
+각 비율지표 시계열 분석, 연도별 시총증가율 등등. 사용자가 입력한 기준으로 쿼리(연도 지정, 각 비율 커트라인 수치). 기준을 더 세세하게 추가할 필요가 있음
+
+
+가져올 기업명 개수 설정
+가져온 기업명을 토대로 해당 기업들의 주가에 현대 포트폴리오 이론 적용(?)
+
+아니면 무작위의 모든 종목을 대입해서 리스크가 적고 가장큰 이익을 내는 알고리즘은 어떨까?
+포트폴리오 이론은 과거 데이터를 기반으로 계산한건데 이익을 내는데 효과가 있는지 의문 스럽지만 지금까지 계산 해본 결과 손해는 없었다. 다만 수익률은 조금 미미했다.(100만원 투자 기준)
+아니면 단타 전략을 짜는게 더 낫지 않을까? 그렇다면 지금까지 얻은 데이터로 어떻게 단타 전략을 짤 수 있을까
+현대 포트폴리오 이론은 수익률 보다 안정성에 더 중점을 둔 이론이다.(손실을 보지 않기 위한 종목별 비중을 달리둔 포트폴리오) 그렇기 때문에 어떤 종목이 더 오를지에 대한 분석이 아니다.
+"""
+
+"""
 샤프 지수 = (포트폴리오 기대 수익률 - 무위자산 수익률) / (포트폴리오 수익률의 표준편차)
 *계산의 편의를 고려해 무위험률을 0으로 가정했으며, 샤프 지수는 포트폴리오의 예상 수익률을 수익률의 표준편차로 나누어서 구했다. *
 예를 들어 예상 수익률이 7%이고 수익률의 표준편차가 5%인 경우, 샤프 지수는 7 / 5 = 1.4 가 된다. 샤프 지수가 높을수록 위험에 대한 보상이 더 크다.
@@ -8,18 +26,19 @@
 가장 안전한 포트폴리오는 Risk값이 가장 작은 행을 찾으면 된다. 
 """
 
+# 이걸 어떻게 사용자와 상호작용 시키지?
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from REST_API.DB.StockPriceSearcher import Market as mkd
 
 
-def portfolio():
+def portfolio_revenue():
     try:
         mk = mkd()
         stocks_name_list = ['삼성전자', 'LG전자', 'NAVER', '카카오']  # ex) '삼성전자', 'SK하이닉스', '현대자동차', 'NAVER'
-        start_date = '2021-06-01'
-        end_date = '2021-06-18'
+        start_date = '2021-01-01'
+        end_date = '2021-03-18'
 
         df = pd.DataFrame()
 
@@ -98,8 +117,8 @@ def portfolio():
         investment = 5000000
 
         for s in stocks_name_list:
-            # 종목별 투자금 비율계산
-            stock_investment = int(investment * min_risk[s])
+            # 종목별 투자금 비율계산 : min_risk(손실최소화)보다 max_sharpe(이익극대화)가 수익률과 안정성이 더 좋을수도 있다.
+            stock_investment = int(investment * max_sharpe[s])
 
             df_price[s] = mk.get_daily_price(s, start_date, end_date)['close']
 
@@ -119,24 +138,25 @@ def portfolio():
 
         print('')
         print(f"투자기간 : {start_date} ~ {end_date}")
-        print(f"총 투자금액 : {sum(total_investment)}")
-        print(f"총 수익 : {sum(total_revenue)}")
-
+        print(f"투자 전 예치금 : {investment}")
+        print(f"총 투자금 : {sum(total_investment)}")
+        print(f"총 수익금 : {sum(total_revenue)}")
+        print(f"총 예치금 : {sum(total_investment)+sum(total_revenue)}")
         """
         df 데이터프레임을 산점도로 출력하면, 몬테카를로 시뮬레이션으로 생성한 효율적 투자선을 눈으로 확인할 수 있다. 
         scatter() 함수를 호출할 때 x축 값으로 해당 포트폴리오의 리스크, y축 값으로 예상 수익률을 넘겨주면 된다.
         """
 
         # 포트폴리오의 샤프 지수에 따라 컬러맵을 'viridis' 로 표시하고 테두리는 검정(k)으로 표시한다.
-        # df.plot.scatter(x='Risk', y='Returns', c='Sharpe', cmap='viridis', edgecolors='k', figsize=(11, 7), grid=True)
-        # plt.scatter(x=max_sharpe['Risk'], y=max_sharpe['Returns'], c='r', marker='*', s=300) # 샤프 지수가 가장 큰 포트폴리오를 300 크기의 붉은 별로 표시한다.
-        # plt.scatter(x=min_risk['Risk'], y=min_risk['Returns'], c='r', marker='X', s=200)  # 리스크가 제일 작은 포트폴리오를 200 크기의 붉은 엑스표로 표시한다.
-        # plt.title('Portfolio Optimization')
-        # plt.xlabel('Risk')
-        # plt.ylabel('Expected Returns')
-        # plt.show()
+        df.plot.scatter(x='Risk', y='Returns', c='Sharpe', cmap='viridis', edgecolors='k', figsize=(11, 7), grid=True)
+        plt.scatter(x=max_sharpe['Risk'], y=max_sharpe['Returns'], c='r', marker='*', s=300) # 샤프 지수가 가장 큰 포트폴리오를 300 크기의 붉은 별로 표시한다.
+        plt.scatter(x=min_risk['Risk'], y=min_risk['Returns'], c='r', marker='X', s=200)  # 리스크가 제일 작은 포트폴리오를 200 크기의 붉은 엑스표로 표시한다.
+        plt.title('Portfolio Optimization')
+        plt.xlabel('Risk')
+        plt.ylabel('Expected Returns')
+        plt.show()
         return
     except:
         pass
 
-portfolio()
+portfolio_revenue()
