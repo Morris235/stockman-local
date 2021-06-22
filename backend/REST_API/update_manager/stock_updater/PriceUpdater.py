@@ -5,6 +5,8 @@ from REST_API.update_manager.downloader.KrxCompanyList import read_krx_code
 from datetime import datetime
 import logging
 import time
+from pytimekr import pytimekr
+import traceback
 
 # 콘솔에 판다스 결과값 최대 표시 설정
 pd.set_option('display.width', 100000)
@@ -29,18 +31,17 @@ class DailyPriceUpdater:
         # 코드순회
         for code in code_list.code:
             progress_count += 1
-            # 마지막 업데이트 날짜 조회
 
             if progress_count % 100 != 0:
+                self.update_stock_price(code)
                 tmnow = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 print(
                     f"[{tmnow}] {progress_count :04d} / {code_list_len} ({round((progress_count / code_list_len) * 100, 2)}%) {code} (REPLACE UPDATE)")
-                self.update_stock_price(code)
             else:
+                self.update_stock_price(code)
                 tmnow = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 print(
                     f"[{tmnow}] {progress_count :04d} / {code_list_len} ({round((progress_count / code_list_len) * 100, 2)}%) {code} (REPLACE UPDATE) 1분 스크랩핑 대기")
-                self.update_stock_price(code)
                 time.sleep(61)
 
     # DB 연결해제
@@ -54,10 +55,14 @@ class DailyPriceUpdater:
             get_date_sql = f"SELECT date FROM daily_price WHERE code={code};"
             df = pd.read_sql(get_date_sql, connector)
 
-            today = datetime.today()
-            last_update = str(df.iloc[-1].date)
+            last_update = str(df.iloc[-1].date)  # 마지막 업데이트 : 마지막 업데이트는 휴일이 될 수 없다는걸 전제적 사실로 한다.
+            # last_update = '2021-06-14'
 
-            # 마지막 업데이트 날짜와 현재까지의 날짜 리스트
+            today = datetime.today()
+            # today = '2021-06-22'  # 지정 날짜
+
+
+            # 마지막 업데이트 날짜와 현재까지의 날짜 리스트 : 주말, 공휴일은 제회하는 코드가 필요하다.
             date_list = pd.date_range(last_update, today).strftime('%Y-%m-%d')
 
             # 당일 연월일 기준 (스케쥴러에 공휴일을 제외한 날짜로 등록해야함 -> 공휴일 값은 자동으로 표시되지 않음)
@@ -65,8 +70,10 @@ class DailyPriceUpdater:
 
             for idx in range(len(result_df)):
                 # 주가 전일차 계산 : IndexError: single positional indexer is out-of-bounds가 발생하지만 업데이트에 문제 없음
-                before_close_price = result_df.iloc[idx].Close
-                next_close_price = result_df.iloc[idx + 1].Close
+                date = result_df.iloc[idx + 1].name.date()  # 시장이 열린 날 기준으로 마지막 업데이트 + 1
+
+                before_close_price = result_df.iloc[idx].Close  # DB의 마지막 업데이트 종가
+                next_close_price = result_df.iloc[idx + 1].Close  # DataReader 마지막 업데이트 다음날 종가
                 diff = next_close_price - before_close_price
 
                 # datareader로 OHLCV를 취득
@@ -77,10 +84,10 @@ class DailyPriceUpdater:
                 close_price = result_df.iloc[idx + 1].Close
                 volume = result_df.iloc[idx + 1].Volume
 
-                # 업데이트
+                # 업데이트 : 날짜가 유동적이지 못하고 잘못된 날짜를 가리키는 거 같다.
                 with connector.cursor() as curs:
                     update_sql = f"REPLACE INTO daily_price (code, date, open, high, low, close, diff, volume)" \
-                                 f"VALUES ('{code}', '{date_list[idx + 1]}', '{open_price}', '{high_price}', '{low_price}', '{close_price}', '{diff}', '{volume}')"
+                                 f"VALUES ('{code}', '{date}', '{open_price}', '{high_price}', '{low_price}', '{close_price}', '{diff}', '{volume}')"
                     curs.execute(update_sql)
                     connector.commit()
             return

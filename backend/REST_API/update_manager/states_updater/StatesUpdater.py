@@ -830,7 +830,7 @@ class StatesUpdater:
                     self.dart_call_count += 1
 
                     # 다트 api 호출건수 1만건이 되면 자정까지 시스템 멈춰!
-                    if (self.dart_call_count-1) >= 10000:
+                    if (self.dart_call_count-1) >= 9999:
                         sec_hour = (time.localtime().tm_hour * 3600)
                         sec_minn = (time.localtime().tm_min * 60)
                         sec = time.localtime().tm_sec
@@ -838,7 +838,7 @@ class StatesUpdater:
                         sleep_sec = 86400 - now_sec
                         sleep_time = round(sleep_sec / 3600, 2)
 
-                        print(f"다트 API 호출이 {self.dart_call_count-1} 건을 초과했으므로 현 시점부터 {sleep_time} 시간 동안 대기 합니다.")
+                        print(f"다트 API 호출이 {self.dart_call_count-1} 건에 도달 했으므로 현 시점부터 {sleep_time} 시간 동안 대기 합니다.")
                         time.sleep(sleep_sec)
                         self.dart_call_count = 0  # 초기화
 
