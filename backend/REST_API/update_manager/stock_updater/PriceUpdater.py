@@ -5,7 +5,6 @@ from REST_API.update_manager.downloader.KrxCompanyList import read_krx_code
 from datetime import datetime
 import logging
 import time
-from pytimekr import pytimekr
 import traceback
 
 # 콘솔에 판다스 결과값 최대 표시 설정

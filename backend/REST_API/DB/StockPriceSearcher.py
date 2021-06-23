@@ -4,6 +4,11 @@ from datetime import datetime
 from datetime import timedelta
 import re
 
+# 콘솔에 판다스 결과값 최대 표시 설정
+pd.set_option('display.width', 100000)
+pd.set_option('display.max_rows', 100000)
+pd.set_option('display.max_columns', 100000)
+
 # 종목 검색기 API?
 class Market:
     def __init__(self):

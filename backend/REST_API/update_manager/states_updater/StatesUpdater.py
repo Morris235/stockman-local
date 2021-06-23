@@ -830,7 +830,7 @@ class StatesUpdater:
                     self.dart_call_count += 1
 
                     # 다트 api 호출건수 1만건이 되면 자정까지 시스템 멈춰!
-                    if (self.dart_call_count-1) >= 9999:
+                    if (self.dart_call_count-1) >= 9990:
                         sec_hour = (time.localtime().tm_hour * 3600)
                         sec_minn = (time.localtime().tm_min * 60)
                         sec = time.localtime().tm_sec

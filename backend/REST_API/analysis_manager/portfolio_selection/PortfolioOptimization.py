@@ -37,13 +37,13 @@ from REST_API.DB.StockPriceSearcher import Market as mkdb
 class PortfolioSelector:
     def __init__(self):
         self.mk = mkdb()
-        self.stocks_name_list = ['종근당', '경방', 'KR모터스', 'NAVER']  # ex) '삼성전자', 'SK하이닉스', '현대자동차', 'NAVER'
-        self.start_date = '2021-06-01'  # 당연한거지만 언제 사서 언제 파는냐에 따라 수익률이 다르다
-        self.end_date = '2021-06-18'
+        self.stocks_name_list = ['카카오', 'NAVER', '셀트리온', 'LG화학']  # ex) '삼성전자', 'SK하이닉스', '현대자동차', 'NAVER'
+        self.start_date = '2020-01-18'  # 당연한거지만 언제 사서 언제 파는냐에 따라 수익률이 다르다
+        self.end_date = '2021-06-22'
         # 사용자가 입력해야할 예상 투자금
-        self.investment = 50000000  # 투자금액이 너무 적으면 투자분산이 되지 않는다. (종목 선별 함수에 투자금액에 맞는 종목을 필터링 하는 조건을 추가시켜볼까?)
+        self.investment = 100000000  # 투자금액이 너무 적으면 투자분산이 되지 않는다. (종목 선별 함수에 투자금액에 맞는 종목을 필터링 하는 조건을 추가시켜볼까?)
         # 랜덤하게 생성할 포트폴리오 개수
-        self.portfolio_count = 20000
+        self.portfolio_count = 30000
         # 비중 계산용
         self.df = pd.DataFrame()
         # 주가 계산용
@@ -74,8 +74,8 @@ class PortfolioSelector:
                 # ex) s, '2016-01-04', '2018-04-27')['close']
                 self.df[s] = self.mk.get_daily_price(s, self.start_date, self.end_date)['close']
 
-            # 시총 상위 4 종목의 수익률을 비교하려면 종가 대신 일간 변동률로 비교를 해야 하기 때문에
-            # 데이터프레임에서 제공하는 pct_change() 함수를 사용해 4종목의 일간 변동률을 구한다.
+            # 종목의 수익률을 비교하려면 종가 대신 일간 변동률로 비교를 해야 하기 때문에
+            # 데이터프레임에서 제공하는 pct_change() 함수를 사용해 종목들의 일간 변동률을 구한다.
             daily_ret = self.df.pct_change()  # 일간 수익률 daily_ret
 
             # 일간 변동률의 평균값에 252를 곱해서 연간 수익률을 구한다. 252는 미국의 1년 평균 개장일로, 우리나라 실정에 맞게 다른 숫자로 바꾸어도 무방하다.
@@ -163,7 +163,7 @@ class PortfolioSelector:
             print(f"투자 전 예치금 : {self.investment}")
             print(f"총 투자금 : {sum(self.total_investment)}")
             print(f"예상 수익금 : {sum(self.total_revenue)}")
-            print(f"예상 예치금 : {self.investment + sum(self.total_revenue)}")
+            print(f"투자 후 예상 예치금 : {self.investment + sum(self.total_revenue)}")
 
             """
             df 데이터프레임을 산점도로 출력하면, 몬테카를로 시뮬레이션으로 생성한 효율적 투자선을 눈으로 확인할 수 있다. 
