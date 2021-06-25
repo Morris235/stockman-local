@@ -19,13 +19,12 @@ export default function Routing () {
     // 라우터 사용법을 좀 더 공부해야한다. (라우터 기능의 개념 이해하기)
     return (
         <Router>
-            <div>
+            <header>
                 <h5>
                     <Link to="/">STOCKMAN</Link>
                 </h5>
+            </header>
 
-                <TitleBar/>
-            </div>
 
             
 
@@ -33,7 +32,7 @@ export default function Routing () {
                         <li><Link to="/companylist">companyBoard</Link></li>
                     </ul>
 
-                {/* 스위치 라우트를 지정하지 않으면 해당 컴포넌트를 불러올수 없다. */}
+                {/* 주소창의 경로와 매칭될 경우 보여줄 컴포넌트 할당 */}
                 <Switch>
                     <Route path="/"  exact={true}><Home /></Route>
                     <Route path="/companylist"><CompanyBoard /></Route>
