@@ -6,7 +6,7 @@ from matplotlib import rc, font_manager as fm
 from DB import Analyzer
 
 # df = mkdb.get_daily_price('삼성전자', '2019-01-02')  에러 발생하는 코드 : codes를 찾을 수 없음
-compName = 'NAVER'
+compName = '카카오'
 mk = Analyzer.MarketDB()  #객체 생성, 변수에 저장
 df = mk.get_daily_price(compName, '2021-01-01')  #df 변수에 get_daily_price() 의 DataFrame 리턴값 저장
 

@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 from DB import Analyzer
 
 # df = mkdb.get_daily_price('삼성전자', '2019-01-02')  에러 발생하는 코드 : codes를 찾을 수 없음
-compName = 'NAVER'
+compName = '카카오'
 mk = Analyzer.MarketDB()  #객체 생성, 변수에 저장
-df = mk.get_daily_price(compName, '2020-01-01')  #df 변수에 get_daily_price() 의 DataFrame 리턴값 저장
+df = mk.get_daily_price(compName, '2021-01-01')  #df 변수에 get_daily_price() 의 DataFrame 리턴값 저장
 
 df['MA20'] = df['close'].rolling(window=20).mean()  # 20개 종가를 이용해서 평균을 구한다.
 df['stddev'] = df['close'].rolling(window=20).std()  # 20개 종가를 이용해서 표준편차를 구한 뒤 stddev 칼럼으로 df에 추가한다.
