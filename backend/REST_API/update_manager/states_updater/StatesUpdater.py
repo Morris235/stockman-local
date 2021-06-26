@@ -40,7 +40,8 @@ class StatesUpdater:
 
         # 이전 업데이트 연도부터 진행을 위한 로직(개발중)
         # 2015~2020
-        # del self.year_list[:5]
+        del self.year_list[2:]
+
 
         # 1분당 유통주식수 크롤링 제한 횟수, 다트 api 호출 카운트 변수 선언
         scraping_limit, self.dart_call_count = 10, 0
@@ -51,7 +52,7 @@ class StatesUpdater:
             year = self.year_list[position]
             # check_dir = self.check_dir_name(self.year_list[position])
             progress_count = 0
-
+            print(year)
             # refined 보고서에서 추출한 기업코드 리스트
             state_code_list = self.read_state_code_list(year)
             krx_count = len(state_code_list)

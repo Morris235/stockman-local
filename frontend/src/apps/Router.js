@@ -20,16 +20,20 @@ export default function Routing () {
     return (
         <Router>
             <header>
-                <h5>
-                    <Link to="/">STOCKMAN</Link>
-                </h5>
+                <nav class="navbar navbar-expand navbar-dark bg-dark">
+                    <div class="container">
+                        <Link to="/" class="navbar-brand">STOCKMAN</Link>
+                        <div class="me-auto navbar-nav">
+                            {/* <a href="#home" data-rb-event-key="#home" class="nav-link">메뉴1</a>
+                            <a href="#features" data-rb-event-key="#features" class="nav-link">메뉴2</a>
+                            <a href="#pricing" data-rb-event-key="#pricing" class="nav-link">메뉴3</a> */}
+                        </div>
+                    </div>
+                </nav>
             </header>
 
-
-            
-
                     <ul>
-                        <li><Link to="/companylist">companyBoard</Link></li>
+                        <li><Link to="/companylist">기업리스트</Link></li>
                     </ul>
 
                 {/* 주소창의 경로와 매칭될 경우 보여줄 컴포넌트 할당 */}

@@ -6,10 +6,7 @@ import ReactDOM from 'react-dom';
 // Apps
 import Routing from './apps/Router';
 
-// material-ui 
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import { ThemeProvider } from '@material-ui/core/styles';
-// import { theme } from './config';
+// css
 import "bootstrap/dist/css/bootstrap.min.css"
 
 // react-redux

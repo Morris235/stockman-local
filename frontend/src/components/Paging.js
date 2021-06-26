@@ -4,7 +4,6 @@
 import { useState, useRef } from "react";
 // import axios from 'axios';
 
-import { Button, makeStyles } from '@material-ui/core';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { updateCurrnetPage } from '../modules/Counter';
 import { css } from '@emotion/react';
@@ -47,28 +46,28 @@ font-size: 14px;
 `;
 
 /* Mui theme */
-const useStyles = makeStyles(theme => ({
-    pageBtn : {
-        backgroundColor : '',
-        borderRadius : '20px',
-        '&:hover': {
-            backgroundColor : '#B8DFF8',
-        },
-    },
-    startEndBtn : {
-        backgroundColor : '',
-        '&:hover': {
-            backgroundColor : '#B8DFF8'
-        }
-    },
-    div : {
-        marginTop : '10px',
-    },
-    clickedBtn : {
-        backgroundColor : 'red',
-    },
-}));
-const classes = useStyles();
+// const useStyles = makeStyles(theme => ({
+//     pageBtn : {
+//         backgroundColor : '',
+//         borderRadius : '20px',
+//         '&:hover': {
+//             backgroundColor : '#B8DFF8',
+//         },
+//     },
+//     startEndBtn : {
+//         backgroundColor : '',
+//         '&:hover': {
+//             backgroundColor : '#B8DFF8'
+//         }
+//     },
+//     div : {
+//         marginTop : '10px',
+//     },
+//     clickedBtn : {
+//         backgroundColor : 'red',
+//     },
+// }));
+// const classes = useStyles();
 
 
 
@@ -127,29 +126,29 @@ const classes = useStyles();
         // <div style={{float:'left'}}>
         // css 적용: className={classes.primary}
         return (
-            <div className={classes.div}>
+            <div className="">
                 {/* <button id='asd' onClick={targetTest}>target test</button> */}
-                <Button className={classes.startEndBtn} onClick={() => OnStartEndClicked(1)}>처음</Button>
+                <button className="" onClick={() => OnStartEndClicked(1)}>처음</button>
                 {/* <button id='sss'>test button</button> */}
                 {
                 // OnClicked() 메서드에서 업데이트한 currentPageNumber를 Paging() 메서드에 보내서 페이징 배열을 재생성한다.
                 createSlicedArray(currentPageNumber, pagesArray).map((currentValue, index, array) => {
                     // {console.log('HTML id: '+currentValue);}
                     return ( 
-                        <Button
+                        <button
                         id={currentValue}
                         ref={pageRef}
                         variant='text'
                         key={index} 
-                        className={classes.pageBtn}
+                        className=""
                         // onClicked() 메서드는 클릭한 인덱스의 값을 setCurrentPageNumber(currentValue)하여 currentPageNumber를 업데이트 시킨다.
                         // 값을 dispatch한다.
                         onClick= { () => OnClicked(currentValue) }> 
                         {currentValue} 
-                        </Button> 
+                        </button> 
                 );
                 })}
-                <Button className={classes.startEndBtn} onClick={() => OnStartEndClicked(totalPageCount)}>끝</Button>
+                <button className="" onClick={() => OnStartEndClicked(totalPageCount)}>끝</button>
             </div>
         );
 }
