@@ -40,7 +40,7 @@ class StatesUpdater:
 
         # 이전 업데이트 연도부터 진행을 위한 로직(개발중)
         # 2015~2020
-        del self.year_list[2:]
+        del self.year_list[:3]
 
 
         # 1분당 유통주식수 크롤링 제한 횟수, 다트 api 호출 카운트 변수 선언
@@ -50,9 +50,9 @@ class StatesUpdater:
         # 각 연도 디렉토리마다 state code 를 순회해야 하기 때문에 지금으로썬 이 반복문이 쓰이는건 어쩔수 없음 => 진짜?
         for position in range(len(self.year_list)):  # 연도 순회
             year = self.year_list[position]
+
             # check_dir = self.check_dir_name(self.year_list[position])
             progress_count = 0
-            print(year)
             # refined 보고서에서 추출한 기업코드 리스트
             state_code_list = self.read_state_code_list(year)
             krx_count = len(state_code_list)
@@ -831,7 +831,7 @@ class StatesUpdater:
                     self.dart_call_count += 1
 
                     # 다트 api 호출건수 1만건이 되면 자정까지 시스템 멈춰!
-                    if (self.dart_call_count-1) >= 9990:
+                    if (self.dart_call_count-1) >= 9900:
                         sec_hour = (time.localtime().tm_hour * 3600)
                         sec_minn = (time.localtime().tm_min * 60)
                         sec = time.localtime().tm_sec
