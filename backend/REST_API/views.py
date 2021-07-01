@@ -1,8 +1,5 @@
 from rest_framework import viewsets, status
-from django.shortcuts import render
-from rest_framework.views import APIView
-from django.http import HttpResponse
-from rest_framework.response import Response
+from rest_framework.filters import SearchFilter
 from .models import CompanyInfo, DailyPrice, CompanyState
 from .serializers import CompSerializer, DailyPriceSerializer, CompanyStateSerializer
 
@@ -27,16 +24,39 @@ from .serializers import CompSerializer, DailyPriceSerializer, CompanyStateSeria
 #             comp_serializer = CompSerializer(CompanyInfo.objects.get(code=code))
 #             return Response(comp_serializer.data, status=status.HTTP_200_OK)
 
-class CompViewSet(viewsets.ModelViewSet):
-    def get(self, request):
-        code = self.request.query_params.get('code', None)
+# class CompViewSet(viewsets.ModelViewSet):
+#     serializer_class = CompSerializer  # 필수 작성
+#
+#     def get_queryset(self, **kwargs):
+#         if kwargs.get('code') is None:  # request가 없다면
+#             comp_queryset = CompanyInfo.objects.all()  # 모든 정보를 불러온다.
+#             comp_queryset_serializer = CompSerializer(comp_queryset, many=True).data
+#             return comp_queryset_serializer
+#
+#         else:  # request가 있다면
+#             comp_queryset = kwargs.get('code')  # 종목코드에 해당하는 정보를 불러온다.
+#             comp_queryset_serializer = CompSerializer(comp_queryset).data.get(code=comp_queryset)
+#             return comp_queryset_serializer
 
+# 문제를 작게 나눠서 처리하기
+class CompViewSet(viewsets.ModelViewSet):
+    # 필수 구현 : 미구현시 에러
+    serializer_class = CompSerializer
+
+    def get_queryset(self):
         queryset = CompanyInfo.objects.all()
-        serializer_class = CompSerializer(queryset, many=True)
-        if code:
-            queryset = queryset.filter(code=code)
-            serializer_class = CompSerializer(queryset, many=True)
-        return serializer_class
+
+        # 쿼리스트링 종류
+        code_request = self.request.query_params.get("code", None)
+        com_name = self.request.query_params.get("company", None)
+
+        # 쿼리스트링을 사용한 경우
+        if code_request is not None:  # 조건 검색 로직 필요
+            queryset = CompanyInfo.objects.filter(code=code_request)
+        elif com_name is not None:
+            queryset = CompanyInfo.objects.filter(company=com_name)
+
+        return queryset
 
 
 class DailyPriceViewSet(viewsets.ModelViewSet):

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, shallowEqual } from 'react-redux';
 import axios from 'axios';
-import { Table, TableHead, TableRow, TableCell, TableBody } from "@material-ui/core";
 
  export default function Company () {
     const [compsPosts, setCompPosts] = useState([]);
@@ -29,7 +28,7 @@ import { Table, TableHead, TableRow, TableCell, TableBody } from "@material-ui/c
             setCompPosts(null);
             setLoading(true);
 
-            const url = `http://localhost:8000/company/?page=${pageNum}&data`; 
+            const url = `http://localhost:8000/api/company`; 
             const response = await axios.get(url);
 
             setCompPosts(response.data.results);
@@ -50,21 +49,21 @@ import { Table, TableHead, TableRow, TableCell, TableBody } from "@material-ui/c
         
         <>
         <div>
-        <Table>
-        <TableHead>
-            <TableRow>
-                <TableCell>Code</TableCell>
-                <TableCell>Names</TableCell>
-                <TableCell>Updated</TableCell>
-            </TableRow>
-        </TableHead>
+        <table>
+        <th>
+            <tr>
+                <td>Code</td>
+                <td>Names</td>
+                <td>Updated</td>
+            </tr>
+        </th>
 
-        <TableBody>
+        <tbody>
             {compsPosts.map(comps => { 
                 return <tr key={comps.code}><td>{comps.code}</td><td>{comps.company}</td><td>{comps.last_update}</td></tr>
             })}
-        </TableBody>
-        </Table>
+        </tbody>
+        </table>
         </div>
 
         <div>

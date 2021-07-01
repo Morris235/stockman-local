@@ -24,7 +24,7 @@ export const GetCompanyTotalPostsCount = async() => {
     const [totalPostsCount, setTotalPostsCount] = useState(0);
 
     try{
-        const url = `http://localhost:8000/company`;
+        const url = `http://localhost:8000/api/company`;
         const response = await axios.get(url);
         setTotalPostsCount(response.data.count);
     } catch(e){

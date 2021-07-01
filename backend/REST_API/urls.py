@@ -3,11 +3,13 @@ from REST_API.views import *
 from django.conf.urls import include
 from rest_framework import routers
 
+# 라우터에서(라우터란?) 디테일 리퀘스트를 어떻게 설정해서 뷰와 연결해야하나? 정규식을 사용하는건 맞는거 같은데 말이야
 router = routers.DefaultRouter()
-router.register(r'company', CompViewSet, basename='comp')
+router.register(r'company', CompViewSet, basename='company_info')
+# router.register(r'company/<str:code>/', CompViewSet.as_view({'get': 'list'}), basename='company_info_code')
 router.register(r'daily_price', DailyPriceViewSet, basename='daily')
 router.register(r'company_state', CompanyStateViewSet, basename='comp_state')
 
 urlpatterns = [
-    re_path(r'^', include(router.urls)),
+    re_path(r'^', include(router.urls)),  # 정규표현식을 사용, 모든 라우터 url 표현
 ]

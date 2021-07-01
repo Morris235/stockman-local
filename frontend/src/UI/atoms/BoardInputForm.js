@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 // import UI from './styles/Material_ui';
-import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
 
 
 // 게시판 검색어 입력 폼
@@ -27,13 +25,13 @@ export function BoardInput () {
             <div style={{float: 'left', marginTop: '10px'}}>
                <form onSubmit={doSubmit}>
 
-                   <Input type='text'
+                   <input type='text'
                    name='onChange'
                    value={text}
                    onChange={onChange}
                    placeholder='종목의 이름 또는 코드명' />
 
-                   <Button variant='contained' color='primary' type='submit'>검색</Button>
+                   <button variant='contained' color='primary' type='submit'>검색</button>
                </form>
             </div>
         );
