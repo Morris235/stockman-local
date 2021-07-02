@@ -3,7 +3,7 @@ from django_filters import rest_framework as filters
 from rest_framework.filters import SearchFilter
 from .models import CompanyInfo, DailyPrice, CompanyState
 from .serializers import CompSerializer, DailyPriceSerializer, CompanyStateSerializer
-
+from .filter_sets import *
 
 # rest_framework에 있는 viewset에서 modelViewSet을 가져와 연동시킨다.
 # seriallizer틀을 먼저 작성해야함
@@ -61,31 +61,17 @@ class CompViewSet(viewsets.ModelViewSet):
 
 
 class DailyPriceViewSet(viewsets.ModelViewSet):
-    # GET, POST, DELETE 메서드 정의 가능. queryset, serializer_class 는 GET 메서드에 속함.
+
     queryset = DailyPrice.objects.all()
     serializer_class = DailyPriceSerializer
 
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = DailyPriceFilter
+
+
 
 class CompanyStateViewSet(viewsets.ModelViewSet):
-    """
-    파라미터명과 필터 조건키가 다른 경우 필터셋 클래스를 만들어서 사용
-    """
-    class CompanyStatesFilter(filters.FilterSet):
-        # 조건필드 추가
-        min_roe = filters.NumberFilter(field_name='roe', lookup_expr='gte')
-        max_roe = filters.NumberFilter(field_name='roe', lookup_expr='lte')
 
-        class Meta:
-            model = CompanyState
-            fields = ['code', 'year', 'sec', 'sec_nm', 'company_nm', 'rp_type', 'mk', 'last_update',
-                      'current_asset', 'gross_profit', 'net_profit', 'operating_profit', 'liabilities', 'mk_cap',
-                      'number_of_stocks',
-                      'current_ratio', 'debt_ratio', 'quick_ratio', 'bis',
-                      'sales_growth_rate', 'asset_growth_rate', 'net_profit_growth_rate',
-                      'eps', 'roa', 'gross_margin',
-                      'pbr', 'per', 'roe', 'bps', 'asset_turnover']
-
-    # 조건검색이 가능한가?
     queryset = CompanyState.objects.all()
     serializer_class = CompanyStateSerializer
 
