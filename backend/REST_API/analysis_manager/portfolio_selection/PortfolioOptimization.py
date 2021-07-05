@@ -37,9 +37,9 @@ from REST_API.DB.StockPriceSearcher import Market as mkdb
 class PortfolioSelector:
     def __init__(self):
         self.mk = mkdb()
-        self.stocks_name_list = ['카카오', 'NAVER', '셀트리온', 'LG화학']  # ex) '삼성전자', 'SK하이닉스', '현대자동차', 'NAVER'
-        self.start_date = '2021-05-18'  # 당연한거지만 언제 사서 언제 파는냐에 따라 수익률이 다르다
-        self.end_date = '2021-06-22'
+        self.stocks_name_list = ['NICE평가정보', '미스터블루', '고려제약']  # ex) '삼성전자', 'SK하이닉스', '현대자동차', 'NAVER'
+        self.start_date = '2021-06-30'  # 당연한거지만 언제 사서 언제 파는냐에 따라 수익률이 다르다
+        self.end_date = '2021-07-02'
         # 사용자가 입력해야할 예상 투자금
         self.investment = 1000000  # 투자금액이 너무 적으면 투자분산이 되지 않는다. (종목 선별 함수에 투자금액에 맞는 종목을 필터링 하는 조건을 추가시켜볼까?)
         # 랜덤하게 생성할 포트폴리오 개수

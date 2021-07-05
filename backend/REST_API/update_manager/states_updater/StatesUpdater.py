@@ -40,7 +40,7 @@ class StatesUpdater:
 
         # 이전 업데이트 연도부터 진행을 위한 로직(개발중)
         # 2015~2020
-        del self.year_list[:4]
+        del self.year_list[:5]
 
 
         # 1분당 유통주식수 크롤링 제한 횟수, 다트 api 호출 카운트 변수 선언
@@ -73,7 +73,7 @@ class StatesUpdater:
                     self.update_ratio(code, year)
                     tmnow = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     print(f"[{tmnow}] {progress_count :04d} / {krx_count} ({round((progress_count/krx_count) * 100, 2)}%) {code} ({year} REPLACE UPDATE) 소요시간: {round(time.time() - start_time, 2)} 초, 1분 스크랩핑 대기")
-                    time.sleep(61)
+                    # time.sleep(61)
 
             print('')
 
@@ -659,6 +659,14 @@ class StatesUpdater:
                     return 0.0
 
             # <성장성 지표>
+
+            # 영업이익률
+            def operating_margin():
+                try:
+                    return round(self.cal_rate(operating_profit, revenue), 2)
+                except:
+                    return 0.0
+
             # 매출증가율 -확인
             def sales_growth_rate():
                 # (금년도 영업수익(매출) - 전년도 영업수익(매출)) / 전년도 영업수익 * 100
@@ -1080,10 +1088,15 @@ class StatesUpdater:
                     return 0
 
             result_dict = {
+                'revenue': revenue,
                 'current_asset': current_asset_cal(),
                 'gross_profit': gross_profit,
                 'net_profit': net_profit,
                 'operating_profit': operating_profit,
+                'liabilities': liabilities,
+                'mk_cap': mk_cap(),
+                'number_of_stocks': number_of_stocks(),
+                'operating_margin': operating_margin(),
                 'current_ratio': current_ratio(),
                 'debt_ratio': debt_ratio(),
                 'quick_ratio': quick_ratio(),
@@ -1091,17 +1104,14 @@ class StatesUpdater:
                 'sales_growth_rate': sales_growth_rate().get(quarter_year),
                 'asset_growth_rate': asset_growth_rate().get(quarter_year),
                 'net_profit_growth_rate': net_profit_growth_rate().get(quarter_year),
-                'per': per(),
                 'roa': roa(),
                 'roe': roe(),
-                'eps': eps_cal(),
-                'bps': bps(),
                 'pbr': pbr(),
-                'mk_cap': mk_cap(),
+                'eps': eps_cal(),
+                'per': per(),
+                'bps': bps(),
                 'gross_margin': gross_margin(),
                 'asset_turnover': asset_turnover(),
-                'liabilities': liabilities,
-                'number_of_stocks': number_of_stocks()
             }
             return result_dict
         except:
@@ -1148,7 +1158,8 @@ class StatesUpdater:
                 # quarter_year: year과 비슷함. 분기 숫자 연도,
                 # quarter_str_list: curr, last, before_last 분기문자 재무값 추출용
                 cal_ratios = self.cal_ratios(code, year, quarter_year, quarter_str_list[position])
-
+                revenue = cal_ratios.get('revenue')
+                operating_margin = cal_ratios.get('operating_margin')
                 current_asset = cal_ratios.get('current_asset')  # 당좌자산
                 net_profit = cal_ratios.get('net_profit')  # 당기순이익
                 gross_profit = cal_ratios.get('gross_profit')  # 매출총이익
@@ -1175,17 +1186,20 @@ class StatesUpdater:
                 with connector.cursor() as curs:
                     # update 는 업데이트 날짜에 맞쳐서 자동생성
                     sql = f"REPLACE INTO company_state (code, year, sec, sec_nm, company_nm, rp_type, mk, last_update, " \
-                          f"current_asset, gross_profit, net_profit, operating_profit, liabilities, mk_cap, number_of_stocks, " \
-                          f"current_ratio, debt_ratio, quick_ratio, bis, " \
+                          f"revenue, current_asset, gross_profit, net_profit, operating_profit, liabilities, mk_cap, number_of_stocks, " \
+                          f"operating_margin, current_ratio, debt_ratio, quick_ratio, bis, " \
                           f"sales_growth_rate, asset_growth_rate, net_profit_growth_rate, " \
-                          f"eps, roa, gross_margin, pbr, per, " \
-                          f"roe, bps, asset_turnover) " \
+                          f"roa, roe, pbr, eps, per, " \
+                          f"bps, gross_margin, asset_turnover) " \
                           f"VALUES ('{code}', '{quarter_year}', '{sec_code}', '{sec_nm}', '{comp_nm}', '{state_rp_type}', '{mk}', '{tmnow}', " \
-                          f"'{current_asset}', '{gross_profit}', '{net_profit}', '{operating_profit}', '{liabilities}', '{mk_cap}', '{number_of_stocks}', " \
-                          f"'{current_ratio}', '{debt_ratio}', '{quick_ratio}', '{bis}', " \
+                          f"'{revenue}', '{current_asset}', '{gross_profit}', '{net_profit}', '{operating_profit}', '{liabilities}', '{mk_cap}', '{number_of_stocks}', " \
+                          f"'{operating_margin}', '{current_ratio}', '{debt_ratio}', '{quick_ratio}', '{bis}', " \
                           f"'{sales_growth_rate}', '{asset_growth_rate}', '{net_profit_growth_rate}', " \
-                          f"'{eps}', '{roa}', '{gross_margin}', '{pbr}', '{per}', " \
-                          f"'{roe}', '{bps}', '{asset_turnover}')"
+                          f"'{roa}', '{roe}', '{pbr}', '{eps}', '{per}', " \
+                          f"'{bps}', '{gross_margin}', '{asset_turnover}')"
+
+                    # 15년도 엽엉이익률 업데이트후 16년도부터는 매출액과 영업이익률 동시에 업데이트
+                    # sql = f"UPDATE company_state SET revenue='{revenue}', operating_margin='{operating_margin}' WHERE code='{code}' AND year='{year}';"
                     curs.execute(sql)
                     connector.commit()
             return

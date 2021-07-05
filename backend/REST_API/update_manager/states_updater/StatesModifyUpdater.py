@@ -43,21 +43,23 @@ class StatesModifyUpdater:
         try:
             with connector.cursor() as curs:
                 # 해당 종목코드칼럼, year칼럼에서 가장 큰 숫자를 기준
-                sql = f"SELECT year, code FROM company_state WHERE year={recent_year}"
+                sql = f"SELECT year, code FROM company_state WHERE year={recent_year};"
                 df = pd.read_sql(sql, connector)
 
                 # 최근 연도를 기준으로 상호명 조회및 데이터프레임화
                 for code in df.code:
-                    sql = f"SELECT code, company_nm FROM company_state WHERE code={code}"
+                    sql = f"SELECT code, company_nm, sec, sec_nm FROM company_state WHERE code={code};"
                     df = pd.read_sql(sql, connector)
                     recent_comp_nm = df.company_nm.iloc[-1]
+                    recent_sec = df.sec.iloc[-1]
+                    recent_sec_nm = df.sec_nm.iloc[-1]
 
-                    # 변경된 상호명으로 업데이트. 업종코드, 업종명은 변경하지 않는다.(그 당시 업종간 비교를 위함)
-                    sql = f"UPDATE company_state SET company_nm='{recent_comp_nm}' " \
-                          f"WHERE code='{code}'"
+                    # 변경된 상호명으로 업데이트. 업종코드, 업종명
+                    sql = f"UPDATE company_state SET company_nm='{recent_comp_nm}', sec='{recent_sec}', sec_nm='{recent_sec_nm}'" \
+                          f"WHERE code='{code}';"
                     curs.execute(sql)
                     connector.commit()
-                    print(f"code: {code}, comp_nm: {recent_comp_nm}")
+                    print(f"code: {code}, comp_nm: {recent_comp_nm}, sec: {recent_sec}, sec_nm: {recent_sec_nm}")
         except:
             logging.error(traceback.format_exc())
             return

@@ -43,73 +43,96 @@ class DailyPriceFilter(filters.FilterSet):
 
 # 재무 필터 클래스
 class CompanyStatesFilter(filters.FilterSet):
+    # 연도
+    # start_year = filters.NumberFilter(field_name='year', lookup_expr='gte')
+    # end_year = filters.NumberFilter(field_name='year', lookup_expr='lte')
 
     # mk_cap
     min_mk_cap = filters.NumberFilter(field_name='mk_cap', lookup_expr='gte')
     max_mk_cap = filters.NumberFilter(field_name='mk_cap', lookup_expr='lte')
 
-    # current_ratio
+    # 매출액
+    min_revenue = filters.NumberFilter(field_name='revenue', lookup_expr='gte')
+    max_revenue = filters.NumberFilter(field_name='revenue', lookup_expr='lte')
+
+    # 영업이익
+    min_operating_profit = filters.NumberFilter(field_name='operating_profit', lookup_expr='gte')
+    max_operating_profit = filters.NumberFilter(field_name='operating_profit', lookup_expr='lte')
+
+    # 당기순이익
+    min_net_profit = filters.NumberFilter(field_name='net_profit', lookup_expr='gte')
+    max_net_profit = filters.NumberFilter(field_name='net_profit', lookup_expr='lte')
+
+    # 영업이익률
+    min_operating_margin = filters.NumberFilter(field_name='operating_margin', lookup_expr='gte')
+    max_operating_margin = filters.NumberFilter(field_name='operating_margin', lookup_expr='lte')
+
+    # 유동비율
     min_current_ratio = filters.NumberFilter(field_name='current_ratio', lookup_expr='gte')
     max_current_ratio = filters.NumberFilter(field_name='current_ratio', lookup_expr='lte')
 
-    # debt_ratio
+    # 부채비율
     min_debt_ratio = filters.NumberFilter(field_name='debt_ratio', lookup_expr='gte')
     max_debt_ratio = filters.NumberFilter(field_name='debt_ratio', lookup_expr='lte')
 
-    # quick_ratio
+    # 당좌비율
     min_quick_ratio = filters.NumberFilter(field_name='quick_ratio', lookup_expr='gte')
     max_quick_ratio = filters.NumberFilter(field_name='quick_ratio', lookup_expr='lte')
 
-    # bis
+    # 자기자본율
     min_bis = filters.NumberFilter(field_name='bis', lookup_expr='gte')
     max_bis = filters.NumberFilter(field_name='bis', lookup_expr='lte')
 
-    # sales_growth_rate
+    # 매출액 증가율
     min_sales_growth_rate = filters.NumberFilter(field_name='sales_growth_rate', lookup_expr='gte')
     max_sales_growth_rate = filters.NumberFilter(field_name='sales_growth_rate', lookup_expr='lte')
 
-    # asset_growth_rate
+    # 총자산증가율
     min_asset_growth_rate = filters.NumberFilter(field_name='asset_growth_rate', lookup_expr='gte')
     max_asset_growth_rate = filters.NumberFilter(field_name='asset_growth_rate', lookup_expr='lte')
 
-    # net_profit_growth_rate
+    # 순이익증가율
     min_net_profit_growth_rate = filters.NumberFilter(field_name='net_profit_growth_rate', lookup_expr='gte')
     max_net_profit_growth_rate = filters.NumberFilter(field_name='net_profit_growth_rate', lookup_expr='lte')
 
-    # eps
+    # 주당순이익
     min_eps = filters.NumberFilter(field_name='eps', lookup_expr='gte')
     max_eps = filters.NumberFilter(field_name='eps', lookup_expr='lte')
 
-    # roa
+    # 총자산이익률
     min_roa = filters.NumberFilter(field_name='roa', lookup_expr='gte')
     max_roa = filters.NumberFilter(field_name='roa', lookup_expr='lte')
 
-    # roe
+    # 자기자본이익률
     min_roe = filters.NumberFilter(field_name='roe', lookup_expr='gte')
     max_roe = filters.NumberFilter(field_name='roe', lookup_expr='lte')
 
-    # gross_margin
+    # 매출액 총이익률
     min_gross_margin = filters.NumberFilter(field_name='gross_margin', lookup_expr='gte')
     max_gross_margin = filters.NumberFilter(field_name='gross_margin', lookup_expr='lte')
 
-    # pbr
+    # 주가 순자산배율
     min_pbr = filters.NumberFilter(field_name='pbr', lookup_expr='gte')
     max_pbr = filters.NumberFilter(field_name='pbr', lookup_expr='lte')
 
-    # per
+    # 주당 수익비율
     min_per = filters.NumberFilter(field_name='per', lookup_expr='gte')
     max_per = filters.NumberFilter(field_name='per', lookup_expr='lte')
 
-    # bps
+    # 주당순자산비율
     min_bps = filters.NumberFilter(field_name='bps', lookup_expr='gte')
     max_bps = filters.NumberFilter(field_name='bps', lookup_expr='lte')
+
+    # 자본회전률
+    min_asset_turnover = filters.NumberFilter(field_name='asset_turnover', lookup_expr='gte')
+    max_asset_turnover = filters.NumberFilter(field_name='asset_turnover', lookup_expr='lte')
 
     class Meta:
         model = CompanyState
         fields = ['code', 'year', 'sec', 'sec_nm', 'company_nm', 'rp_type', 'mk', 'last_update',
-                  'current_asset', 'gross_profit', 'net_profit', 'operating_profit', 'liabilities', 'mk_cap',
+                  'revenue', 'current_asset', 'gross_profit', 'net_profit', 'operating_profit', 'liabilities', 'mk_cap',
                   'number_of_stocks',
-                  'current_ratio', 'debt_ratio', 'quick_ratio', 'bis',
+                  'operating_margin', 'current_ratio', 'debt_ratio', 'quick_ratio', 'bis',
                   'sales_growth_rate', 'asset_growth_rate', 'net_profit_growth_rate',
-                  'eps', 'roa', 'gross_margin',
-                  'pbr', 'per', 'roe', 'bps', 'asset_turnover']
+                  'roa', 'roe', 'pbr',
+                  'eps', 'per', 'bps', 'gross_margin', 'asset_turnover']

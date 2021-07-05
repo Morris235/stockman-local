@@ -58,6 +58,8 @@ class CompanyState(models.Model):
 
 
     # <기본 재무 정부>
+    # 매출액
+    revenue = models.BigIntegerField(blank=True, null=True)
     # 유동자산
     current_asset = models.BigIntegerField(blank=True, null=True)
     # 매출총이익
@@ -84,6 +86,8 @@ class CompanyState(models.Model):
     bis = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
 
     # <성장성 지표>
+    # 영업이익률
+    operating_margin = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 매출액 증가율
     sales_growth_rate = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
     # 총자산증가율 max_digits=7, decimal_places=3 -> 1111.234
