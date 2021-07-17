@@ -3,8 +3,13 @@
 """
 
 from django_filters import rest_framework as filters
-from .models import CompanyInfo, DailyPrice, CompanyState
+from .models import *
 
+
+class CompFilter(filters.FilterSet):
+    class Meta:
+        model = CompanyInfo
+        fields = '__all__'
 
 # 주가 필터 클래스
 class DailyPriceFilter(filters.FilterSet):
@@ -136,3 +141,15 @@ class CompanyStatesFilter(filters.FilterSet):
                   'sales_growth_rate', 'asset_growth_rate', 'net_profit_growth_rate',
                   'roa', 'roe', 'pbr',
                   'eps', 'per', 'bps', 'gross_margin', 'asset_turnover']
+
+
+class CalRequestFilter(filters.FilterSet):
+    class Meta:
+        model = CalRequest
+        fields = ['id', 'operand_a', 'operand_b', 'operator']
+
+
+class CalResponseFilter(filters.FilterSet):
+    class Meta:
+        model = CalResponse
+        fields = ['id', 'return_val']

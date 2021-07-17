@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from django_filters import rest_framework as filters
 from rest_framework.filters import SearchFilter
 from .models import CompanyInfo, DailyPrice, CompanyState
-from .serializers import CompSerializer, DailyPriceSerializer, CompanyStateSerializer
+from .serializers import *
 from .filter_sets import *
 
 # rest_framework에 있는 viewset에서 modelViewSet을 가져와 연동시킨다.
@@ -42,22 +42,13 @@ from .filter_sets import *
 # 문제를 작게 나눠서 처리하기
 class CompViewSet(viewsets.ModelViewSet):
     # 필수 구현 : 미구현시 에러
+    queryset = CompanyInfo.objects.all()
     serializer_class = CompSerializer
 
-    def get_queryset(self):
-        queryset = CompanyInfo.objects.all()
+    # 필터
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = CompFilter
 
-        # 쿼리스트링 종류
-        code_request = self.request.query_params.get("code", None)
-        com_name = self.request.query_params.get("company", None)
-
-        # 쿼리스트링을 사용 : code_request가 조건문 앞에 위치가히 때문에 종목코드를 우선시 하는 로직이다.
-        if code_request is not None:  # 조건 검색 로직 필요
-            queryset = CompanyInfo.objects.filter(code=code_request)  # get은 왜 안되는걸까? 리스트형 리턴이라서?
-        elif com_name is not None:
-            queryset = CompanyInfo.objects.filter(company=com_name)
-
-        return queryset
 
 
 class DailyPriceViewSet(viewsets.ModelViewSet):
@@ -80,6 +71,19 @@ class CompanyStateViewSet(viewsets.ModelViewSet):
     # filterset_fields = ['code', 'year', 'company_nm', 'sec']
 
 
+class CalRequestViewSet(viewsets.ModelViewSet):
+    queryset = CalRequest.objects.all()
+    serializer_class = CalRequestSerializer
+
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = CalRequestFilter
+
+class CalResponseViewSet(viewsets.ModelViewSet):
+    queryset = CalResponse.objects.all()
+    serializer_class = CalResponseSerializer
+
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = CalResponseFilter
 
     # 매번 사용?
     # def get_queryset(self):

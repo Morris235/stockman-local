@@ -9,7 +9,6 @@ import { BrowserRouter as Router,
 import CompanyBoard from './CompanyBoard';
 import NotFound from './NotFound';
 import Home from './Home';
-import TitleBar from '../components/TitleBar';
 
 export default function Routing () {
 
@@ -19,22 +18,9 @@ export default function Routing () {
     // 라우터 사용법을 좀 더 공부해야한다. (라우터 기능의 개념 이해하기)
     return (
         <Router>
-            <header>
-                <nav class="navbar navbar-expand navbar-dark bg-dark">
-                    <div class="container">
-                        <Link to="/" class="navbar-brand">STOCKMAN</Link>
-                        <div class="me-auto navbar-nav">
-                            {/* <a href="#home" data-rb-event-key="#home" class="nav-link">메뉴1</a>
-                            <a href="#features" data-rb-event-key="#features" class="nav-link">메뉴2</a>
-                            <a href="#pricing" data-rb-event-key="#pricing" class="nav-link">메뉴3</a> */}
-                        </div>
-                    </div>
-                </nav>
-            </header>
-
-                    <ul>
+                    {/* <ul>
                         <li><Link to="/companylist">기업리스트</Link></li>
-                    </ul>
+                    </ul> */}
 
                 {/* 주소창의 경로와 매칭될 경우 보여줄 컴포넌트 할당 */}
                 <Switch>

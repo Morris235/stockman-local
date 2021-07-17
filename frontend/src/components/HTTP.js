@@ -19,6 +19,7 @@ import { updateTotalPostsCount } from '../modules/Counter';
     
 
 /* GET 메서드 집합 */
+
 export const GetCompanyTotalPostsCount = async() => {
     const dispatch = useDispatch();
     const [totalPostsCount, setTotalPostsCount] = useState(0);

@@ -4,6 +4,8 @@ from django.utils import timezone
 import time
 
 from django.db import models
+
+
 # 모델의 하나의 클래스는 DB에서 하나의 테이블이다.
 # 따라서 패키지 네임인 REST-API는 잘못되었음, 현재 종목이름만 가져다 쓰고 있으니 CompanyNames-REST 정도로 해야함. 그렇다는건 필요한 테이블마다 하나씩 장고 앱을 가져야 한다는 말인가?
 # 모델을 다 작성하였으면 migrate 하기
@@ -56,7 +58,6 @@ class CompanyState(models.Model):
     # 업데이트 날짜
     last_update = models.DateField()
 
-
     # <기본 재무 정부>
     # 매출액
     revenue = models.BigIntegerField(blank=True, null=True)
@@ -103,7 +104,6 @@ class CompanyState(models.Model):
     # 매출액 총이익률
     gross_margin = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
 
-
     # <기업가치 관련 지수>
     # 주가 순자산배율
     pbr = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2)
@@ -119,7 +119,6 @@ class CompanyState(models.Model):
     class Meta:
         managed = True
         db_table = 'company_state'
-
 
 
 class MarketCap(models.Model):
@@ -145,8 +144,24 @@ class MarketCap(models.Model):
         db_table = 'market_cap'
 
 
+class CalRequest(models.Model):
+    id = models.CharField(primary_key=True, max_length=20, unique=True)
+    operand_a = models.BigIntegerField()
+    operand_b = models.BigIntegerField()
+    operator = models.CharField(blank=False, null=False, max_length=10)
+
+    class Meta:
+        managed = True
+        db_table = 'cal_request'
 
 
+class CalResponse(models.Model):
+    id = models.CharField(primary_key=True, max_length=20, unique=True)
+    return_val = models.BigIntegerField()
+
+    class Meta:
+        managed = True
+        db_table = 'cal_response'
 
 
 # Django 관련 테이블들
@@ -169,6 +184,7 @@ class AuthGroupPermissions(models.Model):
             models.UniqueConstraint(fields=['group', 'permission'], name='AuthGroupPermissions')
         ]
 
+
 class AuthPermission(models.Model):
     name = models.CharField(max_length=255)
     content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
@@ -180,6 +196,7 @@ class AuthPermission(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['content_type', 'codename'], name='AuthPermission')
         ]
+
 
 class AuthUser(models.Model):
     password = models.CharField(max_length=128)
@@ -209,6 +226,7 @@ class AuthUserGroups(models.Model):
             models.UniqueConstraint(fields=['user', 'group'], name='AuthUserGroups')
         ]
 
+
 class AuthUserUserPermissions(models.Model):
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
     permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
@@ -219,6 +237,7 @@ class AuthUserUserPermissions(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['user', 'permission'], name='AuthUserUserPermissions')
         ]
+
 
 class DjangoAdminLog(models.Model):
     action_time = models.DateTimeField()
@@ -245,6 +264,7 @@ class DjangoContentType(models.Model):
             models.UniqueConstraint(fields=['app_label', 'model'], name='DjangoContentType')
         ]
 
+
 class DjangoMigrations(models.Model):
     app = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
@@ -263,4 +283,3 @@ class DjangoSession(models.Model):
     class Meta:
         managed = False
         db_table = 'django_session'
-
