@@ -8,7 +8,7 @@
 """
 
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt, mpld3
 import datetime
 import matplotlib.dates as mdates
 import matplotlib.font_manager as fm

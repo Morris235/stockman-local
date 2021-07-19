@@ -1,7 +1,7 @@
 import { initialState } from "./Counter";
 
 // 액션 타입
-export const SHOW_COMPANY_INFO = 'company/SHOW_COMPANY_INFO';
+export const SHOW_COMPANY_INFO = 'company_info/SHOW_COMPANY_INFO';
 
 // 액션 객체 
 export const companyInfoActionObject = (code, comp_name) => ({

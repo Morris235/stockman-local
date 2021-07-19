@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt, mpld3
 import datetime
 import mplfinance as mpf
 import matplotlib.dates as mdates
@@ -26,7 +26,7 @@ p1 = plt.subplot(2, 1, 1)
 plt.title('Triple Screen Trading - First Screen')
 plt.grid(True)
 
-candlestick_ohlc(p1,ohlc.values, width=.6, colorup='red', colordown='blue')  # ohlc의 숫자형 일자, 시가, 고가, 저가, 종가 값을 이용해서 캔들 차트를 그린다.
+candlestick_ohlc(p1, ohlc.values, width=.6, colorup='red', colordown='blue')  # ohlc의 숫자형 일자, 시가, 고가, 저가, 종가 값을 이용해서 캔들 차트를 그린다.
 p1.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
 plt.plot(df.number, df['ema130'], color='c', label='EMA130')
 plt.legend(loc='best')
@@ -38,4 +38,4 @@ plt.bar(df.number, df['macdhist'], color='m', label='MACD-Hist')
 plt.plot(df.number, df['macd'], color='b', label='MACD')
 plt.plot(df.number, df['signal'], 'g--', label='MACD-Signal')
 plt.legend(loc='best')
-plt.show()
+mpld3.show()

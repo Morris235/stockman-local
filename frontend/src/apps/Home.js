@@ -1,16 +1,29 @@
-import React, { useEffect, useState }  from 'react';
+import React, { useState }  from 'react';
 import axios from 'axios';
-import TitleBar from '../components/TitleBar';
+import TitleBar from '../components/NavBar';
+import CandleChart from '../components/Charts';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
+
+/*
+  1. 종목조건 검색
+  2. 포트폴리오 셀렉션
+  3. 뉴스/공시 (크롤링?)
+  4. 연간실적
+  5. 동종업 실적 비교
+
+  6. UI,CSS,레이아웃 조정
+  7. 처음 보여줄 데이터 기준 정하기
+*/
 export default function Home () {
     const [result, setResult] = useState(0)
     // 리덕스 스토어로부터 검색정보 받기
     const { code, compName } = useSelector(
         state => ({
             code: state.searchReducer.code,
-            compName: state.searchReducer.compName,
+            compName: state.searchReducer.comp_name,
         }), shallowEqual);
+
 
     // 계산 요청 메소드(POST)
     const CalRequest = async(e) => {
@@ -52,25 +65,25 @@ export default function Home () {
     };
     
     // if (loading) return <div>loading...</div>;
-
     // 미디어 쿼리를 어떻게 구조적으로 작성하나?
     return (
-    <div className="container">
+    <div className="container-fluid">
+
         <div className="row">
             <div className="col-sm-12">
                 {/* 네비를 라우터에 어떻게 동작하게 해야하나? 검색 기능 구현, 라우터에서 동작 설계 */}
                 <TitleBar/>
             </div>
 
-            <div className="col-sm-12">
+            {/* <div className="col-sm-12">
                 서브네비
-            </div>
+            </div> */}
 
-            <div className="col-sm-6">
+            <div className="col-md-6">
                 {/* 조건검색, 가격조건도 추가 */}
                 {/* 파이썬과 rest api를 이용해 간단한 통신해보기 */}
                 {/* 간단한 계산기 (피연산자 2개, +,-,/,*) */}
-                
+                종목조건 검색
                 <form onSubmit={CalRequest}>
                     <input name='operand_a' className='m-2' type='number'/>
                     <input name='operand_b' type='number'/>
@@ -88,27 +101,29 @@ export default function Home () {
 
                 {/* 결과값 */}
                 <h2>{result}</h2>
+
             </div>
 
-            <div className="col-sm-6">
+            <div className="col-md-6">
                 {/* mpld3 를 이용해 matplotlib을 웹상에 올리기 */}
-                차트
+                {compName} ({code})의 차트
+                <CandleChart/>
             </div>
-            <div className="col-sm-6">
+            <div className="col-md-6">
                 {/* 파이썬 로직 서버에 임의의 사용자 요청에 대한 응답을 어떻게 줄 것인가 */}
                 포트폴리오
             </div>
-            <div className="col-sm-6">
+            <div className="col-md-6">
                 연간실적
             </div>
-            <div className="col-sm-6">
+            <div className="col-md-6">
                 {/* 뉴스사이트에서 해당 종목의 뉴스 헤드라인을 어떻게 끌어모아 표시할것인가 */}
                 뉴스/공시
             </div>
-            <div className="col-sm-6">
+            <div className="col-md-6">
                 동종업 실적 비교
             </div>
-            <div className="col-sm-12">
+            <div className="col-md-12">
                 <footer>
                     {/* 사이트의 작성자나 그에 따른 저작권 정보, 연락처 등을 명시한다. */}
                     <p>Copyright 2021. Morris all rights reserved, email: Morris@gmail.com, phone: 010-7283-2350</p>
