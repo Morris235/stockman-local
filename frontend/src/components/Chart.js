@@ -4,14 +4,14 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { useSelector, shallowEqual } from 'react-redux';
 
-
 /*
-  1. 디스포즈 구현
+  1. 디스포즈 구현 (DOM 제어 에러 발생)
   2. 성능 최적화 (느림)
   3. UI 꾸미기 (버튼, from, to input 상자, 캔들 색상)
   4. 수정주가 계산및 구현
   5. 이동평균선, MACD, 추세선등등 기능 확장
 */
+
 export default function Charts () {
   const chart = useRef(null);
 
@@ -87,7 +87,7 @@ export default function Charts () {
       valueAxis.renderer.gridContainer.background.fillOpacity = 0.05;
       valueAxis.renderer.inside = true;
       valueAxis.renderer.labels.template.verticalCenter = "bottom";
-      valueAxis.renderer.labels.template.padding(2, 2, 2, 2);
+      valueAxis.renderer.labels.template.padding(1, 1, 1, 1);
 
       //valueAxis.renderer.maxLabelPosition = 0.95;
       valueAxis.renderer.fontSize = "0.8em"
@@ -254,52 +254,28 @@ export default function Charts () {
 
   }, [code]);
 
-  // 캔들차트
-     
-  
-    
-  // css
-  const controlsStyle = {
-      width: '100%',
-      height: '50px',
-      Overflow: 'hidden'
-  };
-  const fieldStyle = {
-      float: 'left',
-      marginLeft: '10px',
-  };
-  const buttonStyle = {
-      float:'right',
-      marginRight: '15px',
-  };
-
-  const chartStyle = {
-    width: '100%',
-    height: '600px'
-  }
-
     /* HTML */ 
     return (
-      <div>
-          <div id="controls" style={controlsStyle}>
-              <div style={fieldStyle}>
+      <div className="chart-div">
+          <div id="controls" className="controls-div">
+              <div className="chart-input-div">
                       From: <input  type="text" id="fromfield" className="amcharts-input"/>
                       to:   <input type="text" id="tofield" className="amcharts-input"/>
               </div>
 
-              <div style={buttonStyle}>
-                {/* 버튼 제어 방법 변경해야 */}
-                  <button id="b1m" className="amcharts-input">1개월</button>
-                  <button id="b3m" className="amcharts-input">3개월</button>
-                  <button id="b6m" className="amcharts-input">6개월</button>
-                  <button id="b1y" className="amcharts-input">1년</button>
-                  <button id="bytd" className="amcharts-input">연초누계</button>
-                  <button id="bmax" className="amcharts-input">전체</button>
+              <div className="chart-btns-div">
+                  <button id="b1m" className="btn btn-outline-primary">1개월</button>
+                  <button id="b3m" className="btn btn-outline-primary">3개월</button>
+                  <button id="b6m" className="btn btn-outline-primary">6개월</button>
+                  <button id="b1y" className="btn btn-outline-primary">1년</button>
+                  <button id="bytd" className="btn btn-outline-primary">연초누계</button>
+                  <button id="bmax" className="btn btn-outline-primary">전체</button>
               </div>
             
           </div>
+
       {/* 차트 구현 코드 */}
-      <div id="chartdiv" style={chartStyle}></div>
+      <div id="chartdiv" className="chart-candle-div" ></div>
       </div>
     );
 };

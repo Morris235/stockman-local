@@ -1,7 +1,12 @@
-import { initialState } from "./Counter";
 
 // 액션 타입
 export const SHOW_COMPANY_INFO = 'company_info/SHOW_COMPANY_INFO';
+
+// counter의 상태 초기화 : 그냥 state라고 이해하기
+export const initialState = {
+    code: '005930',
+    comp_name: '삼성전자',
+};
 
 // 액션 객체 
 export const companyInfoActionObject = (code, comp_name) => ({

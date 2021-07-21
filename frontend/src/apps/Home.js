@@ -1,9 +1,11 @@
 import React, { useState }  from 'react';
 import axios from 'axios';
-import TitleBar from '../components/NavBar';
-import CandleChart from '../components/Charts';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import '../CSS/Style.css';
 
+import TitleBar from '../components/NavBar';
+import CandleChart from '../components/Chart';
+import FinancialTable from '../components/FinancialTable';
 
 /*
   1. 종목조건 검색
@@ -14,6 +16,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
   6. UI,CSS,레이아웃 조정
   7. 처음 보여줄 데이터 기준 정하기
+  8. 최근 검색 항목 보여주기
 */
 export default function Home () {
     const [result, setResult] = useState(0)
@@ -64,73 +67,83 @@ export default function Home () {
         }
     };
     
-    // if (loading) return <div>loading...</div>;
-    // 미디어 쿼리를 어떻게 구조적으로 작성하나?
+    /* HTML */
     return (
-    <div className="container-fluid">
+        <div>
+            {/* 네비를 라우터에 어떻게 동작하게 해야하나? 검색 기능 구현, 라우터에서 동작 설계 */}
+            {/* fiexd position 적용 */}
+            <div className="container-fluid">
 
-        <div className="row">
-            <div className="col-sm-12">
-                {/* 네비를 라우터에 어떻게 동작하게 해야하나? 검색 기능 구현, 라우터에서 동작 설계 */}
-                <TitleBar/>
+                <div className="row">
+                    <div className="col-sm-12">
+                        <div className="nav-div">
+                            <TitleBar />
+                        </div>    
+                    </div>
+                </div>
+                
             </div>
 
-            {/* <div className="col-sm-12">
-                서브네비
-            </div> */}
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-12">
+                        {/* 서브네비 */}
+                        <h4 className="home-compname-text">{compName} {code}</h4>
+                    </div>
 
-            <div className="col-md-6">
-                {/* 조건검색, 가격조건도 추가 */}
-                {/* 파이썬과 rest api를 이용해 간단한 통신해보기 */}
-                {/* 간단한 계산기 (피연산자 2개, +,-,/,*) */}
-                종목조건 검색
-                <form onSubmit={CalRequest}>
-                    <input name='operand_a' className='m-2' type='number'/>
-                    <input name='operand_b' type='number'/>
 
-                    <select name='operator'>
-                        {/* input 에 입력한 숫자와 이 값들을 버튼을 클릭하면 CalRequest 함수로 보내야한다. */}
-                        <option type='text' value='add'>더하기</option>
-                        <option type='text' value='sub'>빼기</option>
-                        <option type='text' value='multi'>곱하기</option>
-                        <option type='text' value='div'>나누기</option>
-                    </select>
-                    
-                    <input type='submit' id='cal' value='연산요청'/>
-                </form>
+                    <div className="col-sm-6 mx-auto">
+                        {/* 재무,조건검색 */}
+                        <CandleChart />
+                    </div>
 
-                {/* 결과값 */}
-                <h2>{result}</h2>
+                    <div className="col-sm-6 mx-auto">
+                        {/* 차트 */}
+                        <FinancialTable />
 
-            </div>
+                    </div>
+                    <div className="col-sm-6 mx-auto">
+                        {/* 파이썬 로직 서버에 임의의 사용자 요청에 대한 응답을 어떻게 줄 것인가 */}
+                        포트폴리오
+                    </div>
+                    <div className="col-sm-6 mx-auto">
+                        {/* 파이썬과 rest api를 이용해 간단한 통신해보기 */}
+                        종목조건 검색
+                        <form onSubmit={CalRequest}>
+                            <input name='operand_a' className='m-2' type='number' />
+                            <input name='operand_b' type='number' />
 
-            <div className="col-md-6">
-                {/* mpld3 를 이용해 matplotlib을 웹상에 올리기 */}
-                {compName} ({code})의 차트
-                <CandleChart/>
-            </div>
-            <div className="col-md-6">
-                {/* 파이썬 로직 서버에 임의의 사용자 요청에 대한 응답을 어떻게 줄 것인가 */}
-                포트폴리오
-            </div>
-            <div className="col-md-6">
-                연간실적
-            </div>
-            <div className="col-md-6">
-                {/* 뉴스사이트에서 해당 종목의 뉴스 헤드라인을 어떻게 끌어모아 표시할것인가 */}
-                뉴스/공시
-            </div>
-            <div className="col-md-6">
-                동종업 실적 비교
-            </div>
-            <div className="col-md-12">
-                <footer>
-                    {/* 사이트의 작성자나 그에 따른 저작권 정보, 연락처 등을 명시한다. */}
-                    <p>Copyright 2021. Morris all rights reserved, email: Morris@gmail.com, phone: 010-7283-2350</p>
-                </footer>
+                            <select name='operator'>
+                                {/* input 에 입력한 숫자와 이 값들을 버튼을 클릭하면 CalRequest 함수로 보내야한다. */}
+                                <option type='text' value='add'>더하기</option>
+                                <option type='text' value='sub'>빼기</option>
+                                <option type='text' value='multi'>곱하기</option>
+                                <option type='text' value='div'>나누기</option>
+                            </select>
+
+                            <input type='submit' id='cal' value='연산요청' />
+                        </form>
+
+                        {/* 결과값 */}
+                        <h2>{result}</h2>
+                    </div>
+                    <div className="col-sm-6 mx-auto">
+                        {/* 뉴스사이트에서 해당 종목의 뉴스 헤드라인을 어떻게 끌어모아 표시할것인가 */}
+                        뉴스/공시
+                    </div>
+                    <div className="col-sm-6 mx-auto">
+                        동종업 실적 비교
+                    </div>
+                    <div className="col-sm-12">
+                        <footer>
+                            {/* 사이트의 작성자나 그에 따른 저작권 정보, 연락처 등을 명시한다. */}
+                            <p>Copyright 2021. Morris all rights reserved</p>
+                        </footer>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    
     )
 
     // const [compsPosts, setCompPosts] = useState([]);

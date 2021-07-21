@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import axios from 'axios';
 import { companyInfoActionObject } from '../modules/SearchReducer';
 import { useDispatch } from 'react-redux';
@@ -13,7 +13,7 @@ import { useDispatch } from 'react-redux';
 */ 
 export default function TitelBar () {
     const dispatch = useDispatch();
-
+    
     const getCompanyInfo = async(e) => {
         try{
             e.preventDefault();  // 페이지 새로고침 막기

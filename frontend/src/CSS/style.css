@@ -38,14 +38,149 @@ color:white;
 text-decoration:none;
 } */
 
-@media (min-width: 768px) {
-    .container-fluid {
-        width: 750px;
-    }
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+     
 }
 
-@media (min-width: 992px) {
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (min-width:480px) and (max-width:767px) {
+    .candle-chart-div {
+        width: 100%;
+        height: 400px;
+    }
+} 
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/ 
+@media all and (max-width:767px) {
+     
+}
+
+/* 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+@media all and (min-width:768px) and (max-width:1023px) {
+     
+} 
+
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+@media all and (min-width:768px) and (max-width:1023px) {
     .container-fluid {
         width: 940px;
     }
+
+    .controls {
+        width: 100%;
+        height: 100px;
+        Overflow: hidden;
+    }
+
+    .chart-btns-div {
+        float: left;
+        margin-top: 5px;
+        margin-left: 15px;
+    }
+} 
+
+/* PC, 테블릿 가로 (해상도 768px ~ 1023px) */
+@media all and (min-width: 768px) and (max-width: 1023px) {
+    /* 전체 레이아웃 */
+    .container-fluid {
+        width: 750px;
+        }
+
+    /* 차트 */
+    .controls-div {
+        width: 100%;
+        height: 100px;
+        Overflow: hidden;
+    }
+    .btn{
+        width: auto;
+    }
+
+    .chart-btns-div {
+        float: left;
+        margin-top: 5px;
+        margin-left: 15px;
+    }
+
+    .amcharts-input {
+        width: auto;
+        margin: 10px;
+    }
+
+    .candle-chart-div {
+        width: 100%;
+        height: 500px;
+    }
 }
+
+/* PC,노트북 (해상도 1024px) */
+@media all and (min-width:1024px) {
+
+    /* 네비게이션 */
+    .nav-div {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+   
+    /* Home 레이아웃 */
+    .home-compname-text {
+        z-index: 2;
+        margin-top: 5px;
+        padding-top: 70px;
+    }
+
+    /* 차트 */
+    .controls-div {
+        width: 100%;
+        height: 100px;
+        Overflow: hidden;
+    }
+
+    .btn {
+        width: auto;
+        margin-right: 5px;
+    }
+
+    .chart-btns-div {
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+    .chart-input-div{
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+    .amcharts-input {
+        width: auto;
+        margin: 5px;
+    }
+
+    .chart-candle-div {
+        width: 100%;
+        height: 800px;
+    }
+
+    /* 실적 테이블 */
+    .table {
+        /* 최소사이즈 800px */
+        height: 500px;
+    }
+
+    .table-btns-div {
+        /* margin-top: 5px; */
+        float: left;
+    }
+
+    .table-change-table-div {
+        float: right;
+    }
+} 
+
+
+
