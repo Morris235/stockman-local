@@ -34,17 +34,16 @@ export default function Tables () {
 
             const url = `http://localhost:8000/api/company-state/?code=${code}`;
             const response = await axios.get(url);
-            console.log(response.data);
             setFinData(response.data);
         } catch (error) {
             console.error(error);
         }
     };
 
-    // 억단위 변환
+    // 억 단위 변환
     const moneyFormat = (money) => {
         if (isNA(money) !== "N/A"){
-            // 마이너스면 붉은색으로 표시
+            // 적자면 붉은색으로 표시 => isNA와 moneyFormat 함수 둘다 손봐야 할 수 있음
             return Math.floor(money / 100000000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         } else {
             return "N/A";
@@ -79,11 +78,6 @@ export default function Tables () {
             <button className="btn btn-primary">다음</button> */}
             </div>
 
-            <div className="table-change-table-div">
-                {/* 버튼을 누르면 조건검색, 재무재표 버튼 체인지, 테이블 체인지 */}
-                <button className="btn btn-primary">조건검색</button>
-            </div>
-
             <table className="table table-hover">
             <thead>
                 <tr className="active">
@@ -100,63 +94,63 @@ export default function Tables () {
                 <tr>
                     <th>매출액(억원)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{moneyFormat(fin.revenue)}</th>
+                        return <td key={fin.year}>{moneyFormat(fin.revenue)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>매출총이익(억원)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{moneyFormat(fin.gross_profit)}</th>
+                        return <td key={fin.year}>{moneyFormat(fin.gross_profit)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>영업이익(억원)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{moneyFormat(fin.operating_profit)}</th>
+                        return <td key={fin.year}>{moneyFormat(fin.operating_profit)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>당기순이익(억원)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{moneyFormat(fin.net_profit)}</th>
+                        return <td key={fin.year}>{moneyFormat(fin.net_profit)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>매출액증가율(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.sales_growth_rate)}</th>
+                        return <td key={fin.year}>{isNA(fin.sales_growth_rate)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>영업이익률(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.operating_margin)}</th>
+                        return <td key={fin.year}>{isNA(fin.operating_margin)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>부채비율(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.debt_ratio)}</th>
+                        return <td key={fin.year}>{isNA(fin.debt_ratio)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>당좌비율(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.quick_ratio)}</th>
+                        return <td key={fin.year}>{isNA(fin.quick_ratio)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>유동비율(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.current_ratio)}</th>
+                        return <td key={fin.year}>{isNA(fin.current_ratio)}</td>
                     })}
                 </tr>   
 
@@ -165,70 +159,70 @@ export default function Tables () {
                 <tr>
                     <th>순이익증가율(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.net_profit_growth_rate)}</th>
+                        return <td key={fin.year}>{isNA(fin.net_profit_growth_rate)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>자산증가율(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.asset_growth_rate)}</th>
+                        return <td key={fin.year}>{isNA(fin.asset_growth_rate)}</td>
                     })}
                 </tr>  
 
                 <tr>
                     <th>PER(배)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.per)}</th>
+                        return <td key={fin.year}>{isNA(fin.per)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>EPS(원)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.eps)}</th>
+                        return <td key={fin.year}>{isNA(fin.eps).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>PBR(배)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.pbr)}</th>
+                        return <td key={fin.year}>{isNA(fin.pbr)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>BPS(원)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(Math.ceil(fin.bps))}</th>
+                        return <td key={fin.year}>{isNA(Math.ceil(fin.bps)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>BIS(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.bis)}</th>
+                        return <td key={fin.year}>{isNA(fin.bis)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>ROA(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.roa)}</th>
+                        return <td key={fin.year}>{isNA(fin.roa)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>ROE(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.roe)}</th>
+                        return <td key={fin.year}>{isNA(fin.roe)}</td>
                     })}
                 </tr>   
 
                 <tr>
                     <th>자산회전율(%)</th>
                     {finData.map(fin => {
-                        return <th key={fin.year}>{isNA(fin.asset_turnover)}</th>
+                        return <td key={fin.year}>{isNA(fin.asset_turnover)}</td>
                     })}
                 </tr>
 

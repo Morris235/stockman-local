@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import Routing from './apps/Router';
 
 // css
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // react-redux
 import CreateStore from './store/index';
@@ -17,12 +17,10 @@ import rootReducer from './modules/RootReducer';
 //react-router-dom
 import { BrowserRouter } from 'react-router-dom';
 
-
-// createStore 메소드를 이용하여, 이를 인자로 reducer을 전달해 줘야 한다.
-
 const devTools = 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
+// createStore 메소드를 이용하여, 이를 인자로 reducer을 전달해 줘야 한다.
 const store = CreateStore(rootReducer, devTools);  // reducer를 바탕으로 store 생성
 
   ReactDOM.render(

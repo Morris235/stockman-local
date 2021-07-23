@@ -4,10 +4,9 @@ import { BrowserRouter as Router,
     Link, 
     Switch } from 'react-router-dom';
 
-
 /* components */
-import CompanyBoard from './CompanyBoard';
-import NotFound from './NotFound';
+import CompanyBoard from '../components//CompanyBoard';
+import NotFound from '../components/NotFound';
 import Home from './Home';
 
 export default function Routing () {

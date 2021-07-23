@@ -154,7 +154,7 @@ export default function Charts () {
       // Date format to be used in input fields
       let inputFieldFormat = "yyyy-MM-dd";
 
-      // dispose후에 버튼을 제어할려고 하니까 에러가 발생한다.
+      // dispose후에 버튼을 제어할려고 하니까 에러가 발생한다. document를 직접 제어하는 방법 말고 다른 방법을 써야 한다.
       document.getElementById("b1m").addEventListener("click", function() {
         let max = dateAxis.groupMax["day1"];
         let date = new Date(max);

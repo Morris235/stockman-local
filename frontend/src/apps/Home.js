@@ -6,6 +6,7 @@ import '../CSS/Style.css';
 import TitleBar from '../components/NavBar';
 import CandleChart from '../components/Chart';
 import FinancialTable from '../components/FinancialTable';
+import PerformSearch from '../components/PerformSearch';
 
 /*
   1. 종목조건 검색
@@ -19,13 +20,20 @@ import FinancialTable from '../components/FinancialTable';
   8. 최근 검색 항목 보여주기
 */
 export default function Home () {
-    const [result, setResult] = useState(0)
+    const [result, setResult] = useState(0);
+    // 실적표, 조건검색표 가시, 비가시 상태 초기화
+    const [finVisible, setFinVisible] = useState({visibility:'hidden', float: 'right'});
+    const [perVisible, setPerVisible] = useState({visibility:'visible', float: 'right'});
+    const [component, setComponent] = useState(false);
+
     // 리덕스 스토어로부터 검색정보 받기
     const { code, compName } = useSelector(
         state => ({
             code: state.searchReducer.code,
             compName: state.searchReducer.comp_name,
         }), shallowEqual);
+
+
 
 
     // 계산 요청 메소드(POST)
@@ -66,6 +74,33 @@ export default function Home () {
             console.error(error);
         }
     };
+
+    // 조건검색 전환 버튼 제어 함수
+    /*
+        1. 버튼 제어(클릭시 재무실적표 컴포넌트와 조건검색 컴포넌트 태그 교체 또는 비쥬블처리, 버튼도 조건검색, 재무실적표 버튼 교체처리)
+        2. 
+    */ 
+    const changeComponent = (e) => {
+        const btnState = e.target.value;
+
+        switch (btnState) {
+            case "조건검색":
+                // 버튼 상태 처리 
+                setFinVisible({visibility: 'visible', float: 'right'});
+                setPerVisible({visibility: 'hidden'});
+                setComponent(true);
+                break;
+            case "실적표" :
+                setFinVisible({visibility: 'hidden', float: 'right'});
+                setPerVisible({visibility: 'visible', float: 'right'});
+                setComponent(false);
+                break;
+            default:
+                setFinVisible({visibility: 'hidden', float: 'right'});
+                setPerVisible({visibility: 'visible', float: 'right'});
+                setComponent(false);
+        }
+    };
     
     /* HTML */
     return (
@@ -78,10 +113,10 @@ export default function Home () {
                     <div className="col-sm-12">
                         <div className="nav-div">
                             <TitleBar />
-                        </div>    
+                        </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <div className="container">
@@ -93,46 +128,53 @@ export default function Home () {
 
 
                     <div className="col-sm-6 mx-auto">
-                        {/* 재무,조건검색 */}
+                        {/* 차트 */}
                         <CandleChart />
                     </div>
 
                     <div className="col-sm-6 mx-auto">
-                        {/* 차트 */}
-                        <FinancialTable />
+                        {/* 재무,조건검색 */}
+                        <div className="home-table-change-btn-div">
+                            {/* 버튼을 누르면  조건검색 버튼 -> 재무실적 버튼, 재무실적 테이블 -> 조건검색 테이블*/}
+                            <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={perVisible} value="조건검색"/>
+                            <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={finVisible} value="실적표"/>
+                        </div>
+                        {component ? <PerformSearch /> : <FinancialTable />}
 
-                    </div>
-                    <div className="col-sm-6 mx-auto">
-                        {/* 파이썬 로직 서버에 임의의 사용자 요청에 대한 응답을 어떻게 줄 것인가 */}
-                        포트폴리오
-                    </div>
-                    <div className="col-sm-6 mx-auto">
-                        {/* 파이썬과 rest api를 이용해 간단한 통신해보기 */}
-                        종목조건 검색
-                        <form onSubmit={CalRequest}>
-                            <input name='operand_a' className='m-2' type='number' />
-                            <input name='operand_b' type='number' />
-
-                            <select name='operator'>
-                                {/* input 에 입력한 숫자와 이 값들을 버튼을 클릭하면 CalRequest 함수로 보내야한다. */}
-                                <option type='text' value='add'>더하기</option>
-                                <option type='text' value='sub'>빼기</option>
-                                <option type='text' value='multi'>곱하기</option>
-                                <option type='text' value='div'>나누기</option>
-                            </select>
-
-                            <input type='submit' id='cal' value='연산요청' />
-                        </form>
-
-                        {/* 결과값 */}
-                        <h2>{result}</h2>
                     </div>
                     <div className="col-sm-6 mx-auto">
                         {/* 뉴스사이트에서 해당 종목의 뉴스 헤드라인을 어떻게 끌어모아 표시할것인가 */}
                         뉴스/공시
                     </div>
                     <div className="col-sm-6 mx-auto">
+                        {/* 파이썬 로직 서버에 임의의 사용자 요청에 대한 응답을 어떻게 줄 것인가 */}
+                        포트폴리오
+
+                        {/* 파이썬과 rest api를 이용해 간단한 통신해보기 */}
+                        {/* 종목조건 검색 */}
+                        {/* <form onSubmit={CalRequest}>
+                            <input name='operand_a' className='m-2' type='number' />
+                            <input name='operand_b' type='number' /> */}
+
+                        {/* <select name='operator'> */}
+                        {/* input 에 입력한 숫자와 이 값들을 버튼을 클릭하면 CalRequest 함수로 보내야한다. */}
+                        {/* <option type='text' value='add'>더하기</option>
+                                <option type='text' value='sub'>빼기</option>
+                                <option type='text' value='multi'>곱하기</option>
+                                <option type='text' value='div'>나누기</option>
+                            </select>
+
+                            <input type='submit' id='cal' value='연산요청' />
+                        </form> */}
+
+                        {/* 결과값 */}
+                        {/* <h2>{result}</h2> */}
+                    </div>
+                    <div className="col-sm-6 mx-auto">
                         동종업 실적 비교
+                    </div>
+                    <div className="col-sm-6 mx-auto">
+
                     </div>
                     <div className="col-sm-12">
                         <footer>

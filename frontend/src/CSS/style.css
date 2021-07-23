@@ -127,11 +127,15 @@ text-decoration:none;
         right: 0;
     }
    
-    /* Home 레이아웃 */
+    /* Home */
     .home-compname-text {
         z-index: 2;
         margin-top: 5px;
         padding-top: 70px;
+    }
+    
+    .home-table-change-btn-div {
+        float: right;
     }
 
     /* 차트 */
@@ -169,6 +173,7 @@ text-decoration:none;
     /* 실적 테이블 */
     .table {
         /* 최소사이즈 800px */
+        margin-top: 20px;
         height: 500px;
     }
 
@@ -177,8 +182,11 @@ text-decoration:none;
         float: left;
     }
 
-    .table-change-table-div {
-        float: right;
+    /* 조건검색 */
+    .per-input-box-div {
+        margin-top: 50px;
+        border-style: groove;
+        height: 810px;
     }
 } 
 
