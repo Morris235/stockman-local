@@ -259,8 +259,8 @@ export default function Charts () {
       <div className="chart-div">
           <div id="controls" className="controls-div">
               <div className="chart-input-div">
-                      From: <input  type="text" id="fromfield" className="amcharts-input"/>
-                      to:   <input type="text" id="tofield" className="amcharts-input"/>
+                      기간: <input  type="text" id="fromfield" className="amcharts-input"/>
+                      ~   <input type="text" id="tofield" className="amcharts-input"/>
               </div>
 
               <div className="chart-btns-div">

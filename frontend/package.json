@@ -2,11 +2,10 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "http://localhost:8000/api",
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.20",
     "@amcharts/amcharts4-fonts": "^4.0.1",
-    "@emotion/react": "^11.1.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -53,8 +52,11 @@
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/helper-builder-react-jsx": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@babel/runtime": "^7.14.8",
     "@storybook/react": "^6.1.21",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
@@ -64,12 +66,14 @@
     "redux-devtools": "^3.7.0",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "webpack": "^5.17.0",
+    "webpack": "4.44.0",
     "webpack-bundle-tracker": "^1.0.0-alpha.1",
     "webpack-cli": "^4.4.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-manifest-plugin": "^3.1.1"
   },
   "main": "index.js",
   "author": "morris <dltkdah777@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "/"
 }

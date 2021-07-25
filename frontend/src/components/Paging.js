@@ -1,5 +1,3 @@
-
-/** @jsxImportSource @emotion/react */
 // 위의 주석 삭제해 버리고 싶다. 
 import { useState, useRef } from "react";
 // import axios from 'axios';

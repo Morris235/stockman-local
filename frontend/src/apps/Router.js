@@ -5,7 +5,6 @@ import { BrowserRouter as Router,
     Switch } from 'react-router-dom';
 
 /* components */
-import CompanyBoard from '../components//CompanyBoard';
 import NotFound from '../components/NotFound';
 import Home from './Home';
 
@@ -22,9 +21,9 @@ export default function Routing () {
                     </ul> */}
 
                 {/* 주소창의 경로와 매칭될 경우 보여줄 컴포넌트 할당 */}
+                {/* path에 후행 슬래시를 넣지 않으면 빌드시 에러 발생 예: /companylist (x) /companylist/ (o) */}
                 <Switch>
                     <Route path="/"  exact={true}><Home /></Route>
-                    <Route path="/companylist"><CompanyBoard /></Route>
                     <Route path="*"><NotFound /></Route>
                 </Switch>
 

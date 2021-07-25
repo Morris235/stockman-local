@@ -36,20 +36,28 @@ export default function PerformSearch () {
 
                     <tr>
                         <div>
-                        <select>
-                            <option>PER</option>
-                            <option>BIS</option>
-                        </select>
+                            <select>
+                                <option>PER</option>
+                                <option>BIS</option>
+                            </select>
 
-                        <input type="text"  placeholder="최소"/>
-                        ~
-                        <input type="text" placeholder="최대"/>
-                        <input type="button" className="btn btn-default btn-sm" value="삭제"/>
+                            <input type="text" placeholder="최소" />
+                            ~
+                            <input type="text" placeholder="최대" />
+                            <input type="button" className="btn btn-default btn-sm" value="삭제" />
                         </div>
 
-                    </tr>
+                        <div>
+                            <select>
+                                <option>PER</option>
+                                <option>BIS</option>
+                            </select>
 
-                    <tr>
+                            <input type="text" placeholder="최소" />
+                            ~
+                            <input type="text" placeholder="최대" />
+                            <input type="button" className="btn btn-default btn-sm" value="삭제" />
+                        </div>
                     </tr>
 
                 </tbody>

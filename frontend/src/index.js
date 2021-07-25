@@ -1,5 +1,4 @@
-// 최상위 루트 파일
-
+// 최상위 루트 파일 index.js = app.jsx = app.js
 import React from 'react';
 import ReactDOM from 'react-dom';
 
