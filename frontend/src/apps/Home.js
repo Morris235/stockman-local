@@ -144,11 +144,11 @@ export default function Home () {
                     </div>
                     <div className="col-sm-6 mx-auto">
                         {/* 뉴스사이트에서 해당 종목의 뉴스 헤드라인을 어떻게 끌어모아 표시할것인가 */}
-                        뉴스/공시
+                        {/* 뉴스/공시 */}
                     </div>
                     <div className="col-sm-6 mx-auto">
                         {/* 파이썬 로직 서버에 임의의 사용자 요청에 대한 응답을 어떻게 줄 것인가 */}
-                        포트폴리오
+                        {/* 포트폴리오 */}
 
                         {/* 파이썬과 rest api를 이용해 간단한 통신해보기 */}
                         {/* 종목조건 검색 */}
@@ -171,7 +171,7 @@ export default function Home () {
                         {/* <h2>{result}</h2> */}
                     </div>
                     <div className="col-sm-6 mx-auto">
-                        동종업 실적 비교
+                        {/* 동종업 실적 비교 */}
                     </div>
                     <div className="col-sm-6 mx-auto">
 

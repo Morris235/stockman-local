@@ -1,7 +1,8 @@
 /* 웹서버는 빌드된 파일을 사용하기 때문에 미리 빌드 산출물을 만들어 놔야 한다. */ 
 const HtmlWebpackPlugin = require('html-webpack-plugin');  // 웹팩에서 HTML을 다루기 위한 플러그인
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const webpack = require('webpack');  
+// const MiniCssExractPlugin = require('mini-css-extract-plugin');
+// const webpack = require('webpack');  
 const path = require('path'); // 절대경로 참조를 위해 불러옴
 var BundleTracker = require('webpack-bundle-tracker');
 
@@ -27,6 +28,13 @@ module.exports = {
             fileName: "manifest.json",
             basePath: "./dist/"
         }),
+        // CSS 파일을 청킹하여 옵션으로 지정한 디렉토리를 생성한다. 한번에 모든 css를 읽는게 아니라 사용자가 필요할 때만 읽게 한다.
+        // 웹팩 버전 5 이상에서만 가능하다.
+        // new MiniCssExractPlugin({
+        //     linkType: false,
+        //     filename: 'static/css/[name].[contenthash:8].css',
+        //     chunkFilename: 'static/css/[id].[contenthash:8].chunk.css',
+        // }),
     ],
     // output 은 entry 로 찾은 모듈을 하나로 묶은 결과물을 반환할 위치다.
     output: {
@@ -35,13 +43,19 @@ module.exports = {
         publicPath:'./', //HTML 등 다른 파일에서 생성된 번들을 참조할 때, /을 기준으로 참조한다. 
         // 브라우저에는 캐싱기능이 있다 hash 는 컴파일될 때마다 웹팩에서 생성된 해시로 변경해주어 브라우저에 캐싱되는 대상의 내용이(파일 내용)
         // 바뀌었다고 알려주는데 도움이 된다.
+        // 하지만 기존의 app.js 파일이 남아있기 때문에 이를 제거하는 로직이 필요하다.
         filename: "app[hash].js"  
     },
+
+
+
+
+    
     // resolve.extensions 는 import 할 때 확장자를 붙이지 않아도 되도록 하는 역할을 한다.
     // resolve: {
     //     extensions: ['js','jsx']
     // },
-    // 웹팩 빌드 옵션. producation은 최적화되어 빌드, development는 빠르게 빌드, none은 아무 기능 없이 웹팩을 빌드.
+    // 웹팩 빌드 옵션. production 은 최적화되어 빌드, development 는 빠르게 빌드, none은 아무 기능 없이 웹팩을 빌드.
     mode: "development",
     devtool: 'inline-souce-map',  // 소스맵을 생성해 디버깅을 도와준다.
     module: {
