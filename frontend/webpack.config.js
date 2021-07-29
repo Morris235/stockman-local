@@ -124,7 +124,8 @@ module.exports = {
         overlay: true,
         stats: 'errors-only',
         proxy: {
-            '/api': 'http://localhost:4000'
+            // 서버의 도메인 입력 (또는 서버의 ip)
+            '/api': 'http://127.0.0.1:4000'  //'http://localhost:4000'
         }
     },
     target: 'web',

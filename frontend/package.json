@@ -2,10 +2,12 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000/api",
+  "proxy": "http://127.0.0.1:8000/",
+
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.20",
     "@amcharts/amcharts4-fonts": "^4.0.1",
+    "@emotion/react": "^11.1.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -61,7 +63,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "html-loader": "^1.3.2",
-    "mini-css-extract-plugin": "^2.1.0",
+    "mini-css-extract-plugin": "^1.3.4",
     "node-sass": "^5.0.0",
     "redux-devtools": "^3.7.0",
     "sass-loader": "^10.1.1",

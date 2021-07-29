@@ -7,6 +7,7 @@ import TitleBar from '../components/NavBar';
 import CandleChart from '../components/Chart';
 import FinancialTable from '../components/FinancialTable';
 import PerformSearch from '../components/PerformSearch';
+import FinSearchTable from '../components/FinSearchTable';
 
 /*
   1. 종목조건 검색
@@ -36,44 +37,44 @@ export default function Home () {
 
 
 
-    // 계산 요청 메소드(POST)
-    const CalRequest = async(e) => {
-        try {
-            e.preventDefault();  // 페이지 새로고침 막기
-            const RandomId = Math.random().toString(36).substr(2,11);
+    // // 계산 요청 메소드(POST)
+    // const CalRequest = async(e) => {
+    //     try {
+    //         e.preventDefault();  // 페이지 새로고침 막기
+    //         const RandomId = Math.random().toString(36).substr(2,11);
 
-            const url = `http://localhost:8000/api/cal-request/`;
+    //         const url = `/api/cal-request/`;
 
-            await axios.post(url, {
-                id: RandomId,
-                operand_a: e.target.operand_a.value,
-                operand_b: e.target.operand_b.value,
-                operator: e.target.operator.value
-            });
+    //         await axios.post(url, {
+    //             id: RandomId,
+    //             operand_a: e.target.operand_a.value,
+    //             operand_b: e.target.operand_b.value,
+    //             operator: e.target.operator.value
+    //         });
 
-            GetResponse(RandomId);
-            // DeleteResults(RandomId);
+    //         GetResponse(RandomId);
+    //         // DeleteResults(RandomId);
 
-        } catch (error) {
-            // 데이터를 전송하지 못한것에 대한 예외처리 필요
-            console.error(error);
-        };
-    };
+    //     } catch (error) {
+    //         // 데이터를 전송하지 못한것에 대한 예외처리 필요
+    //         console.error(error);
+    //     };
+    // };
 
-    // 계산된 값을 받는 메소드
-    const GetResponse = async(id) => {
-        // 병렬처리 하기 위해선 로딩이 필요하다. 아니면 리스팅 시간을 없애던가, response 됐다는 신호가 필요하다. 
-        try {
-            const response = await axios.get(`http://localhost:8000/api/cal-response/?id=${id}`);
-            setResult(response.data.results[0].return_val);
+    // // 계산된 값을 받는 메소드
+    // const GetResponse = async(id) => {
+    //     // 병렬처리 하기 위해선 로딩이 필요하다. 아니면 리스팅 시간을 없애던가, response 됐다는 신호가 필요하다. 
+    //     try {
+    //         const response = await axios.get(`/api/cal-response/?id=${id}`);
+    //         setResult(response.data.results[0].return_val);
 
-            // 처리된 response는 삭제(삭제하기전에 필요하다면 값 저장)
-            await axios.delete(`http://localhost:8000/api/cal-response/${id}`); // delete 할 때는 쿼리스트링 형식은 404에러남
-        } catch (error) {
-            // 데이터를 읽지 못한 경우에 대한 예외처리 필요 (그럴 경우 현재 방식으로는 response에 값들이 남아 있게 된다.)
-            console.error(error);
-        }
-    };
+    //         // 처리된 response는 삭제(삭제하기전에 필요하다면 값 저장)
+    //         await axios.delete(`/api/cal-response/${id}`); // delete 할 때는 쿼리스트링 형식은 404에러남
+    //     } catch (error) {
+    //         // 데이터를 읽지 못한 경우에 대한 예외처리 필요 (그럴 경우 현재 방식으로는 response에 값들이 남아 있게 된다.)
+    //         console.error(error);
+    //     }
+    // };
 
     // 조건검색 전환 버튼 제어 함수
     /*
@@ -139,7 +140,7 @@ export default function Home () {
                             <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={perVisible} value="조건검색"/>
                             <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={finVisible} value="실적표"/>
                         </div>
-                        {component ? <PerformSearch /> : <FinancialTable />}
+                        {component ? <FinSearchTable /> : <FinancialTable />}
 
                     </div>
                     <div className="col-sm-6 mx-auto">

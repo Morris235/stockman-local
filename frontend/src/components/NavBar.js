@@ -22,16 +22,17 @@ export default function TitelBar () {
             // keyword가 int인지 string 인지 분기 처리
             if (isNaN(keyword)) {
                 // 종목명일 경우 (true)
-                const url = `http://localhost:8000/api/company/?company=${keyword}`;
+                const url = `http://localhost:8000/api/company/?company=${keyword}`  // 개발용
+                // const url = `/api/company/?company=${keyword}`;  // 배포용
                 const request = await axios.get(url);
                 const code = request.data[0].code;
-                
 
                 // 리덕스 전달
                 dispatch(companyInfoActionObject(code,keyword));
             }else {
                 // 종목코드일 경우 (false)
-                const url = `http://localhost:8000/api/company/?code=${keyword}`;
+                const url = `http://localhost:8000/api/company/?code=${keyword}`;  // 개발용
+                // const url = `/api/company/?code=${keyword}`;  // 배포용
                 const request = await axios.get(url);
                 const comp_nm = request.data[0].company;
 

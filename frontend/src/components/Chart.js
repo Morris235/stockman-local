@@ -41,7 +41,9 @@ export default function Charts () {
          1. 쿼리스트링 오타 => code를 id로 표시함
          2. 백엔드에서 페이징을 걸어버려서 JSON 형식이 amcharts4가 읽지 못하는 형식이 되버림
       */ 
-      x.dataSource.url = `http://localhost:8000/api/daily-price/?code=${code}`;
+
+      x.dataSource.url = `http://localhost:8000/api/daily-price/?code=${code}`;  // 개발용
+      // x.dataSource.url = `/api/daily-price/?code=${code}`;  // 배포용
 
       x.dataSource.parser = new am4core.JSONParser();
       x.dataSource.parser.options.emptyAs = 0;

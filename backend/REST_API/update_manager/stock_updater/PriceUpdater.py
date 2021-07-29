@@ -1,3 +1,5 @@
+import sys
+sys.path.append()
 import FinanceDataReader as fdr
 import pandas as pd
 from REST_API.DB.Connector import connector
