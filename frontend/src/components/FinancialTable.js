@@ -88,28 +88,28 @@ export default function Tables () {
             
             <tbody>
                 <tr>
-                    <th>매출액(억원)</th>
+                    <th>매출액(억)</th>
                     {finData.map(fin => {
                         return <td className="text-center" key={fin.year}>{moneyFormat(fin.revenue)}</td>
                     })}
                 </tr>   
 
                 <tr>
-                    <th>매출총이익(억원)</th>
+                    <th>매출총이익(억)</th>
                     {finData.map(fin => {
                         return <td className="text-center" key={fin.year}>{moneyFormat(fin.gross_profit)}</td>
                     })}
                 </tr>   
 
                 <tr>
-                    <th>영업이익(억원)</th>
+                    <th>영업이익(억)</th>
                     {finData.map(fin => {
                         return <td className="text-center" key={fin.year}>{moneyFormat(fin.operating_profit)}</td>
                     })}
                 </tr>   
 
                 <tr>
-                    <th>당기순이익(억원)</th>
+                    <th>당기순이익(억)</th>
                     {finData.map(fin => {
                         return <td className="text-center" key={fin.year}>{moneyFormat(fin.net_profit)}</td>
                     })}

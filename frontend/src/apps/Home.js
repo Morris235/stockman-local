@@ -19,6 +19,10 @@ import FinSearchTable from '../components/FinSearchTable';
   6. UI,CSS,레이아웃 조정
   7. 처음 보여줄 데이터 기준 정하기
   8. 최근 검색 항목 보여주기
+  9. 현재 검색한 종목의 최근 종가 표시
+  10. 코스피, 코스닥, 금리등의 정보 표시
+  11. 적절한 위치에 업종 표시
+  12. 검색창 개선하기
 */
 export default function Home () {
     const [result, setResult] = useState(0);

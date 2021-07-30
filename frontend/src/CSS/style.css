@@ -448,7 +448,8 @@ text-decoration:none;
     .table {
         /* 최소사이즈 800px */
         margin-top: 20px;
-        height: 500px;
+        height: fit-content;
+        width: fit-content;
     }
 
     .table-btns-div {
@@ -460,12 +461,22 @@ text-decoration:none;
     .per-input-box-div {
         margin-top: 50px;
         border-style: groove;
-        height: 810px;
+        height: 600px;
     }
 
-    .fin-search-th {
-        float: none;
-        margin: 0 auto;
+    .fixed-table-body {
+        width: 100%;
+        height: 850px;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    .fixed-table-container {
+        height: fit-content;
+    }
+
+    .trow {
+        cursor: pointer;
     }
 } 
 
