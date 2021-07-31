@@ -56,7 +56,7 @@ module.exports = {
     //     extensions: ['js','jsx']
     // },
     // 웹팩 빌드 옵션. production 은 최적화되어 빌드, development 는 빠르게 빌드, none은 아무 기능 없이 웹팩을 빌드.
-    mode: "development",
+    mode: "production",
     devtool: 'inline-souce-map',  // 소스맵을 생성해 디버깅을 도와준다.
     module: {
         rules: [

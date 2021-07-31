@@ -402,10 +402,8 @@ text-decoration:none;
     }
    
     /* Home */
-    .home-compname-text {
-        z-index: 2;
-        margin-top: 5px;
-        padding-top: 70px;
+    .container-fluid {
+        width: 750px;
     }
     
     .home-table-change-btn-div {
@@ -417,6 +415,13 @@ text-decoration:none;
         width: 100%;
         height: 100px;
         Overflow: hidden;
+    }
+
+    .compinfo-text {
+        z-index: 2;
+        margin-top: 5px;
+        padding-top: 70px;
+        /* float: left; */
     }
 
     .btn {

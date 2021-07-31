@@ -60,6 +60,10 @@ class CompanyStatesFilter(filters.FilterSet):
     min_revenue = filters.NumberFilter(field_name='revenue', lookup_expr='gte')
     max_revenue = filters.NumberFilter(field_name='revenue', lookup_expr='lte')
 
+    # 매출총이익
+    min_gross_profit = filters.NumberFilter(field_name='gross_profit', lookup_expr='gte')
+    max_gross_profit = filters.NumberFilter(field_name='gross_profit', lookup_expr='lte')
+
     # 영업이익
     min_operating_profit = filters.NumberFilter(field_name='operating_profit', lookup_expr='gte')
     max_operating_profit = filters.NumberFilter(field_name='operating_profit', lookup_expr='lte')

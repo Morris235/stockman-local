@@ -1,6 +1,6 @@
-import React, { useState, useEffect  }  from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { companyInfoActionObject } from '../modules/SearchReducer';
 /*
     1. 검색 결과를 resultHTML로 넘기기 (상태를 이용?) : 완료
@@ -8,8 +8,8 @@ import { companyInfoActionObject } from '../modules/SearchReducer';
     3. resultHTML 디자인 하기 
     4. 주소창에 쿼리스트링이 표시되는 문제 파악하고 해결하기
     5. 종목을 클릭하면 해당 종목을 검색, 주가차트 표시
-*/ 
-export default function FinSearchTable () {
+*/
+export default function FinSearchTable() {
     // 조건검사 결과 데이터
     const [resultData, setResultData] = useState();
     const [changeResultHTML, setChangeResultHTML] = useState(false);  // 결과 테이블 HTML 출력
@@ -17,21 +17,27 @@ export default function FinSearchTable () {
 
     const dispatch = useDispatch();
     // rootQuery
-    const rootQueryString = `http://localhost:8000/api/company-state/`;  // 개발용
-    // const rootQueryString = `/api/company-state/`  // 배포용
+    // const rootQueryString = `http://localhost:8000/api/company-state/`;  // 개발용
+    const rootQueryString = `/api/company-state/`  // 배포용
 
 
     // conditionHTML의 form의 input값들을 쿼리스트링으로 변환및 결과값을 set하는 함수
-    const handleForm = async(e) => {
+    const handleForm = async (e) => {
         try {
             // 조건검색 쿼리 : 무식하게 코딩함. 유지보수가 더 쉽고 효율적인 코드로 바꿔야함
             const data = new FormData(e.target);
+
             const finQueryStr = `${rootQueryString}?year=2020
-            &min_revenu=${data.get('min_revenu')}&max_revenu=${data.get('max_revenu')}
-            &min_gross_margin=${data.get('min_gross_margin')}&max_gross_margin=${data.get('max_gross_margin')}
-            &min_operating_profit=${data.get('min_operating_profit')}&max_operating_profit=${data.get('max_operating_profit')}
-            &min_net_profit=${data.get('min_net_profit')}&max_net_profit=${data.get('max_net_profit')}
+            &min_revenue=${data.get('min_revenue').length === 0 ? '' : data.get('min_revenue') * 100000000}
+            &max_revenue=${data.get('max_revenue').length === 0 ? '' : data.get('max_revenue') * 100000000}
+            &min_gross_profit=${data.get('min_gross_profit').length === 0 ? '' : data.get('min_gross_profit') * 100000000}
+            &max_gross_profit=${data.get('max_gross_profit').length === 0 ? '' : data.get('max_gross_profit') * 100000000}
+            &min_operating_profit=${data.get('min_operating_profit').length === 0 ? '' : data.get('min_operating_profit') * 100000000}
+            &max_operating_profit=${data.get('max_operating_profit').length === 0 ? '' : data.get('max_operating_profit') * 100000000}
+            &min_net_profit=${data.get('min_net_profit').length === 0 ? '' : data.get('min_net_profit') * 100000000}
+            &max_net_profit=${data.get('max_net_profit').length === 0 ? '' : data.get('max_net_profit') * 100000000}
             &min_sales_growth_rate=${data.get('min_sales_growth_rate')}&max_sales_growth_rate=${data.get('max_sales_growth_rate')}
+            &min_gross_margin=${data.get('min_gross_margin')}&max_gross_margin=${data.get('max_gross_margin')}
             &min_operating_margin=${data.get('min_operating_margin')}&max_operating_margin=${data.get('max_operating_margin')}
             &min_debt_ratio=${data.get('min_debt_ratio')}&max_debt_ratio=${data.get('max_debt_ratio')}
             &min_quick_ratio=${data.get('min_quick_ratio')}&max_quick_ratio=${data.get('max_quick_ratio')}
@@ -58,10 +64,10 @@ export default function FinSearchTable () {
 
             // 결과값을 모두 받아오면 ResultHTML로 상태 변경
             setChangeResultHTML(true);
-        }catch (error){
+        } catch (error) {
             console.error(error);
         }
-        
+
     };
 
     // 재검색 버튼 클릭 상태 변화 함수
@@ -69,11 +75,12 @@ export default function FinSearchTable () {
         setChangeResultHTML(false);
     };
 
-    /* 조건검색 form HTML */ 
+    /* 조건검색 form HTML */
     const conditionHTML = () => {
 
         return (
             <div>
+                (2020년 기준)
                 <form name="conditions" id="conditions" onSubmit={e => {
                     e.preventDefault();
                     handleForm(e);
@@ -91,19 +98,18 @@ export default function FinSearchTable () {
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody className="text-center">
                             <tr>
                                 {/* /? */}
                                 <th >매출액(억)</th>
-                                <th><input type="number" name="min_revenu" /></th>
-                                <th><input type="number" name="max_revenu" /></th>
-
+                                <th><input type="number" name="min_revenue" /></th>
+                                <th><input type="number" name="max_revenue" /></th>
                             </tr>
 
                             <tr>
                                 <th>매출총이익(억)</th>
-                                <th><input type="number" name="min_gross_margin" /></th>
-                                <th><input type="number" name="max_gross_margin" /></th>
+                                <th><input type="number" name="min_gross_profit" /></th>
+                                <th><input type="number" name="max_gross_profit" /></th>
                             </tr>
 
                             <tr>
@@ -119,9 +125,15 @@ export default function FinSearchTable () {
                             </tr>
 
                             <tr>
-                                <th>매출액증가율(%)</th>
+                                <th>매출증가율(%)</th>
                                 <th><input type="number" name="min_sales_growth_rate" /></th>
                                 <th><input type="number" name="max_sales_growth_rate" /></th>
+                            </tr>
+
+                            <tr>
+                                <th>매출이익률(%)</th>
+                                <th><input type="number" name="min_gross_margin" /></th>
+                                <th><input type="number" name="max_gross_margin" /></th>
                             </tr>
 
                             <tr>
@@ -147,8 +159,6 @@ export default function FinSearchTable () {
                                 <th><input type="number" name="min_current_ratio" /></th>
                                 <th><input type="number" name="max_current_ratio" /></th>
                             </tr>
-
-
 
                             <tr>
                                 <th>순이익증가율(%)</th>
@@ -218,23 +228,22 @@ export default function FinSearchTable () {
     };
 
 
-    /* 검색된 결과를 표시하는 HTML  */ 
+    /* 검색된 결과를 표시하는 HTML  */
     const resultHTML = () => {
         // 스크롤이 가능한 테이블이여야 한다. 또는 테이블과 비슷한 구조여야 한다.
         // 재검색 버튼 만들기: 클릭하면 다시 conditionHTML로 넘어간다.
         // 입력한 조건의 지표들만 표시
         // 결과가 없을경우 화면 표시
-        console.log(resultData.length);
-        if (resultData.length > 0){
+        if (resultData.length > 0) {
             return (
                 <div className="fixed-table-container">
+                    (2020년 기준)
                     <div className="fixed-table-body">
-
                         <table className="table table-bordered table-hover table-responsive-md">
                             <thead className="text-center">
                                 <tr>
                                     <th scope="col"><button className="btn btn-outline-primary btn-sm" onClick={onClickedStateChange}>재검색</button></th>
-                                    <th scope="col">종목명</th>
+                                    <th scope="col">종목명 ({resultData.length}개)</th>
                                     {/* 입력한 조건의 투자지표만 표시 */}
                                     {/* <th>지표</th> */}
                                 </tr>
@@ -244,30 +253,32 @@ export default function FinSearchTable () {
                                 {resultData.map(data => {
                                     return (
                                         // 클릭시 해당 종목 검색
-                                        <tr className="trow" key={data.code} tyep="button" onClick={() => {dispatch(companyInfoActionObject(data.code, data.company_nm));}}>
-                                            <th></th>
+                                        <tr className="trow" key={data.code} tyep="button" onClick={() => { dispatch(companyInfoActionObject(data.code, data.company_nm)); }}>
+                                            <th>{/*공란*/}</th>
                                             <td>
-                                                {data.company_nm}
+                                                <div>
+                                                    <b>{data.company_nm}</b>
+                                                </div>
+                                                <div>
+                                                    [{data.sec_nm}]
+                                                </div>
+
                                             </td>
                                             {/* 입력한 조건의 투자지표만 표시 */}
                                             {/* <td>
                                                 {data.current_ratio}
                                             </td> */}
-
                                         </tr>
-
                                     );
                                 })}
                             </tbody>
                         </table>
-
                     </div>
-
                 </div>
             );
         }
 
-        /* 결과값 없음 */ 
+        /* 결과값 없음 */
         else {
             return (
                 <div>
@@ -282,7 +293,7 @@ export default function FinSearchTable () {
                             <tbody className="text-center">
                                 <tr>
                                     <th>
-                                    조건에 맞는 결과가 없습니다.
+                                        조건에 맞는 검색 결과가 없습니다.
                                     </th>
 
                                 </tr>
@@ -293,7 +304,7 @@ export default function FinSearchTable () {
                 </div>
             );
         }
-       
+
     };
 
 
