@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:8000/",
-
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.20",
     "@amcharts/amcharts4-fonts": "^4.0.1",
-    "@emotion/react": "^11.1.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -29,6 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "webpack",
+    "test": "jest",
     "babel": "babel src/app.js -o compiled.js",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
@@ -63,6 +62,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "html-loader": "^1.3.2",
+    "jest": "^27.0.6",
     "mini-css-extract-plugin": "^1.3.4",
     "node-sass": "^5.0.0",
     "redux-devtools": "^3.7.0",

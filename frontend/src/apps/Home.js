@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import '../CSS/Style.css';
 
 import TitleBar from '../components/NavBar';
@@ -123,6 +123,7 @@ export default function Home() {
 
             </div>
 
+            {/* 콘텐츠 레이아웃 */}
             <div className="container">
                 <div className="row">
 
@@ -131,7 +132,6 @@ export default function Home() {
                         <div className="compinfo-text">
                             {/* 레이아웃 유지를 위한 공란 */}
                             <div>
-  
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@ export default function Home() {
                         <CandleChart />
                     </div>
 
-                    <div className="col-sm-6 mx-auto"  style={{marginTop: "70px"}}>
+                    <div className="col-sm-6 mx-auto" style={{ marginTop: "70px" }}>
                         {/* 재무,조건검색 */}
                         <div className="home-table-change-btn-div">
                             {/* 버튼을 누르면  조건검색 버튼 -> 재무실적 버튼, 재무실적 테이블 -> 조건검색 테이블*/}
@@ -183,17 +183,32 @@ export default function Home() {
                     <div className="col-sm-6 mx-auto">
                         {/* 동종업 실적 비교 */}
                     </div>
-                    <div className="col-sm-6 mx-auto">
+                </div>
+            </div>
 
-                    </div>
-                    <div className="col-sm-12">
-                        <footer>
-                            {/* 사이트의 작성자나 그에 따른 저작권 정보, 연락처 등을 명시한다. */}
-                            <p>Copyright 2021. Morris all rights reserved</p>
+            {/* 푸터 */}
+            <div className="container-fluid">
+
+                <div className="row">
+                    <div className="col-sm-12" style={{ padding: "0px" }}>
+                        <footer
+                            className="text-center text-lg-start text-white"
+                            style={{ backgroundColor: "#3e4551" }}
+                        >
+                            {/* 텍스트 div */}
+                            <div
+                                className="text-center p-1"
+                                style={{ backgroundColor: "rgba(1, 0, 0, 0.2)", width: "100%" }}
+                            >
+                                <p>Copyright 2021. Morris all rights reserved</p>
+                            </div>
+
                         </footer>
+
                     </div>
                 </div>
             </div>
+
         </div>
 
     );
