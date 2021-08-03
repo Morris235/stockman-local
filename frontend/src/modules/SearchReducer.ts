@@ -11,7 +11,7 @@ export const initialState = {
 };
 
 // 액션 객체 
-export const companyInfoActionObject = (code, comp_name, sec_nm) => ({
+export const companyInfoActionObject = (code:String, comp_name:String, sec_nm:String) => ({
     type: SHOW_COMPANY_INFO,
     code,
     comp_name,
@@ -19,7 +19,7 @@ export const companyInfoActionObject = (code, comp_name, sec_nm) => ({
 });
 
 // 리듀서
-export default function companyInfoReducer (state = initialState, action) {
+export default function companyInfoReducer (state = initialState, action:any) {
     // action.type에 따라 reducer 동작.
     switch(action.type) {
         case SHOW_COMPANY_INFO:
