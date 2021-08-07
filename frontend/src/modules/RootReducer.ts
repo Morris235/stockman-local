@@ -6,9 +6,9 @@ import searchReducer from './SearchReducer';
 
 // combineReducers의 사용예: 작성한 reducer를 하나로 합쳐준다.
 // reducer를 여러개로 분리하여 작성할 땐, 서로 직접적인 관계가 없어야 한다.
-const rootReducer = combineReducers ({
-    counter,
-    searchReducer,
+export const rootReducer = combineReducers ({                    // 타입스크립트 적용 : export default를 export로 바꾸고
+    counter: counter,
+    searchReducer: searchReducer,
 });
 
 /*
@@ -20,4 +20,4 @@ const defaultReducer = combineReducers ({
 */
 
 // reducer를 export한다.
-export default rootReducer;
+export type RootState = ReturnType<typeof rootReducer>          // type 키워드를 써서 RootState라는 타입을 rootReducer로 만든건가?

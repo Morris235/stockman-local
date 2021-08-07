@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, shallowEqual } from 'react-redux';
+import React, { useState } from 'react';
 import '../CSS/Style.css';
 
 import TitleBar from '../components/NavBar';
@@ -23,22 +22,10 @@ import FinSearchTable from '../components/FinSearchTable';
   12. 검색창 개선하기
 */
 export default function Home() {
-    const [result, setResult] = useState(0);
     // 실적표, 조건검색표 가시, 비가시 상태 초기화
-    const [finVisible, setFinVisible] = useState({ visibility: 'hidden', float: 'right' });
-    const [perVisible, setPerVisible] = useState({ visibility: 'visible', float: 'right' });
-    const [component, setComponent] = useState(false);
-
-
-    // 리덕스 스토어로부터 검색정보 받기
-    const { code, compName } = useSelector(
-        state => ({
-            code: state.searchReducer.code,
-            compName: state.searchReducer.comp_name,
-        }), shallowEqual);
-
-
-
+    const [finVisible, setFinVisible] = useState({ visibility: 'hidden'} as React.CSSProperties); // 실적표
+    const [perVisible, setPerVisible] = useState({ visibility: 'visible'} as React.CSSProperties); // 조건검색표
+    const [clickChnageBtn, setClickChnageBtn] = useState(false);  // 버튼클릭 상태
 
     // // 계산 요청 메소드(POST)
     // const CalRequest = async(e) => {
@@ -84,25 +71,27 @@ export default function Home() {
         1. 버튼 제어(클릭시 재무실적표 컴포넌트와 조건검색 컴포넌트 태그 교체 또는 비쥬블처리, 버튼도 조건검색, 재무실적표 버튼 교체처리)
         2. 
     */
-    const changeComponent = (e) => {
+    const changeComponent = (e: any) => {
         const btnState = e.target.value;
 
         switch (btnState) {
+            case "실적표":
+                setFinVisible({ visibility: 'hidden'});
+                setPerVisible({ visibility: 'visible'});
+                setClickChnageBtn(false);
+                break;
+
             case "조건검색":
                 // 버튼 상태 처리 
                 setFinVisible({ visibility: 'visible', float: 'right' });
-                setPerVisible({ visibility: 'hidden' });
-                setComponent(true);
+                setPerVisible({ visibility: 'hidden', float: 'right' });
+                setClickChnageBtn(true);
                 break;
-            case "실적표":
-                setFinVisible({ visibility: 'hidden', float: 'right' });
-                setPerVisible({ visibility: 'visible', float: 'right' });
-                setComponent(false);
-                break;
+
             default:
                 setFinVisible({ visibility: 'hidden', float: 'right' });
                 setPerVisible({ visibility: 'visible', float: 'right' });
-                setComponent(false);
+                setClickChnageBtn(false);
         }
     };
 
@@ -146,10 +135,10 @@ export default function Home() {
                         {/* 재무,조건검색 */}
                         <div className="home-table-change-btn-div">
                             {/* 버튼을 누르면  조건검색 버튼 -> 재무실적 버튼, 재무실적 테이블 -> 조건검색 테이블*/}
-                            <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={perVisible} value="조건검색" />
                             <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={finVisible} value="실적표" />
+                            <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={perVisible} value="조건검색" />
                         </div>
-                        {component ? <FinSearchTable /> : <FinancialTable />}
+                        {clickChnageBtn ? <FinSearchTable /> : <FinancialTable />}
 
                     </div>
                     <div className="col-sm-6 mx-auto">

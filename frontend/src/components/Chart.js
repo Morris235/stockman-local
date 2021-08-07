@@ -4,6 +4,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { useSelector, shallowEqual } from 'react-redux';
 import axios from 'axios';
+import { RootState } from '../modules/RootReducer';
 
 /*
   1. 디스포즈 구현 (DOM 제어 에러 발생)
@@ -23,7 +24,7 @@ export default function Charts() {
 
   // 종목코드 상태 참조
   const { code, compName, sec_nm } = useSelector(
-    state => ({
+    (state: RootState) => ({
       code: state.searchReducer.code,
       compName: state.searchReducer.comp_name,
       sec_nm: state.searchReducer.sec_nm,

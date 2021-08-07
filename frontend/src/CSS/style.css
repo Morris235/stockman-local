@@ -729,6 +729,8 @@ text-decoration:none;
 
     .tooltip-graph {
         cursor: pointer;
+        float: right;
+        size: 2x;
     }
 } 
 

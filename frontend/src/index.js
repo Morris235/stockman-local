@@ -11,11 +11,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // react-redux
 import CreateStore from './store/index';
 import { Provider } from 'react-redux';
-import rootReducer from './modules/RootReducer';
+import { rootReducer } from './modules/RootReducer';
 
 //react-router-dom
 import { BrowserRouter } from 'react-router-dom';
 
+/*
+ declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+};
+
+  const devTools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+*/ 
 const devTools = 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 

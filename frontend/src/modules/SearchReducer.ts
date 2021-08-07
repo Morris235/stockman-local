@@ -13,9 +13,9 @@ export const initialState = {
 // 액션 객체 
 export const companyInfoActionObject = (code:String, comp_name:String, sec_nm:String) => ({
     type: SHOW_COMPANY_INFO,
-    code,
-    comp_name,
-    sec_nm,
+    code: code,
+    comp_name: comp_name,
+    sec_nm: sec_nm,
 });
 
 // 리듀서
