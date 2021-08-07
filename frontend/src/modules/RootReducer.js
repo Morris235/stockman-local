@@ -20,4 +20,5 @@ const defaultReducer = combineReducers ({
 */
 
 // reducer를 export한다.
-export type RootState = ReturnType<typeof rootReducer>          // type 키워드를 써서 RootState라는 타입을 rootReducer로 만든건가?
+// type 키워드를 써서 RootState라는 타입을 rootReducer로 만든건가?
+// export type RootState = ReturnType<typeof rootReducer>          

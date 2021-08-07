@@ -1,3 +1,4 @@
+import React from 'react';
 // icon css
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";

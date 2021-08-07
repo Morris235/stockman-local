@@ -23,8 +23,8 @@ import FinSearchTable from '../components/FinSearchTable';
 */
 export default function Home() {
     // 실적표, 조건검색표 가시, 비가시 상태 초기화
-    const [finVisible, setFinVisible] = useState({ visibility: 'hidden'} as React.CSSProperties); // 실적표
-    const [perVisible, setPerVisible] = useState({ visibility: 'visible'} as React.CSSProperties); // 조건검색표
+    const [finVisible, setFinVisible] = useState({ visibility: 'hidden'}); // 실적표
+    const [perVisible, setPerVisible] = useState({ visibility: 'visible'}); // 조건검색표
     const [clickChnageBtn, setClickChnageBtn] = useState(false);  // 버튼클릭 상태
 
     // // 계산 요청 메소드(POST)
@@ -71,7 +71,7 @@ export default function Home() {
         1. 버튼 제어(클릭시 재무실적표 컴포넌트와 조건검색 컴포넌트 태그 교체 또는 비쥬블처리, 버튼도 조건검색, 재무실적표 버튼 교체처리)
         2. 
     */
-    const changeComponent = (e: any) => {
+    const changeComponent = (e) => {
         const btnState = e.target.value;
 
         switch (btnState) {

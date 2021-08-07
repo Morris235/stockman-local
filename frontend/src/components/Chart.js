@@ -24,7 +24,7 @@ export default function Charts() {
 
   // 종목코드 상태 참조
   const { code, compName, sec_nm } = useSelector(
-    (state: RootState) => ({
+    (state) => ({
       code: state.searchReducer.code,
       compName: state.searchReducer.comp_name,
       sec_nm: state.searchReducer.sec_nm,

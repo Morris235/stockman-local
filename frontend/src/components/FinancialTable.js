@@ -165,8 +165,8 @@ export default function Tables() {
                     </tr>
 
                     <tr>
-                       {/* 영업이익률 */}
-                       {IndicatorsObject.operating_margin}
+                        {/* 영업이익률 */}
+                        {IndicatorsObject.operating_margin}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
                                 <span style={fin.operating_margin < 0 ? { color: "red" } : { color: "black" }}>
@@ -189,8 +189,8 @@ export default function Tables() {
                     </tr>
 
                     <tr>
-                         {/* 당좌비율 */}
-                         {IndicatorsObject.quick_ratio}
+                        {/* 당좌비율 */}
+                        {IndicatorsObject.quick_ratio}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
                                 <span style={fin.quick_ratio < 0 ? { color: "red" } : { color: "black" }}>
@@ -239,8 +239,8 @@ export default function Tables() {
                     </tr>
 
                     <tr>
-                       {/* PER */}
-                       {IndicatorsObject.PER}
+                        {/* PER */}
+                        {IndicatorsObject.PER}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
                                 <span style={fin.per < 0 ? { color: "red" } : { color: "black" }}>
@@ -251,8 +251,8 @@ export default function Tables() {
                     </tr>
 
                     <tr>
-                       {/* EPS */}
-                       {IndicatorsObject.EPS}
+                        {/* EPS */}
+                        {IndicatorsObject.EPS}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
                                 <span style={fin.eps < 0 ? { color: "red" } : { color: "black" }}>
@@ -287,8 +287,8 @@ export default function Tables() {
                     </tr>
 
                     <tr>
-                       {/* BIS */}
-                       {IndicatorsObject.BIS}
+                        {/* BIS */}
+                        {IndicatorsObject.BIS}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
                                 <span style={fin.bis < 0 ? { color: "red" } : { color: "black" }}>
@@ -299,8 +299,8 @@ export default function Tables() {
                     </tr>
 
                     <tr>
-                       {/* ROA */}
-                       {IndicatorsObject.ROA}
+                        {/* ROA */}
+                        {IndicatorsObject.ROA}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
                                 <span style={fin.roa < 0 ? { color: "red" } : { color: "black" }}>
@@ -323,8 +323,8 @@ export default function Tables() {
                     </tr>
 
                     <tr>
-                         {/* 자산회전율 */}
-                         {IndicatorsObject.asset_turnover}
+                        {/* 자산회전율 */}
+                        {IndicatorsObject.asset_turnover}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
                                 <span style={fin.asset_turnover < 0 ? { color: "red" } : { color: "black" }}>

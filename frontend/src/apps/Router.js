@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router,
-    Route, 
-    Link, 
-    Switch } from 'react-router-dom';
+    Route, Switch } from 'react-router-dom';
 
 /* components */
 import NotFound from '../components/NotFound';

@@ -55,6 +55,13 @@ module.exports = {
         // 하지만 기존의 app.js 파일이 남아있기 때문에 이를 제거하는 로직이 필요하다.
         filename: "app[hash].js"
     },
+    // resolve: {
+    //     extensions: ['.js','.jsx','.ts','.tsx'],
+    //     // 절대 경로 설정
+    //     alias: {
+    //         '@': path.resolve(__dirname, '../src/'),
+    //       },
+    // },
 
 
 
@@ -70,7 +77,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$|js/,  // 빌드할 파일 확장자 정규식
+                test: /\.(js|jsx|ts|tsx)$/,  // 빌드할 파일 확장자 정규식
                 exclude: /node_modules/,  //제외할 파일 정규식
                 use: [
                     {
@@ -84,17 +91,21 @@ module.exports = {
                                     {
                                         targets: {
                                             // 브라우저들에 대해서는 최신 n 버전(IE는 10과 11, 크롬과 파이어폭스, 사파리, 엣지는 최신 n 버전)과 한국에서 n% 이상 점유율을 차지하는 브라우저를 모두 지원하라고 설정
-                                            browsers: ["last 2 versions", ">=5% in KR", "safari tp"],
+                                            browsers: ["last 2 versions", ">=5% in KR"],
                                         },
                                         debug: true,
                                     },
                                 ],
                                 // 로더 옵션 : 바벨을 이용하여 빌드                                 
-                                '@babel/preset-react'
+                                '@babel/preset-react',
+                                // '@babel/preset-flow',
+                                // '@babel/typescript'
                             ],
                             // @babel/plugin-transform-runtime 추가: 애플리케이션이 컴파일될 때 regeratorRuntime 이 async/await 문법을 번역
                             // 하도록 했는데 해당 ragenerator를 제공하지 않아서 에러가 발생한다.
-                            plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime'],
+                            plugins: [
+                            '@babel/plugin-proposal-class-properties', 
+                            '@babel/plugin-transform-runtime'],
                         },
                     },
                 ],
@@ -117,17 +128,22 @@ module.exports = {
                 ]
             },
 
+            {
+                test: /\.(png|jpe?g|gif|woff|woff2|ttf|svg|ico)$/i,
+                loader: "file-loader",
+                options: {
+                  outputPath: "../fonts",
+                }
+            },
+
             // {
-            //     test: /\.html$/,
+            //     test: /\.(png|jpe?g|gif|woff|woff2|ttf|svg|ico)$/i,
             //     use: [
-            //         {
-            //         loader: 'html-loader',
-            //         options: {
-            //              minimize: true 
-            //             },
-            //         },
+            //       {
+            //         loader: 'file-loader',
+            //       },
             //     ],
-            // },
+            //   },
         ],
     },
 
