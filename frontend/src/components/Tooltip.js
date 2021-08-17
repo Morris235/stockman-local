@@ -7,8 +7,7 @@ export const IndicatorsObject = {
     revenue: (
         <th>
             매출액(억)
-            <FontAwesomeIcon className="tooltip-graph" title="[수익성 지표] 최근 사업연도 50억 원 미만이면 관리종목 지정,
-                                2년 연속이면 상장폐지(지주회사는 연결 기준), 코스닥은 30억원 미만" icon={faQuestionCircle} />
+            <FontAwesomeIcon className="tooltip-graph" title="[수익성 지표] 코스피 종목 기준, 최근 사업연도 50억 원 미만이면 관리종목 지정되며 2년간 50억 미만이면 상장폐지다(지주회사는 연결 기준), 코스닥은 30억원 미만이면 이에 해당된다." icon={faQuestionCircle} />
         </th>),
     gross_profit: (
         <th>
@@ -28,7 +27,7 @@ export const IndicatorsObject = {
     net_profit: (
         <th>
             당기순이익(억)
-            <FontAwesomeIcon className="tooltip-graph" title="[수익성 지표] 기업이 한해 동안 실제로 얻게 되는 순이익(IFRS 기준 우선)"
+            <FontAwesomeIcon className="tooltip-graph" title="[수익성 지표] 기업이 한해 동안 순수하게 실제로 얻게 되는 이익이다 (IFRS 기준 우선, 지배기업 우선)"
                 icon={faQuestionCircle} />
         </th>
     ),
@@ -82,7 +81,7 @@ export const IndicatorsObject = {
         <th>
             유동비율(%)
             <FontAwesomeIcon className="tooltip-graph" title="[안정성 지표] 회사가 1년 안에 현금으로 바꿀 수 있는 유동자산을 1년 안에 갚아야할 유동부채로 나눈 값.
-                                통상 유동비율이 150%~200%가 넘으면 기업의 재무 상태가 안정적이라고 평가할수 있다 (매출채권 조작 유의"
+                                통상 유동비율이 150%~200%가 넘으면 기업의 재무 상태가 안정적이라고 평가할수 있다 (매출채권 조작 유의)"
                 icon={faQuestionCircle} />
         </th>
     ),
@@ -123,10 +122,8 @@ export const IndicatorsObject = {
     PBR: (
         <th>
             PBR(배)
-            <FontAwesomeIcon className="tooltip-graph" title="[안정성 지표] 주가순자산배율. 주가를 주당 순자산으로 나눈 지표.
-                                당시 주가가 주당 순자산의 몇 배로 거래되고 있는지를 보여준다. PBR이 1이라면 자본총계의 가치와 시장가치가 같다는 것을 의미한다.
-                                PBR이 1 보다 작으면 주가보다 순자산 가치가 높다는 것을 의미한다. PBR은 기업의 순자산에 비해 주가가 적정하게 형성되었는지를 판단하는 지표다.
-                                PER과 마찬가지로 높고 낮음의 기준은 따로 없기 때문에 동종업계와 비교가 필수다. 미래가치가 높은 종목들은 PBR 또한 높게 측정된 경우가 많다"
+            <FontAwesomeIcon className="tooltip-graph" title="[안정성 지표] 주가순자산배율. 주가를 주당 순자산으로 나눈 지표. PBR은 기업의 순자산에 비해 주가가 적정하게 형성되었는지를 판단하는 지표다.
+                                주가가 주당 순자산의 몇 배로 거래되고 있는지를 보여준다. 미래가치가 높은 종목들은 PBR 또한 높게 측정된 경우가 많지만 되도록 4 이상 되는 종목은 매입하지 않는게 좋다."
                 icon={faQuestionCircle} />
         </th>
     ),

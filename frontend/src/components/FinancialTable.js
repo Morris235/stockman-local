@@ -13,7 +13,13 @@ import { IndicatorsObject } from './Tooltip';
 export default function Tables() {
     // component state
     const [finData, setFinData] = useState([]);
-    const [finColorState, SetFinColorState] = useState();  // 적자는 붉은색으로 표시
+
+    function person (name, age){
+        this.name = name;
+        this.age = age;
+    };
+
+    const p1 = new person('morris',31);
 
     // 종목코드 취득
     const { code, compName } = useSelector(
@@ -30,8 +36,8 @@ export default function Tables() {
     /* 검색된 종목의 재무정보 취득 함수:: Hook memo 사용 검토 */
     const getFinYearData = async () => {
         try {
-            const url = `/api/company-state/?code=${code}`;  // 배포용
-            const response = await axios.get(url);
+            const url = `/api/company-state/?code=${code}`; 
+            const response = await axios.get(url);  // 프라미스가 이행될 때 까지 기다림
             setFinData(response.data);
         } catch (error) {
             console.error(error);
@@ -57,17 +63,16 @@ export default function Tables() {
         }
     };
 
-    const tooltip = () => {
-        return
+    // 적자 붉은색 숫자 표시
+    const alertTextStyle = (indicators, type) => {
+        // 매출액은 50억 이하일 경우, 적자표시를 한다. (type으로 revenue 텍스트 전달, 그 이외에는 아무런 문자도 전달하지 않음)
+        if (type === 'revenue') {
+            return indicators < 5000000000 ? {color : 'red'} : {color : 'black'};
+        }
+        else {
+            return indicators < 0 ? {color : 'red'} : {color : 'black'};
+        }
     };
-
-    /* 조건검색 테이블 변환 함수 */
-
-
-
-    // if (loading) return <div>loading...</div>;
-    // if (error) return <div>error.</div>;
-    // if (!setFinData) return null;
 
     /* HTML */
     return (
@@ -97,7 +102,7 @@ export default function Tables() {
                         {IndicatorsObject.revenue}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.revenue < 5000000000 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.revenue, 'revenue')}>
                                     {moneyFormat(fin.revenue)}
                                 </span>
                             </td>
@@ -109,7 +114,7 @@ export default function Tables() {
                         {IndicatorsObject.gross_profit}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.gross_profit < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.gross_profit)}>
                                     {moneyFormat(fin.gross_profit)}
                                 </span>
                             </td>
@@ -121,7 +126,7 @@ export default function Tables() {
                         {IndicatorsObject.operating_profit}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.operating_profit < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.operating_profit)}>
                                     {moneyFormat(fin.operating_profit)}
                                 </span>
                             </td>
@@ -133,7 +138,7 @@ export default function Tables() {
                         {IndicatorsObject.net_profit}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.net_profit < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.net_profit)}>
                                     {moneyFormat(fin.net_profit)}
                                 </span>
                             </td>
@@ -145,7 +150,7 @@ export default function Tables() {
                         {IndicatorsObject.sales_growth_rate}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.sales_growth_rate < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.sales_growth_rate)}>
                                     {isNA(fin.sales_growth_rate)}
                                 </span>
                             </td>
@@ -157,7 +162,7 @@ export default function Tables() {
                         {IndicatorsObject.gross_margin}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.gross_margin < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.gross_margin)}>
                                     {isNA(fin.gross_margin)}
                                 </span>
                             </td>
@@ -169,7 +174,7 @@ export default function Tables() {
                         {IndicatorsObject.operating_margin}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.operating_margin < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.operating_margin)}>
                                     {isNA(fin.operating_margin)}
                                 </span>
                             </td>
@@ -181,7 +186,7 @@ export default function Tables() {
                         {IndicatorsObject.debt_ratio}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.debt_ratio < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.debt_ratio)}>
                                     {isNA(fin.debt_ratio)}
                                 </span>
                             </td>
@@ -193,7 +198,7 @@ export default function Tables() {
                         {IndicatorsObject.quick_ratio}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.quick_ratio < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.quick_ratio)}>
                                     {isNA(fin.quick_ratio)}
                                 </span>
                             </td>
@@ -205,7 +210,7 @@ export default function Tables() {
                         {IndicatorsObject.current_ratio}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.current_ratio < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.current_ratio)}>
                                     {isNA(fin.current_ratio)}
                                 </span>
                             </td>
@@ -219,7 +224,7 @@ export default function Tables() {
                         {IndicatorsObject.net_profit_growth_rate}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.net_profit_growth_rate < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.net_profit_growth_rate)}>
                                     {isNA(fin.net_profit_growth_rate)}
                                 </span>
                             </td>
@@ -231,7 +236,7 @@ export default function Tables() {
                         {IndicatorsObject.asset_growth_rate}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.asset_growth_rate < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.asset_growth_rate)}>
                                     {isNA(fin.asset_growth_rate)}
                                 </span>
                             </td>
@@ -243,7 +248,7 @@ export default function Tables() {
                         {IndicatorsObject.PER}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.per < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.per)}>
                                     {isNA(fin.per)}
                                 </span>
                             </td>
@@ -255,7 +260,7 @@ export default function Tables() {
                         {IndicatorsObject.EPS}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.eps < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.eps)}>
                                     {isNA(fin.eps).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                 </span>
                             </td>
@@ -267,7 +272,7 @@ export default function Tables() {
                         {IndicatorsObject.PBR}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.pbr < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.pbr)}>
                                     {isNA(fin.pbr)}
                                 </span>
                             </td>
@@ -279,7 +284,7 @@ export default function Tables() {
                         {IndicatorsObject.BPS}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.bps < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.bps)}>
                                     {isNA(Math.ceil(fin.bps)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                 </span>
                             </td>
@@ -291,7 +296,7 @@ export default function Tables() {
                         {IndicatorsObject.BIS}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.bis < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.bis)}>
                                     {isNA(fin.bis)}
                                 </span>
                             </td>
@@ -303,7 +308,7 @@ export default function Tables() {
                         {IndicatorsObject.ROA}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.roa < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.roa)}>
                                     {isNA(fin.roa)}
                                 </span>
                             </td>
@@ -315,7 +320,7 @@ export default function Tables() {
                         {IndicatorsObject.ROE}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.roe < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.roe)}>
                                     {isNA(fin.roe)}
                                 </span>
                             </td>
@@ -327,7 +332,7 @@ export default function Tables() {
                         {IndicatorsObject.asset_turnover}
                         {finData.map(fin => {
                             return <td className="text-center" key={fin.year}>
-                                <span style={fin.asset_turnover < 0 ? { color: "red" } : { color: "black" }}>
+                                <span style={alertTextStyle(fin.asset_turnover)}>
                                     {isNA(fin.asset_turnover)}
                                 </span>
                             </td>

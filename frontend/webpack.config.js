@@ -135,15 +135,6 @@ module.exports = {
                   outputPath: "../fonts",
                 }
             },
-
-            // {
-            //     test: /\.(png|jpe?g|gif|woff|woff2|ttf|svg|ico)$/i,
-            //     use: [
-            //       {
-            //         loader: 'file-loader',
-            //       },
-            //     ],
-            //   },
         ],
     },
 
@@ -158,10 +149,3 @@ module.exports = {
     },
     target: 'web',
 };
-
-// test: /\.jsx?$/,
-// exclude: /(node_modules)/,
-// loader: 'babel-loader',
-// query: {
-//     presets: ['react']
-// }

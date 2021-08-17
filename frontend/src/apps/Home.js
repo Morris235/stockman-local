@@ -23,10 +23,14 @@ import FinSearchTable from '../components/FinSearchTable';
 */
 export default function Home() {
     // 실적표, 조건검색표 가시, 비가시 상태 초기화
-    const [finVisible, setFinVisible] = useState({ visibility: 'hidden'}); // 실적표
-    const [perVisible, setPerVisible] = useState({ visibility: 'visible'}); // 조건검색표
-    const [clickChnageBtn, setClickChnageBtn] = useState(false);  // 버튼클릭 상태
+    const [btnState, setBtnState] = useState(false);  // 버튼 클릭 상태
 
+    // 조건검색 전환 버튼 상태 객체
+    const BtnStateObject = {
+        btnValue: btnState ? "실적표" : "조건검색",
+        btnStyle: {float: 'right'},
+    };
+    
     // // 계산 요청 메소드(POST)
     // const CalRequest = async(e) => {
     //     try {
@@ -66,34 +70,7 @@ export default function Home() {
     //     }
     // };
 
-    // 조건검색 전환 버튼 제어 함수
-    /*
-        1. 버튼 제어(클릭시 재무실적표 컴포넌트와 조건검색 컴포넌트 태그 교체 또는 비쥬블처리, 버튼도 조건검색, 재무실적표 버튼 교체처리)
-        2. 
-    */
-    const changeComponent = (e) => {
-        const btnState = e.target.value;
 
-        switch (btnState) {
-            case "실적표":
-                setFinVisible({ visibility: 'hidden'});
-                setPerVisible({ visibility: 'visible'});
-                setClickChnageBtn(false);
-                break;
-
-            case "조건검색":
-                // 버튼 상태 처리 
-                setFinVisible({ visibility: 'visible', float: 'right' });
-                setPerVisible({ visibility: 'hidden', float: 'right' });
-                setClickChnageBtn(true);
-                break;
-
-            default:
-                setFinVisible({ visibility: 'hidden', float: 'right' });
-                setPerVisible({ visibility: 'visible', float: 'right' });
-                setClickChnageBtn(false);
-        }
-    };
 
     /* HTML */
     return (
@@ -135,10 +112,10 @@ export default function Home() {
                         {/* 재무,조건검색 */}
                         <div className="home-table-change-btn-div">
                             {/* 버튼을 누르면  조건검색 버튼 -> 재무실적 버튼, 재무실적 테이블 -> 조건검색 테이블*/}
-                            <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={finVisible} value="실적표" />
-                            <input type="button" name="componentChangeBtn" onClick={changeComponent} className="btn btn-primary" style={perVisible} value="조건검색" />
+                            <input type="button" onClick={() => setBtnState(!btnState)} className="btn btn-primary" style={BtnStateObject.btnStyle} value={BtnStateObject.btnValue} />
                         </div>
-                        {clickChnageBtn ? <FinSearchTable /> : <FinancialTable />}
+
+                        {btnState ? <FinSearchTable /> : <FinancialTable />}
 
                     </div>
                     <div className="col-sm-6 mx-auto">
@@ -147,10 +124,8 @@ export default function Home() {
                     </div>
                     <div className="col-sm-6 mx-auto">
                         {/* 파이썬 로직 서버에 임의의 사용자 요청에 대한 응답을 어떻게 줄 것인가 */}
-                        {/* 포트폴리오 */}
 
                         {/* 파이썬과 rest api를 이용해 간단한 통신해보기 */}
-                        {/* 종목조건 검색 */}
                         {/* <form onSubmit={CalRequest}>
                             <input name='operand_a' className='m-2' type='number' />
                             <input name='operand_b' type='number' /> */}

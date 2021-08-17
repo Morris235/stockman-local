@@ -23,11 +23,12 @@ export default function Charts() {
   // useRef
 
   // 종목코드 상태 참조
-  const { code, compName, sec_nm } = useSelector(
+  const { code, compName, sec_nm, mk } = useSelector(
     (state) => ({
       code: state.searchReducer.code,
       compName: state.searchReducer.comp_name,
       sec_nm: state.searchReducer.sec_nm,
+      mk: state.searchReducer.mk,
     }), shallowEqual);
 
   // 라이프 사이클을 고려하지 않으면 새로고침할때 2개의 차트가 생겨버린다. 
@@ -264,14 +265,11 @@ export default function Charts() {
   // 현재 종목의 마지막 종가 
   const getPrice = async () => {
     try {
-      const url = `/api/daily-price/?code=${code}`;  // 배포용
+      const url = `/api/daily-price/?code=${code}`;  
       const response = await axios.get(url);
-
-      const url2 = `/api/company-state/?code=${code}`
       const closePrice = response.data[response.data.length - 1].close.toString()
-        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
       setClosePrice(closePrice);
-
       setLastUpdatePrice(response.data[response.data.length - 1].date);
     } catch (error) {
       console.error(error);
@@ -283,16 +281,17 @@ export default function Charts() {
     <div className="chart-div">
       {/* 기업명, 가격표시 */}
       <div>
+        
         <p>
           <span style={{ fontSize: '200%' }}>{compName}</span>
           <span>
             {code} ({lastUpdatePrice})
           </span>
-          
         </p>
 
         <p>
-        <h6>[{sec_nm}]</h6>
+        <span>[{sec_nm}]</span>
+        <span style={{color: "red", marginLeft: "15px"}}>{mk}</span>
         </p>
 
       </div>

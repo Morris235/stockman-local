@@ -49,11 +49,11 @@ text-decoration:none;
         left: 0;
         right: 0;
     }
-   
+
     /* Home */
-    .container-fluid {
+    /* .container-fluid {
         width: 750px;
-    }
+    } */
     
     .home-table-change-btn-div {
         float: right;
@@ -95,7 +95,7 @@ text-decoration:none;
 
     .chart-candle-div {
         width: 100%;
-        height: 800px;
+        height: 750px;
     }
 
     /* 실적 테이블 */
@@ -135,6 +135,8 @@ text-decoration:none;
 
     .tooltip-graph {
         cursor: pointer;
+        float: right;
+        size: 2x;
     }
 }
 
@@ -148,11 +150,11 @@ text-decoration:none;
         left: 0;
         right: 0;
     }
-   
+
     /* Home */
-    .container-fluid {
+    /* .container-fluid {
         width: 750px;
-    }
+    } */
     
     .home-table-change-btn-div {
         float: right;
@@ -194,7 +196,7 @@ text-decoration:none;
 
     .chart-candle-div {
         width: 100%;
-        height: 800px;
+        height: 750px;
     }
 
     /* 실적 테이블 */
@@ -234,6 +236,8 @@ text-decoration:none;
 
     .tooltip-graph {
         cursor: pointer;
+        float: right;
+        size: 2x;
     }
 } 
 
@@ -247,11 +251,11 @@ text-decoration:none;
         left: 0;
         right: 0;
     }
-   
+
     /* Home */
-    .container-fluid {
+    /* .container-fluid {
         width: 750px;
-    }
+    } */
     
     .home-table-change-btn-div {
         float: right;
@@ -293,7 +297,7 @@ text-decoration:none;
 
     .chart-candle-div {
         width: 100%;
-        height: 800px;
+        height: 750px;
     }
 
     /* 실적 테이블 */
@@ -333,6 +337,8 @@ text-decoration:none;
 
     .tooltip-graph {
         cursor: pointer;
+        float: right;
+        size: 2x;
     }
 }
 
@@ -346,11 +352,11 @@ text-decoration:none;
         left: 0;
         right: 0;
     }
-   
+
     /* Home */
-    .container-fluid {
+    /* .container-fluid {
         width: 750px;
-    }
+    } */
     
     .home-table-change-btn-div {
         float: right;
@@ -392,7 +398,7 @@ text-decoration:none;
 
     .chart-candle-div {
         width: 100%;
-        height: 800px;
+        height: 750px;
     }
 
     /* 실적 테이블 */
@@ -432,6 +438,8 @@ text-decoration:none;
 
     .tooltip-graph {
         cursor: pointer;
+        float: right;
+        size: 2x;
     }
 } 
 
@@ -445,11 +453,11 @@ text-decoration:none;
         left: 0;
         right: 0;
     }
-   
+
     /* Home */
-    .container-fluid {
+    /* .container-fluid {
         width: 750px;
-    }
+    } */
     
     .home-table-change-btn-div {
         float: right;
@@ -491,7 +499,7 @@ text-decoration:none;
 
     .chart-candle-div {
         width: 100%;
-        height: 800px;
+        height: 750px;
     }
 
     /* 실적 테이블 */
@@ -531,6 +539,8 @@ text-decoration:none;
 
     .tooltip-graph {
         cursor: pointer;
+        float: right;
+        size: 2x;
     }
 } 
 
@@ -544,11 +554,11 @@ text-decoration:none;
         left: 0;
         right: 0;
     }
-   
+
     /* Home */
-    .container-fluid {
+    /* .container-fluid {
         width: 750px;
-    }
+    } */
     
     .home-table-change-btn-div {
         float: right;
@@ -590,7 +600,7 @@ text-decoration:none;
 
     .chart-candle-div {
         width: 100%;
-        height: 800px;
+        height: 750px;
     }
 
     /* 실적 테이블 */
@@ -630,6 +640,8 @@ text-decoration:none;
 
     .tooltip-graph {
         cursor: pointer;
+        float: right;
+        size: 2x;
     }
 }
 

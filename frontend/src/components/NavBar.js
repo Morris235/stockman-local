@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 // 코스피, 코스닥, 금리, VIX 지수를 실시간 확인할수 있도록 기능을 넣어야한다.
 
 /*
-  1. 검색어 미리보기 기능 
+  1. 검색어 미리보기 기능 (자동완성)
      (종목 리스트를 모두 로드하고 정규식이든 뭐든 써서 사용자 타이핑을 감시하고 부분일치 리스트를 모두 보여주면 되지 않을까?)
 */ 
 
@@ -22,22 +22,24 @@ export default function TitelBar () {
             // keyword가 int인지 string 인지 분기 처리
             if (isNaN(keyword)) {
                 // 종목명일 경우 (true)
-                const url = `/api/company-state/?company_nm=${keyword}`;  // 배포용
+                const url = `/api/company-state/?company_nm=${keyword}`;  
                 const request = await axios.get(url);
                 const code = request.data[0].code;
+                const comp_nm = request.data[0].company_nm;
                 const sec_nm = request.data[0].sec_nm;
+                const mk = request.data[0].mk;
 
                 // 리덕스 전달
-                dispatch(companyInfoActionObject(code, keyword, sec_nm));
+                dispatch(companyInfoActionObject(code, comp_nm, sec_nm, mk));
             }else {
                 // 종목코드일 경우 (false)
-                const url = `/api/company-state/?code=${keyword}`;  // 배포용
+                const url = `/api/company-state/?code=${keyword}`; 
                 const request = await axios.get(url);
                 const comp_nm = request.data[0].company_nm;
                 const sec_nm = request.data[0].sec_nm;
+                const mk = request.data[0].mk;
 
-                // 리덕스 전달
-                dispatch(companyInfoActionObject(keyword,comp_nm, sec_nm));
+                dispatch(companyInfoActionObject(keyword,comp_nm, sec_nm, mk));
             }
 
         } catch (error) {

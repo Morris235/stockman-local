@@ -5,8 +5,9 @@
 from django_filters import rest_framework as filters
 from .models import *
 
-
+# 기업명 필터 클래스
 class CompFilter(filters.FilterSet):
+    # 검색어 자동완성 기능을 여기서 설정을 해줘야 한다.
     class Meta:
         model = CompanyInfo
         fields = '__all__'

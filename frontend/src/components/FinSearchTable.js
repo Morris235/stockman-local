@@ -3,9 +3,6 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { companyInfoActionObject } from '../modules/SearchReducer';
 import { IndicatorsObject } from './Tooltip';
-// icon css
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 
 /*
     1. 검색 결과를 resultHTML로 넘기기 (상태를 이용?) : 완료
@@ -32,6 +29,7 @@ export default function FinSearchTable() {
             // 조건검색 쿼리 : 무식하게 코딩함. 유지보수가 더 쉽고 효율적인 코드로 바꿔야함
             const data = new FormData(e.target);
 
+            // 입력한 정보만 쿼리를 하는게 필요하다. 이런식으로 쿼리를 하면 성능이 떨어질수 있다. 
             const finQueryStr = `${rootQueryString}?year=2020
             &min_revenue=${data.get('min_revenue').length === 0 ? '' : data.get('min_revenue') * 100000000}
             &max_revenue=${data.get('max_revenue').length === 0 ? '' : data.get('max_revenue') * 100000000}
@@ -66,6 +64,7 @@ export default function FinSearchTable() {
 
             // 결과값을 상태 저장
             setResultData(response.data);
+            console.log(response.data);
 
             // 결과값을 모두 받아오면 ResultHTML로 상태 변경
             setChangeResultHTML(true);
@@ -276,7 +275,7 @@ export default function FinSearchTable() {
                                 <tr>
                                     <th scope="col"><button className="btn btn-outline-primary btn-sm" onClick={onClickedStateChange}>재검색</button></th>
                                     <th scope="col">종목명 ({resultData.length}개)</th>
-                                    {/* 입력한 조건의 투자지표만 표시 */}
+                                    {/* 입력한 조건의 투자지표만 표시? */}
                                     {/* <th>지표</th> */}
                                 </tr>
                             </thead>
@@ -285,7 +284,7 @@ export default function FinSearchTable() {
                                 {resultData.map(data => {
                                     return (
                                         // 클릭시 해당 종목 검색
-                                        <tr className="trow" key={data.code} tyep="button" onClick={() => { dispatch(companyInfoActionObject(data.code, data.company_nm, data.sec_nm)); }}>
+                                        <tr className="trow" key={data.code} tyep="button" onClick={() => { dispatch(companyInfoActionObject(data.code, data.company_nm, data.sec_nm, data.mk)); }}>
                                             <th>{/* 실적보기 버튼 만들어서 관련종목의 검색한 연도의 실적표를 팝업으로 띄우기 */}</th>
                                             <td>
                                                 <div>
